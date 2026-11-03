@@ -1,0 +1,1068 @@
+============================================================
+Web Application (Copy)
+============================================================
+
+Platform: web
+Description: Comprehensive design guidelines for responsive web applications. Covers responsive breakpoints, navigation patterns, grid systems, accessibility standards, and cross-browser considerations.
+
+────────────────────────────────────────────────────────────
+1. Responsive Design
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   App must be fully responsive across all viewport sizes: mobile (320px+), tablet (768px+), desktop (1024px+), wide (1440px+). Use CSS media queries or container queries. Mobile-first approach recommended.
+
+   Acceptance Criteria:
+   • App must be fully responsive across all viewport sizes: mobile (320px+), tablet (768px+), desktop (1024px+), wide (1440px+)
+   • Use CSS media queries or container queries
+   • Mobile-first approach recommended
+
+   User Story: As a user on any device, I want to see responsive design applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+2. Maximum Content Width
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: app-size
+
+   Maximum content width: 1200-1440px, centered on larger screens with auto margins. Prevents content from stretching on ultra-wide monitors. Background can extend full width.
+
+   Acceptance Criteria:
+   • Maximum content width: 1200-1440px, centered on larger screens with auto margins
+   • Prevents content from stretching on ultra-wide monitors
+   • Background can extend full width
+
+   User Story: As a user, I want to see maximum content width applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+3. Minimum Supported Width
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   Minimum supported viewport width: 320px (iPhone SE). All content must be accessible at 320px. No horizontal scrolling at any supported viewport.
+
+   Acceptance Criteria:
+   • Minimum supported viewport width: 320px (iPhone SE)
+   • All content must be accessible at 320px
+   • No horizontal scrolling at any supported viewport
+
+   User Story: As a user, I want to see minimum supported width applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+4. Viewport Meta Tag
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   Include proper viewport meta tag: width=device-width, initial-scale=1. Required for responsive behavior on mobile browsers. Do not disable user-scalable.
+
+   Acceptance Criteria:
+   • Include proper viewport meta tag: width=device-width, initial-scale=1
+   • Required for responsive behavior on mobile browsers
+   • Do not disable user-scalable
+
+   User Story: As a user on any device, I want to see viewport meta tag applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+5. Header/Navbar Height
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: top-bar
+
+   Desktop header: 56-64px height. Mobile header: 48-56px height. Consistent height across pages. Fixed/sticky positioning recommended for app-style interfaces.
+
+   Acceptance Criteria:
+   • Desktop header: 56-64px height
+   • Mobile header: 48-56px height
+   • Consistent height across pages
+   • Fixed/sticky positioning recommended for app-style interfaces
+
+   User Story: As a user, I want to see header/navbar height applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+6. Header Content
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: top-bar
+
+   Header contains: logo/brand (left), primary navigation (center or left), user actions (right). Logo links to home/dashboard. User actions: profile, notifications, settings.
+
+   Acceptance Criteria:
+   • Header contains: logo/brand (left), primary navigation (center or left), user actions (right)
+   • Logo links to home/dashboard
+   • User actions: profile, notifications, settings
+
+   User Story: As a user, I want to navigate using header content, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+7. Sticky Header
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: top-bar
+
+   Header should be sticky (position: sticky) so it remains visible on scroll. For app-style interfaces. Content pages may use static header. Add subtle shadow on scroll.
+
+   Acceptance Criteria:
+   • Header should be sticky (position: sticky) so it remains visible on scroll
+   • For app-style interfaces
+   • Content pages may use static header
+   • Add subtle shadow on scroll
+
+   User Story: As a user, I want to see sticky header applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+8. Mobile Header
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: top-bar
+
+   On mobile, header collapses to: logo (left), hamburger menu (right) or minimal navigation. Hamburger opens mobile navigation drawer/overlay. Keep header minimal on small screens.
+
+   Acceptance Criteria:
+   • On mobile, header collapses to: logo (left), hamburger menu (right) or minimal navigation
+   • Hamburger opens mobile navigation drawer/overlay
+   • Keep header minimal on small screens
+
+   User Story: As a user, I want to navigate using mobile header, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+9. Breadcrumbs
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: top-bar
+
+   Use breadcrumbs below the header for multi-level navigation. Not on top-level pages. Shows current location in hierarchy. Links to parent levels. Hidden on mobile or collapsed.
+
+   Acceptance Criteria:
+   • Use breadcrumbs below the header for multi-level navigation
+   • Not on top-level pages
+   • Shows current location in hierarchy
+   • Links to parent levels
+   • Hidden on mobile or collapsed
+
+   User Story: As a user, I want to navigate using breadcrumbs, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+10. Primary Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: navigation
+
+   Desktop: horizontal nav in header or fixed sidebar (240px). Mobile: hamburger menu with slide-out drawer. Choose sidebar for app-like interfaces (dashboards, tools). Header nav for content-focused sites.
+
+   Acceptance Criteria:
+   • Desktop: horizontal nav in header or fixed sidebar (240px)
+   • Mobile: hamburger menu with slide-out drawer
+   • Choose sidebar for app-like interfaces (dashboards, tools)
+   • Header nav for content-focused sites
+
+   User Story: As a user, I want to navigate using primary navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+11. Sidebar Navigation
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: navigation
+
+   If using sidebar: fixed left, 240px width on desktop, collapsible to 64px (icon-only), hidden on mobile. Icon + text items. Collapsible for more content space. Toggle button visible.
+
+   Acceptance Criteria:
+   • If using sidebar: fixed left, 240px width on desktop, collapsible to 64px (icon-only), hidden on mobile
+   • Icon + text items
+   • Collapsible for more content space
+   • Toggle button visible
+
+   User Story: As a user, I want to navigate using sidebar navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+12. Back Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: navigation
+
+   Provide explicit back buttons/links for sub-pages. Do not rely solely on browser back button. Arrow + text (e.g., "← Back to Dashboard"). Top-left of content area. Consistent placement.
+
+   Acceptance Criteria:
+   • Provide explicit back buttons/links for sub-pages
+   • Do not rely solely on browser back button
+   • , "← Back to Dashboard")
+   • Top-left of content area
+   • Consistent placement
+
+   User Story: As a user, I want to navigate using back navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+13. Active State
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: navigation
+
+   Current page/section must be clearly highlighted in navigation. Use background color, accent bar, bold text, or combination. Must be obvious at a glance.
+
+   Acceptance Criteria:
+   • Current page/section must be clearly highlighted in navigation
+   • Use background color, accent bar, bold text, or combination
+   • Must be obvious at a glance
+
+   User Story: As a user, I want to navigate using active state, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+14. Keyboard Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: navigation
+
+   Full keyboard navigation support. Logical tab order. Skip-to-content link as first focusable element. WCAG requirement. Tab through all interactive elements. Visible focus indicators throughout.
+
+   Acceptance Criteria:
+   • Full keyboard navigation support
+   • Logical tab order
+   • Skip-to-content link as first focusable element
+   • WCAG requirement
+   • Tab through all interactive elements
+
+   User Story: As a user, I want to navigate using keyboard navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+15. URL Routing
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: navigation
+
+   Every distinct view should have its own URL. Support browser back/forward and bookmarking. Use client-side routing. URLs should be human-readable and shareable.
+
+   Acceptance Criteria:
+   • Every distinct view should have its own URL
+   • Support browser back/forward and bookmarking
+   • Use client-side routing
+   • URLs should be human-readable and shareable
+
+   User Story: As a user, I want to see url routing applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+16. CSS Grid/Flexbox
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: layout
+
+   Use CSS Grid for page layout and Flexbox for component-level layout. Avoid float-based layouts. Grid for 2D layouts, Flexbox for 1D layouts. Both support responsive design.
+
+   Acceptance Criteria:
+   • Use CSS Grid for page layout and Flexbox for component-level layout
+   • Avoid float-based layouts
+   • Grid for 2D layouts, Flexbox for 1D layouts
+   • Both support responsive design
+
+   User Story: As a user on any device, I want to see css grid/flexbox applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+17. Column Grid
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: layout
+
+   12-column grid system. Desktop: 12 columns. Tablet: 8 columns. Mobile: 4 columns. Standard grid provides flexible column combinations (6+6, 4+8, 3+3+3+3, etc.).
+
+   Acceptance Criteria:
+   • 12-column grid system
+   • Desktop: 12 columns
+   • Tablet: 8 columns
+   • Mobile: 4 columns
+   • Standard grid provides flexible column combinations (6+6, 4+8, 3+3+3+3, etc
+
+   User Story: As a user, I want to see column grid applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+18. Content Area
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: layout
+
+   Main content area fills available space after header and sidebar. Centered with max-width constraint. Content padding: 24-32px on desktop, 16px on mobile. Scrolls independently if sidebar is fixed.
+
+   Acceptance Criteria:
+   • Main content area fills available space after header and sidebar
+   • Centered with max-width constraint
+   • Content padding: 24-32px on desktop, 16px on mobile
+   • Scrolls independently if sidebar is fixed
+
+   User Story: As a user, I want to see content area applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+19. Card Layout
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: layout
+
+   Use cards for grouping content. Consistent corner radius (8-12px), padding (16-24px), and shadow/border. Cards help organize dashboard-style interfaces. Use grid layout for card grids.
+
+   Acceptance Criteria:
+   • Use cards for grouping content
+   • Consistent corner radius (8-12px), padding (16-24px), and shadow/border
+   • Cards help organize dashboard-style interfaces
+   • Use grid layout for card grids
+
+   User Story: As a user, I want to see card layout applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+20. Footer
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: xs | Category: layout
+
+   App-style interfaces: no footer needed. Content sites: footer with links, copyright, secondary nav. Footer sticks to bottom of viewport (min-height: 100vh pattern) when content is short.
+
+   Acceptance Criteria:
+   • App-style interfaces: no footer needed
+   • Content sites: footer with links, copyright, secondary nav
+   • Footer sticks to bottom of viewport (min-height: 100vh pattern) when content is short
+
+   User Story: As a user, I want to see footer applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+21. Empty States
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: layout
+
+   Empty states centered in content area: icon/illustration, headline, description, action button. Guide users on what to do next. Keep visuals lightweight. Match overall design language.
+
+   Acceptance Criteria:
+   • Empty states centered in content area: icon/illustration, headline, description, action button
+   • Guide users on what to do next
+   • Keep visuals lightweight
+   • Match overall design language
+
+   User Story: As a user, I want to see empty states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+22. 8px Grid System
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: spacing
+
+   Use an 8px base grid for all spacing. Standard values: 4, 8, 12, 16, 24, 32, 48, 64px. Consistent spacing creates visual harmony. Use CSS custom properties for spacing tokens.
+
+   Acceptance Criteria:
+   • Use an 8px base grid for all spacing
+   • Standard values: 4, 8, 12, 16, 24, 32, 48, 64px
+   • Consistent spacing creates visual harmony
+   • Use CSS custom properties for spacing tokens
+
+   User Story: As a user, I want to see 8px grid system applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+23. Page Padding
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: spacing
+
+   Desktop: 24-32px page padding. Tablet: 24px. Mobile: 16px. Responsive padding. Content should never touch viewport edges on any device.
+
+   Acceptance Criteria:
+   • Desktop: 24-32px page padding
+   • Responsive padding
+   • Content should never touch viewport edges on any device
+
+   User Story: As a user on any device, I want to see page padding applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+24. Section Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: spacing
+
+   Between major page sections: 32-48px. Between related content blocks: 16-24px. Larger gaps between unrelated sections. Tighter gaps within related groups.
+
+   Acceptance Criteria:
+   • Between major page sections: 32-48px
+   • Between related content blocks: 16-24px
+   • Larger gaps between unrelated sections
+   • Tighter gaps within related groups
+
+   User Story: As a user, I want to see section spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+25. Click/Touch Target
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: spacing
+
+   Minimum interactive element size: 44 x 44 px for touch, 32 x 32 px for mouse-only interfaces. WCAG 2.5.5 (AAA) recommends 44px. At minimum meet 2.5.8 (AA) target size of 24px.
+
+   Acceptance Criteria:
+   • Minimum interactive element size: 44 x 44 px for touch, 32 x 32 px for mouse-only interfaces
+   • 5 (AAA) recommends 44px
+   • At minimum meet 2
+   • 8 (AA) target size of 24px
+
+   User Story: As a user, I want to see click/touch target applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+26. Form Field Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: spacing
+
+   Between form fields: 16-24px. Between label and input: 4-8px. Between form groups: 32px. Readable, scannable forms. Labels close to their inputs. Groups visually separated.
+
+   Acceptance Criteria:
+   • Between form fields: 16-24px
+   • Between label and input: 4-8px
+   • Between form groups: 32px
+   • Readable, scannable forms
+   • Labels close to their inputs
+
+   User Story: As a user, I want to see form field spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+27. Gutter Width
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: spacing
+
+   Grid gutter: 16px on mobile, 24px on desktop. Between cards: 16-24px. Consistent gutter across the grid. Tighter on mobile to maximize content space.
+
+   Acceptance Criteria:
+   • Grid gutter: 16px on mobile, 24px on desktop
+   • Between cards: 16-24px
+   • Consistent gutter across the grid
+   • Tighter on mobile to maximize content space
+
+   User Story: As a user, I want to see gutter width applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+28. Icon Library
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Use a single, consistent icon library (Lucide, Heroicons, Phosphor, or Material Symbols). Pick one library and use it everywhere. Do not mix icon sets. SVG format preferred.
+
+   Acceptance Criteria:
+   • Use a single, consistent icon library (Lucide, Heroicons, Phosphor, or Material Symbols)
+   • Pick one library and use it everywhere
+   • Do not mix icon sets
+   • SVG format preferred
+
+   User Story: As a user, I want to see icon library applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+29. Icon Sizes
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: icons
+
+   Standard sizes: 16px (inline/dense), 20px (default), 24px (prominent), 32-48px (hero/empty states). Use consistent sizes. Navigation icons: 20px. Button icons: 16-20px. Table actions: 16px.
+
+   Acceptance Criteria:
+   • Standard sizes: 16px (inline/dense), 20px (default), 24px (prominent), 32-48px (hero/empty states)
+   • Use consistent sizes
+   • Navigation icons: 20px
+   • Button icons: 16-20px
+   • Table actions: 16px
+
+   User Story: As a user, I want to navigate using icon sizes, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+30. Icon Style
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: icons
+
+   Simple, clean outline icons. Consistent stroke width (1.5-2px). Not too bold, not too thin. Match the overall design tone. Outline icons feel modern and clean.
+
+   Acceptance Criteria:
+   • Simple, clean outline icons
+   • Consistent stroke width (1
+   • Not too bold, not too thin
+   • Match the overall design tone
+   • Outline icons feel modern and clean
+
+   User Story: As a user, I want to see icon style applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+31. Icon + Text Pairing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: icons
+
+   Icons accompanying text labels in navigation, buttons, and list items. 8px gap between icon and text. Icons alone can be ambiguous. Always pair with text in primary navigation. Icon-only acceptable for common actions (search, settings, close).
+
+   Acceptance Criteria:
+   • Icons accompanying text labels in navigation, buttons, and list items
+   • 8px gap between icon and text
+   • Icons alone can be ambiguous
+   • Always pair with text in primary navigation
+   • Icon-only acceptable for common actions (search, settings, close)
+
+   User Story: As a user, I want to navigate using icon + text pairing, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+32. SVG Format
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Use inline SVG or SVG sprites for icons. Avoid icon fonts and raster images. SVGs are scalable, accessible (via aria), and styleable with CSS. Better performance than icon fonts.
+
+   Acceptance Criteria:
+   • Use inline SVG or SVG sprites for icons
+   • Avoid icon fonts and raster images
+   • SVGs are scalable, accessible (via aria), and styleable with CSS
+   • Better performance than icon fonts
+
+   User Story: As a user, I want to see svg format applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+33. Type Hierarchy
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: typography
+
+   Fixed structure: H1 (28-32px bold), H2 (22-24px semibold), H3 (18-20px semibold), Body (14-16px regular), Small/Caption (12-13px regular). Clear hierarchy. Only one H1 per page. Scale down slightly on mobile.
+
+   Acceptance Criteria:
+   • Fixed structure: H1 (28-32px bold), H2 (22-24px semibold), H3 (18-20px semibold), Body (14-16px regular), Small/Caption (12-13px regular)
+   • Only one H1 per page
+   • Scale down slightly on mobile
+
+   User Story: As a user, I want to see type hierarchy applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+34. Font Family
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: typography
+
+   Font family will be provided before design starts. Default to system font stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif. System fonts load instantly and look native. Custom fonts via Google Fonts or self-hosted WOFF2.
+
+   Acceptance Criteria:
+   • Font family will be provided before design starts
+   • Default to system font stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+   • System fonts load instantly and look native
+   • Custom fonts via Google Fonts or self-hosted WOFF2
+
+   User Story: As a user, I want to see font family applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+35. Line Height
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: typography
+
+   Body text line-height: 1.5. Headings: 1.2-1.3. Tight text (captions, labels): 1.3-1.4. WCAG requires at least 1.5 line-height for body text readability.
+
+   Acceptance Criteria:
+   • Body text line-height: 1
+   • Tight text (captions, labels): 1
+   • WCAG requires at least 1
+   • 5 line-height for body text readability
+
+   User Story: As a user, I want to see line height applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+36. Maximum Line Length
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: typography
+
+   Body text max-width: 65-75 characters per line (~600-700px). Long lines are hard to read. Use max-width on text containers, not just the page.
+
+   Acceptance Criteria:
+   • Body text max-width: 65-75 characters per line (~600-700px)
+   • Long lines are hard to read
+   • Use max-width on text containers, not just the page
+
+   User Story: As a user, I want to see maximum line length applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+37. Responsive Typography
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: typography
+
+   Font sizes reduce on mobile: H1 to 24px, H2 to 20px, Body stays 14-16px. Use CSS clamp() or media queries for fluid typography. Body text should not go below 14px.
+
+   Acceptance Criteria:
+   • Font sizes reduce on mobile: H1 to 24px, H2 to 20px, Body stays 14-16px
+   • Use CSS clamp() or media queries for fluid typography
+   • Body text should not go below 14px
+
+   User Story: As a user on any device, I want to see responsive typography applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+38. Font Loading
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: typography
+
+   Use font-display: swap for custom fonts. Preload critical font files. Prevents invisible text during load (FOIT). Shows system font until custom font loads (FOUT).
+
+   Acceptance Criteria:
+   • Use font-display: swap for custom fonts
+   • Preload critical font files
+   • Prevents invisible text during load (FOIT)
+   • Shows system font until custom font loads (FOUT)
+
+   User Story: As a user, I want to see font loading applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+39. Runtime Color Control
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Colors are not fixed at design time. Use CSS custom properties (variables) for all colors. Define colors as --color-primary, --color-surface, etc. at :root level. Swap theme by changing variables.
+
+   Acceptance Criteria:
+   • Colors are not fixed at design time
+   • Use CSS custom properties (variables) for all colors
+   • Define colors as --color-primary, --color-surface, etc
+   • Swap theme by changing variables
+
+   User Story: As a user, I want to see runtime color control applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+40. Light & Dark Mode
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   Full support for light and dark color modes. Detect system preference with prefers-color-scheme. Provide manual toggle. Remember user choice in localStorage. Default to system preference.
+
+   Acceptance Criteria:
+   • Full support for light and dark color modes
+   • Detect system preference with prefers-color-scheme
+   • Provide manual toggle
+   • Remember user choice in localStorage
+   • Default to system preference
+
+   User Story: As a user, I want to see light & dark mode applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+41. Semantic Color Tokens
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Define semantic tokens: background, surface, surface-elevated, text-primary, text-secondary, text-muted, border, accent, error, warning, success. Semantic tokens abstract from specific colors. Enable theming without touching component styles.
+
+   Acceptance Criteria:
+   • Define semantic tokens: background, surface, surface-elevated, text-primary, text-secondary, text-muted, border, accent, error, warning, success
+   • Semantic tokens abstract from specific colors
+   • Enable theming without touching component styles
+
+   User Story: As a user, I want to see semantic color tokens applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+42. Contrast Ratios
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   WCAG AA: 4.5:1 for normal text, 3:1 for large text (18px+ or 14px+ bold). Test both modes. Use WebAIM contrast checker. Verify all text/background combinations in both light and dark.
+
+   Acceptance Criteria:
+   • 5:1 for normal text, 3:1 for large text (18px+ or 14px+ bold)
+   • Use WebAIM contrast checker
+   • Verify all text/background combinations in both light and dark
+
+   User Story: As a user with accessibility needs, I want to see contrast ratios applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+43. Neutral Palette
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: colors
+
+   Use a carefully defined neutral palette (grays) with 8-10 shades for backgrounds, borders, and text. Cool or warm grays depending on brand. Ensure enough distinction between adjacent shades.
+
+   Acceptance Criteria:
+   • Use a carefully defined neutral palette (grays) with 8-10 shades for backgrounds, borders, and text
+   • Cool or warm grays depending on brand
+   • Ensure enough distinction between adjacent shades
+
+   User Story: As a user, I want to see neutral palette applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+44. Illustration Style
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Simple, minimal illustrations. Flat or line-art style with limited colors. Not colorful or heavy. Illustrations should complement, not dominate. 2-3 colors max.
+
+   Acceptance Criteria:
+   • Simple, minimal illustrations
+   • Flat or line-art style with limited colors
+   • Not colorful or heavy
+   • Illustrations should complement, not dominate
+
+   User Story: As a user, I want to see illustration style applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+45. SVG Preferred
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Use SVG for illustrations, icons, and decorative graphics. PNG/WebP for photos only. SVGs scale to any screen density. Smaller file sizes for vector content.
+
+   Acceptance Criteria:
+   • Use SVG for illustrations, icons, and decorative graphics
+   • PNG/WebP for photos only
+   • SVGs scale to any screen density
+   • Smaller file sizes for vector content
+
+   User Story: As a user, I want to see svg preferred applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+46. Image Optimization
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: graphics
+
+   All raster images must be optimized. Use WebP/AVIF with JPEG fallback. Lazy load below-fold images. Critical for web performance. Use srcset for responsive images. Compress to <100KB where possible.
+
+   Acceptance Criteria:
+   • All raster images must be optimized
+   • Use WebP/AVIF with JPEG fallback
+   • Lazy load below-fold images
+   • Critical for web performance
+   • Use srcset for responsive images
+
+   User Story: As a user on any device, I want to see image optimization applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+47. Empty State Graphics
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: graphics
+
+   Lightweight illustrations or large icons for empty states. Centered, with clear message and CTA. Max 200px width for illustrations. Match the overall design tone.
+
+   Acceptance Criteria:
+   • Lightweight illustrations or large icons for empty states
+   • Centered, with clear message and CTA
+   • Max 200px width for illustrations
+   • Match the overall design tone
+
+   User Story: As a user, I want to see empty state graphics applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+48. Favicon & Social
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Provide favicon (16/32/180px), Open Graph image (1200x630), and web manifest icons. Favicon appears in browser tabs. OG image appears when shared on social media.
+
+   Acceptance Criteria:
+   • Provide favicon (16/32/180px), Open Graph image (1200x630), and web manifest icons
+   • Favicon appears in browser tabs
+   • OG image appears when shared on social media
+
+   User Story: As a user, I want to see favicon & social applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+49. Hover States
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   All interactive elements must have hover states. Use cursor: pointer for clickable elements. Desktop users rely on hover for discoverability. Subtle background change or opacity shift.
+
+   Acceptance Criteria:
+   • All interactive elements must have hover states
+   • Use cursor: pointer for clickable elements
+   • Desktop users rely on hover for discoverability
+   • Subtle background change or opacity shift
+
+   User Story: As a user, I want to see hover states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+50. Focus States
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: interactions
+
+   All focusable elements must have visible focus indicators. Use :focus-visible for keyboard-only focus. WCAG requirement. 2px offset outline or ring in accent color. Never remove without replacement.
+
+   Acceptance Criteria:
+   • All focusable elements must have visible focus indicators
+   • Use :focus-visible for keyboard-only focus
+   • WCAG requirement
+   • 2px offset outline or ring in accent color
+   • Never remove without replacement
+
+   User Story: As a user, I want to see focus states applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+51. Loading States
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   Show loading indicators for async operations: skeleton screens for content, spinners for actions, progress bars for uploads. Never leave users guessing. Skeleton screens preferred over spinners for content areas.
+
+   Acceptance Criteria:
+   • Show loading indicators for async operations: skeleton screens for content, spinners for actions, progress bars for uploads
+   • Never leave users guessing
+   • Skeleton screens preferred over spinners for content areas
+
+   User Story: As a user, I want to see loading states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+52. Toast Notifications
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: interactions
+
+   Use toast notifications for non-critical feedback (success, info). Position: top-right or bottom-right. Auto-dismiss after 3-5 seconds. Include dismiss button. Stack multiple toasts vertically.
+
+   Acceptance Criteria:
+   • Use toast notifications for non-critical feedback (success, info)
+   • Position: top-right or bottom-right
+   • Auto-dismiss after 3-5 seconds
+   • Include dismiss button
+   • Stack multiple toasts vertically
+
+   User Story: As a user, I want to see toast notifications applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+53. Smooth Transitions
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: interactions
+
+   Subtle CSS transitions (150-300ms) for state changes. Use ease-out for entrances, ease-in for exits. Avoid jarring layout shifts. Transition color, opacity, and transform. Respect prefers-reduced-motion.
+
+   Acceptance Criteria:
+   • Subtle CSS transitions (150-300ms) for state changes
+   • Use ease-out for entrances, ease-in for exits
+   • Avoid jarring layout shifts
+   • Transition color, opacity, and transform
+   • Respect prefers-reduced-motion
+
+   User Story: As a user, I want to see smooth transitions applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+54. Form Validation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   Inline form validation on blur or submit. Show error messages below fields in red. Success state in green. Validate as user types where possible (email, password strength). Do not validate on every keystroke.
+
+   Acceptance Criteria:
+   • Inline form validation on blur or submit
+   • Show error messages below fields in red
+   • Success state in green
+   • Validate as user types where possible (email, password strength)
+   • Do not validate on every keystroke
+
+   User Story: As a user, I want to see form validation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+55. Button Hierarchy
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: components
+
+   Primary: filled accent color. Secondary: outlined or ghost. Tertiary: text-only. Destructive: red variant. One primary button per section. Height: 36-40px. Padding: 12-16px horizontal. Corner: 6-8px.
+
+   Acceptance Criteria:
+   • Primary: filled accent color
+   • Secondary: outlined or ghost
+   • Tertiary: text-only
+   • Destructive: red variant
+   • One primary button per section
+
+   User Story: As a user, I want to see button hierarchy applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+56. Input Fields
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: components
+
+   Height: 36-40px. Border: 1px subtle. Corner: 6-8px. Clear focus ring. Support prefix/suffix icons. Consistent input styling across all forms. Include placeholder text. Show error state with red border.
+
+   Acceptance Criteria:
+   • Border: 1px subtle
+   • Clear focus ring
+   • Support prefix/suffix icons
+   • Consistent input styling across all forms
+   • Include placeholder text
+
+   User Story: As a user, I want to see input fields applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+57. Modals/Dialogs
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: components
+
+   Centered, dimmed backdrop (50-60% black), max-width 500px for standard, 800px for complex. Corner: 12px. Focus trap inside modal. Close on backdrop click and Escape key. Animate entrance/exit.
+
+   Acceptance Criteria:
+   • Centered, dimmed backdrop (50-60% black), max-width 500px for standard, 800px for complex
+   • Focus trap inside modal
+   • Close on backdrop click and Escape key
+   • Animate entrance/exit
+
+   User Story: As a user, I want to see modals/dialogs applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+58. Tables
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: components
+
+   Clean tables with subtle header background, hover row highlight, sortable columns, and pagination. Responsive: horizontal scroll or card-view on mobile. Sticky header on scroll.
+
+   Acceptance Criteria:
+   • Clean tables with subtle header background, hover row highlight, sortable columns, and pagination
+   • Responsive: horizontal scroll or card-view on mobile
+   • Sticky header on scroll
+
+   User Story: As a user on any device, I want to see tables applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+59. Dropdowns/Select
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: components
+
+   Custom dropdowns matching the design system. Support search/filter for long lists. Native select for mobile (better UX). Custom dropdown for desktop. Keyboard accessible.
+
+   Acceptance Criteria:
+   • Custom dropdowns matching the design system
+   • Support search/filter for long lists
+   • Native select for mobile (better UX)
+   • Custom dropdown for desktop
+   • Keyboard accessible
+
+   User Story: As a user, I want to see dropdowns/select applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+60. Tooltips
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: components
+
+   Use tooltips for supplementary info on icon-only buttons and truncated text. Appear on hover/focus. Brief text, max 2 lines. Arrow pointing to trigger. Dark background for visibility.
+
+   Acceptance Criteria:
+   • Use tooltips for supplementary info on icon-only buttons and truncated text
+   • Appear on hover/focus
+   • Brief text, max 2 lines
+   • Arrow pointing to trigger
+   • Dark background for visibility
+
+   User Story: As a user, I want to see tooltips applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+61. WCAG 2.1 AA Compliance
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: accessibility
+
+   Entire application must meet WCAG 2.1 Level AA standards. Covers perceivable, operable, understandable, and robust principles. Test with axe, Lighthouse.
+
+   Acceptance Criteria:
+   • Entire application must meet WCAG 2
+   • 1 Level AA standards
+   • Covers perceivable, operable, understandable, and robust principles
+   • Test with axe, Lighthouse
+
+   User Story: As a user, I want to see wcag 2.1 aa compliance applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+62. Semantic HTML
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: accessibility
+
+   Use semantic HTML elements: header, nav, main, section, article, aside, footer. Screen readers use landmarks for navigation. Avoid div-only markup for structural elements.
+
+   Acceptance Criteria:
+   • Use semantic HTML elements: header, nav, main, section, article, aside, footer
+   • Screen readers use landmarks for navigation
+   • Avoid div-only markup for structural elements
+
+   User Story: As a user with accessibility needs, I want to see semantic html applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+63. ARIA Labels
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: accessibility
+
+   All interactive elements must have accessible names. Use aria-label, aria-labelledby, or visible text. Icon-only buttons need aria-label. Form inputs need associated labels. Images need alt text.
+
+   Acceptance Criteria:
+   • All interactive elements must have accessible names
+   • Use aria-label, aria-labelledby, or visible text
+   • Icon-only buttons need aria-label
+   • Form inputs need associated labels
+   • Images need alt text
+
+   User Story: As a user, I want to see aria labels applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+64. Keyboard Operability
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: accessibility
+
+   All functionality must be operable via keyboard alone. No keyboard traps. Tab/Shift+Tab for navigation. Enter/Space for activation. Escape to close. Arrow keys for widgets.
+
+   Acceptance Criteria:
+   • All functionality must be operable via keyboard alone
+   • No keyboard traps
+   • Tab/Shift+Tab for navigation
+   • Enter/Space for activation
+   • Arrow keys for widgets
+
+   User Story: As a user, I want to navigate using keyboard operability, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+65. Reduced Motion
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: accessibility
+
+   Respect prefers-reduced-motion media query. Disable or minimize animations when enabled. Replace transitions with instant changes or very subtle fades when reduced motion is preferred.
+
+   Acceptance Criteria:
+   • Respect prefers-reduced-motion media query
+   • Disable or minimize animations when enabled
+   • Replace transitions with instant changes or very subtle fades when reduced motion is preferred
+
+   User Story: As a user, I want to see reduced motion applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+66. Screen Reader Testing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: accessibility
+
+   Test with at least one screen reader: NVDA (Windows), VoiceOver (macOS), or JAWS. Automated tools catch ~30% of issues. Manual screen reader testing catches the rest.
+
+   Acceptance Criteria:
+   • Test with at least one screen reader: NVDA (Windows), VoiceOver (macOS), or JAWS
+   • Automated tools catch ~30% of issues
+   • Manual screen reader testing catches the rest
+
+   User Story: As a user with accessibility needs, I want to see screen reader testing applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+67. Breakpoints
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: responsive
+
+   Standard breakpoints: 480px (mobile), 768px (tablet), 1024px (desktop), 1440px (wide desktop). Mobile-first: default styles for mobile, add complexity via min-width queries.
+
+   Acceptance Criteria:
+   • Standard breakpoints: 480px (mobile), 768px (tablet), 1024px (desktop), 1440px (wide desktop)
+   • Mobile-first: default styles for mobile, add complexity via min-width queries
+
+   User Story: As a user, I want to see breakpoints applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+68. Fluid Layout
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: responsive
+
+   Use fluid widths (%, vw, fr) between breakpoints. Avoid fixed-pixel widths for layout containers. Layout should look good at every width, not just at breakpoint thresholds.
+
+   Acceptance Criteria:
+   • Use fluid widths (%, vw, fr) between breakpoints
+   • Avoid fixed-pixel widths for layout containers
+   • Layout should look good at every width, not just at breakpoint thresholds
+
+   User Story: As a user, I want to see fluid layout applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+69. Mobile Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: responsive
+
+   Desktop sidebar/header nav collapses to hamburger menu on mobile. Full-screen or slide-out drawer. Hamburger icon at top-right or top-left. Overlay with backdrop. Close on item select.
+
+   Acceptance Criteria:
+   • Desktop sidebar/header nav collapses to hamburger menu on mobile
+   • Full-screen or slide-out drawer
+   • Hamburger icon at top-right or top-left
+   • Overlay with backdrop
+   • Close on item select
+
+   User Story: As a user, I want to navigate using mobile navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+70. Touch vs Mouse
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: responsive
+
+   Increase touch targets on touch devices. Use @media (pointer: coarse) for touch-specific styles. Larger buttons, more padding, no hover-dependent interactions on touch devices.
+
+   Acceptance Criteria:
+   • Increase touch targets on touch devices
+   • Use @media (pointer: coarse) for touch-specific styles
+   • Larger buttons, more padding, no hover-dependent interactions on touch devices
+
+   User Story: As a user, I want to see touch vs mouse applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+71. Responsive Images
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: responsive
+
+   Use srcset and sizes attributes. Serve appropriate image sizes for each viewport. Saves bandwidth on mobile. Use picture element for art direction changes.
+
+   Acceptance Criteria:
+   • Use srcset and sizes attributes
+   • Serve appropriate image sizes for each viewport
+   • Saves bandwidth on mobile
+   • Use picture element for art direction changes
+
+   User Story: As a user on any device, I want to see responsive images applied in the interface, so that the interface adapts properly to my screen size
+

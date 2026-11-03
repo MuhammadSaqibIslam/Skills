@@ -1,0 +1,1020 @@
+============================================================
+Android Mobile Application (Copy)
+============================================================
+
+Platform: android
+Description: Comprehensive design guidelines for Android phone applications following Material Design 3 (Material You) principles. Covers system bars, navigation patterns, touch targets, and Android-native patterns.
+
+────────────────────────────────────────────────────────────
+1. Full Screen Layout
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: app-size
+
+   App occupies the full screen. Design for base density: 360 x 800 dp (common Android phone). Use dp (density-independent pixels). Designs adapt across screen densities (mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi).
+
+   Acceptance Criteria:
+   • App occupies the full screen
+   • Design for base density: 360 x 800 dp (common Android phone)
+   • Use dp (density-independent pixels)
+   • Designs adapt across screen densities (mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi)
+
+   User Story: As a user, I want to see full screen layout applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+2. Edge-to-Edge Display
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: app-size
+
+   App content extends behind system bars (status bar and navigation bar) with proper insets. Use WindowInsetsCompat for proper inset handling. Content scrolls behind transparent system bars.
+
+   Acceptance Criteria:
+   • App content extends behind system bars (status bar and navigation bar) with proper insets
+   • Use WindowInsetsCompat for proper inset handling
+   • Content scrolls behind transparent system bars
+
+   User Story: As a user, I want to navigate using edge-to-edge display, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+3. Device Fragmentation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   Support screen widths from 320dp (small) to 480dp (large phones). Test at multiple sizes. Android has massive device variety. Use ConstraintLayout and flexible components. Test on small and large devices.
+
+   Acceptance Criteria:
+   • Support screen widths from 320dp (small) to 480dp (large phones)
+   • Test at multiple sizes
+   • Android has massive device variety
+   • Use ConstraintLayout and flexible components
+   • Test on small and large devices
+
+   User Story: As a user, I want to see device fragmentation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+4. Orientation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: app-size
+
+   Portrait-only unless the app specifically requires landscape (e.g., video player, games). Lock orientation via manifest. If landscape is needed, test all screens in both orientations.
+
+   Acceptance Criteria:
+   • Portrait-only unless the app specifically requires landscape (e
+   • , video player, games)
+   • Lock orientation via manifest
+   • If landscape is needed, test all screens in both orientations
+
+   User Story: As a user, I want to see orientation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+5. Status Bar
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: top-bar
+
+   Transparent or color-matched status bar. Use light/dark icons based on background color. Use WindowInsetsController to control status bar appearance. Content should draw behind it.
+
+   Acceptance Criteria:
+   • Transparent or color-matched status bar
+   • Use light/dark icons based on background color
+   • Use WindowInsetsController to control status bar appearance
+   • Content should draw behind it
+
+   User Story: As a user, I want to see status bar applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+6. Top App Bar Height
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: top-bar
+
+   Standard top app bar height: 64dp. Use Material 3 TopAppBar component. Three variants: CenterAligned (default), Small, Medium (112dp), Large (152dp). Choose based on content.
+
+   Acceptance Criteria:
+   • Standard top app bar height: 64dp
+   • Use Material 3 TopAppBar component
+   • Three variants: CenterAligned (default), Small, Medium (112dp), Large (152dp)
+   • Choose based on content
+
+   User Story: As a user, I want to see top app bar height applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+7. Top App Bar Content
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: top-bar
+
+   Contains: navigation icon (left), title (center or left), action icons (right, max 3). Navigation icon: back arrow or menu. Actions: most important visible, overflow menu for the rest.
+
+   Acceptance Criteria:
+   • Contains: navigation icon (left), title (center or left), action icons (right, max 3)
+   • Navigation icon: back arrow or menu
+   • Actions: most important visible, overflow menu for the rest
+
+   User Story: As a user, I want to navigate using top app bar content, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+8. Collapsing Behavior
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: top-bar
+
+   Top app bar can scroll off-screen or collapse to a smaller size on scroll. Use CollapsingToolbarLayout for scroll behavior. Gives more content space on scroll.
+
+   Acceptance Criteria:
+   • Top app bar can scroll off-screen or collapse to a smaller size on scroll
+   • Use CollapsingToolbarLayout for scroll behavior
+   • Gives more content space on scroll
+
+   User Story: As a user, I want to see collapsing behavior applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+9. Search Integration
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: top-bar
+
+   Use Material 3 Search Bar or Search View for search functionality. Place in top app bar area. Search bar expands from the top app bar. Provides suggestions and recent searches.
+
+   Acceptance Criteria:
+   • Use Material 3 Search Bar or Search View for search functionality
+   • Place in top app bar area
+   • Search bar expands from the top app bar
+   • Provides suggestions and recent searches
+
+   User Story: As a user, I want to see search integration applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+10. Bottom Navigation Bar
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: navigation
+
+   Use Material 3 NavigationBar (bottom) for 3-5 top-level destinations. Height: 80dp. Icons + labels always visible. Active item uses indicator pill. Max 5 items.
+
+   Acceptance Criteria:
+   • Use Material 3 NavigationBar (bottom) for 3-5 top-level destinations
+   • Icons + labels always visible
+   • Active item uses indicator pill
+
+   User Story: As a user, I want to navigate using bottom navigation bar, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+11. Navigation Drawer
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: navigation
+
+   Use a modal navigation drawer for apps with 6+ top-level sections or secondary navigation. Triggered by hamburger icon or edge swipe. Full-height overlay. Include user info at top.
+
+   Acceptance Criteria:
+   • Use a modal navigation drawer for apps with 6+ top-level sections or secondary navigation
+   • Triggered by hamburger icon or edge swipe
+   • Full-height overlay
+   • Include user info at top
+
+   User Story: As a user, I want to navigate using navigation drawer, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+12. Back Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: navigation
+
+   Support system back gesture (swipe from edge) and back arrow in top app bar. Predictive back gesture (Android 14+). Never disable system back. Ensure consistent back behavior.
+
+   Acceptance Criteria:
+   • Support system back gesture (swipe from edge) and back arrow in top app bar
+   • Predictive back gesture (Android 14+)
+   • Never disable system back
+   • Ensure consistent back behavior
+
+   User Story: As a user, I want to navigate using back navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+13. Bottom Sheets
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: navigation
+
+   Use bottom sheets for supplementary content, filters, or actions. Standard and modal variants. Standard: coexists with main content. Modal: blocks interaction. Use drag handle at top.
+
+   Acceptance Criteria:
+   • Use bottom sheets for supplementary content, filters, or actions
+   • Standard and modal variants
+   • Standard: coexists with main content
+   • Modal: blocks interaction
+   • Use drag handle at top
+
+   User Story: As a user, I want to see bottom sheets applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+14. Gesture Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: navigation
+
+   Design for gesture navigation mode (no visible nav bar buttons). Reserve edge areas for system gestures. Most modern Android phones use gesture nav. Avoid placing interactive elements at screen edges (20dp inset).
+
+   Acceptance Criteria:
+   • Design for gesture navigation mode (no visible nav bar buttons)
+   • Reserve edge areas for system gestures
+   • Most modern Android phones use gesture nav
+   • Avoid placing interactive elements at screen edges (20dp inset)
+
+   User Story: As a user, I want to navigate using gesture navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+15. Deep Links
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: navigation
+
+   Support Android App Links for key screens. Navigate directly to specific content from external sources. Register intent filters. Handle deep link navigation gracefully with proper back stack.
+
+   Acceptance Criteria:
+   • Support Android App Links for key screens
+   • Navigate directly to specific content from external sources
+   • Register intent filters
+   • Handle deep link navigation gracefully with proper back stack
+
+   User Story: As a user, I want to navigate using deep links, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+16. Content Area
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: layout
+
+   Full-width content with 16dp horizontal padding. Cards and groups use 16dp margins. Standard Material 3 layout margins. Content fills the width between margins.
+
+   Acceptance Criteria:
+   • Full-width content with 16dp horizontal padding
+   • Cards and groups use 16dp margins
+   • Standard Material 3 layout margins
+   • Content fills the width between margins
+
+   User Story: As a user, I want to see content area applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+17. Card-Based Layout
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: layout
+
+   Use Material 3 Cards for grouping related content. Filled, elevated, or outlined variants. Cards: 12dp corner radius, 16dp internal padding. Choose variant based on emphasis level.
+
+   Acceptance Criteria:
+   • Use Material 3 Cards for grouping related content
+   • Filled, elevated, or outlined variants
+   • Cards: 12dp corner radius, 16dp internal padding
+   • Choose variant based on emphasis level
+
+   User Story: As a user, I want to see card-based layout applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+18. Floating Action Button
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: layout
+
+   Use FAB for the single most important action on a screen. Position: bottom-right, 16dp from edges. Only one FAB per screen. Can be regular (56dp), small (40dp), or large (96dp). Hides on scroll if needed.
+
+   Acceptance Criteria:
+   • Use FAB for the single most important action on a screen
+   • Position: bottom-right, 16dp from edges
+   • Only one FAB per screen
+   • Can be regular (56dp), small (40dp), or large (96dp)
+   • Hides on scroll if needed
+
+   User Story: As a user, I want to see floating action button applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+19. Scrollable Content
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: layout
+
+   Screens scroll vertically. Use RecyclerView or LazyColumn for lists. Avoid nested scrolling. Smooth scrolling is essential. Use edge effects (overscroll glow/stretch). Lazy loading for long lists.
+
+   Acceptance Criteria:
+   • Screens scroll vertically
+   • Use RecyclerView or LazyColumn for lists
+   • Avoid nested scrolling
+   • Smooth scrolling is essential
+   • Use edge effects (overscroll glow/stretch)
+
+   User Story: As a user, I want to see scrollable content applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+20. Empty States
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: layout
+
+   Centered layout: icon (48-64dp), headline, body text, optional action button. Use Material icons for empty states. Keep messaging clear and actionable.
+
+   Acceptance Criteria:
+   • Centered layout: icon (48-64dp), headline, body text, optional action button
+   • Use Material icons for empty states
+   • Keep messaging clear and actionable
+
+   User Story: As a user, I want to see empty states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+21. 4dp/8dp Grid System
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: spacing
+
+   Use a 4dp base grid. Standard spacings: 4, 8, 12, 16, 24, 32dp. Material Design uses 4dp as the base unit. 8dp for most component spacing. 4dp for tight/detail spacing.
+
+   Acceptance Criteria:
+   • Use a 4dp base grid
+   • Standard spacings: 4, 8, 12, 16, 24, 32dp
+   • Material Design uses 4dp as the base unit
+   • 8dp for most component spacing
+   • 4dp for tight/detail spacing
+
+   User Story: As a user, I want to see 4dp/8dp grid system applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+22. Horizontal Margins
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: spacing
+
+   Screen horizontal margin: 16dp. Cards and elevated surfaces: additional 16dp internal padding. Consistent with Material 3 guidelines. Content should never touch screen edges.
+
+   Acceptance Criteria:
+   • Screen horizontal margin: 16dp
+   • Cards and elevated surfaces: additional 16dp internal padding
+   • Consistent with Material 3 guidelines
+   • Content should never touch screen edges
+
+   User Story: As a user, I want to see horizontal margins applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+23. Touch Target Minimum
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: spacing
+
+   All tappable elements must have a minimum touch target of 48 x 48 dp. Material Design accessibility requirement. Visual element can be smaller but touch area must be 48dp.
+
+   Acceptance Criteria:
+   • All tappable elements must have a minimum touch target of 48 x 48 dp
+   • Material Design accessibility requirement
+   • Visual element can be smaller but touch area must be 48dp
+
+   User Story: As a user with accessibility needs, I want to see touch target minimum applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+24. List Item Height
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: spacing
+
+   Single-line list item: 56dp. Two-line: 72dp. Three-line: 88dp. Material 3 ListItem component sizes. Include leading icon (24dp) and trailing element.
+
+   Acceptance Criteria:
+   • Single-line list item: 56dp
+   • Three-line: 88dp
+   • Material 3 ListItem component sizes
+   • Include leading icon (24dp) and trailing element
+
+   User Story: As a user, I want to see list item height applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+25. Section Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: spacing
+
+   Between major content sections: 24dp. Between related items within a section: 8-16dp. Clear visual hierarchy through spacing. Groups of related items stay close together.
+
+   Acceptance Criteria:
+   • Between major content sections: 24dp
+   • Between related items within a section: 8-16dp
+   • Clear visual hierarchy through spacing
+   • Groups of related items stay close together
+
+   User Story: As a user, I want to see section spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+26. Component Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: spacing
+
+   Between buttons: 8dp. Between chips: 8dp. Between form fields: 16dp. Consistent spacing between similar components creates visual harmony.
+
+   Acceptance Criteria:
+   • Between buttons: 8dp
+   • Between chips: 8dp
+   • Between form fields: 16dp
+   • Consistent spacing between similar components creates visual harmony
+
+   User Story: As a user, I want to see component spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+27. Material Symbols
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: icons
+
+   Use Material Symbols (variable font) as the primary icon set. Material Symbols support variable weight, fill, grade, and optical size. Consistent with Material 3.
+
+   Acceptance Criteria:
+   • Use Material Symbols (variable font) as the primary icon set
+   • Material Symbols support variable weight, fill, grade, and optical size
+   • Consistent with Material 3
+
+   User Story: As a user, I want to see material symbols applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+28. Icon Size
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: icons
+
+   Standard icon sizes: 18dp (dense), 20dp (default), 24dp (standard), 40-48dp (prominent). Navigation icons: 24dp. List leading icons: 24dp. Bottom nav: 24dp. Actions: 24dp.
+
+   Acceptance Criteria:
+   • Standard icon sizes: 18dp (dense), 20dp (default), 24dp (standard), 40-48dp (prominent)
+   • Navigation icons: 24dp
+   • List leading icons: 24dp
+   • Bottom nav: 24dp
+
+   User Story: As a user, I want to navigate using icon size, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+29. Icon Style
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: icons
+
+   Outlined style for default state. Filled style for active/selected states. Consistent with Material 3 navigation pattern. Outlined = unselected, Filled = selected.
+
+   Acceptance Criteria:
+   • Outlined style for default state
+   • Filled style for active/selected states
+   • Consistent with Material 3 navigation pattern
+   • Outlined = unselected, Filled = selected
+
+   User Story: As a user, I want to navigate using icon style, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+30. Icon Color
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: icons
+
+   Icons use onSurface color by default. Active/accent icons use primary color. Follow Material 3 color roles. Error icons use error color. Disabled icons at 38% opacity.
+
+   Acceptance Criteria:
+   • Icons use onSurface color by default
+   • Active/accent icons use primary color
+   • Follow Material 3 color roles
+   • Error icons use error color
+   • Disabled icons at 38% opacity
+
+   User Story: As a user, I want to see icon color applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+31. Consistent Set
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Use a single icon family throughout the app. Do not mix Material Symbols with other icon sets. Visual consistency. If custom icons are needed, match the weight and style of Material Symbols.
+
+   Acceptance Criteria:
+   • Use a single icon family throughout the app
+   • Do not mix Material Symbols with other icon sets
+   • Visual consistency
+   • If custom icons are needed, match the weight and style of Material Symbols
+
+   User Story: As a user, I want to see consistent set applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+32. Material 3 Type Scale
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: typography
+
+   Use Material 3 type scale: Display (Large/Medium/Small), Headline (L/M/S), Title (L/M/S), Body (L/M/S), Label (L/M/S). Display: 57/45/36sp. Headline: 32/28/24sp. Title: 22/16/14sp. Body: 16/14/12sp. Label: 14/12/11sp.
+
+   Acceptance Criteria:
+   • Use Material 3 type scale: Display (Large/Medium/Small), Headline (L/M/S), Title (L/M/S), Body (L/M/S), Label (L/M/S)
+   • Display: 57/45/36sp
+   • Headline: 32/28/24sp
+   • Title: 22/16/14sp
+   • Body: 16/14/12sp
+
+   User Story: As a user, I want to see material 3 type scale applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+33. Font Family
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: typography
+
+   Default to Roboto (system font). Custom fonts will be provided before design starts. Roboto is the Android system font. Custom fonts should be loaded via Google Fonts or bundled.
+
+   Acceptance Criteria:
+   • Default to Roboto (system font)
+   • Custom fonts will be provided before design starts
+   • Roboto is the Android system font
+   • Custom fonts should be loaded via Google Fonts or bundled
+
+   User Story: As a user, I want to see font family applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+34. Scalable Text
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: typography
+
+   Use sp (scale-independent pixels) for all text sizes. Support user font size preferences. sp respects the user's font size setting in Android. Test at minimum and maximum scale.
+
+   Acceptance Criteria:
+   • Use sp (scale-independent pixels) for all text sizes
+   • Support user font size preferences
+   • sp respects the user's font size setting in Android
+   • Test at minimum and maximum scale
+
+   User Story: As a user, I want to see scalable text applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+35. Font Weights
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: typography
+
+   Regular (400) for body, Medium (500) for emphasis, Bold (700) for headlines. Avoid thin/light weights. Android renders thin fonts poorly on some devices. Stick to 400-700 weight range.
+
+   Acceptance Criteria:
+   • Regular (400) for body, Medium (500) for emphasis, Bold (700) for headlines
+   • Avoid thin/light weights
+   • Android renders thin fonts poorly on some devices
+   • Stick to 400-700 weight range
+
+   User Story: As a user, I want to see font weights applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+36. Text Alignment
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: typography
+
+   Left-align body text (or start-align for RTL support). Center-align for empty states and dialogs. Use textAlignment start instead of left for RTL language support.
+
+   Acceptance Criteria:
+   • Left-align body text (or start-align for RTL support)
+   • Center-align for empty states and dialogs
+   • Use textAlignment start instead of left for RTL language support
+
+   User Story: As a user, I want to see text alignment applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+37. Runtime Color Control
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Colors are not fixed at design time. Use Material 3 dynamic color or a custom theme manager. Material You extracts colors from the user's wallpaper on Android 12+. Provide fallback static theme.
+
+   Acceptance Criteria:
+   • Colors are not fixed at design time
+   • Use Material 3 dynamic color or a custom theme manager
+   • Material You extracts colors from the user's wallpaper on Android 12+
+   • Provide fallback static theme
+
+   User Story: As a user, I want to see runtime color control applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+38. Light & Dark Theme
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: colors
+
+   Full support for light and dark themes following Material 3 color scheme. Use Material 3 color roles: primary, onPrimary, primaryContainer, surface, onSurface, etc.
+
+   Acceptance Criteria:
+   • Full support for light and dark themes following Material 3 color scheme
+   • Use Material 3 color roles: primary, onPrimary, primaryContainer, surface, onSurface, etc
+
+   User Story: As a user, I want to see light & dark theme applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+39. Material 3 Color Roles
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   Use the full Material 3 color role system: primary, secondary, tertiary, error, surface, background, outline. Each role has on-color, container, and on-container variants. Use Material Theme Builder to generate.
+
+   Acceptance Criteria:
+   • Use the full Material 3 color role system: primary, secondary, tertiary, error, surface, background, outline
+   • Each role has on-color, container, and on-container variants
+   • Use Material Theme Builder to generate
+
+   User Story: As a user, I want to see material 3 color roles applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+40. Contrast Ratios
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   WCAG AA minimum: 4.5:1 for body text, 3:1 for large text. Test in both themes. Material 3 color system is designed for accessibility but verify with custom colors.
+
+   Acceptance Criteria:
+   • WCAG AA minimum: 4
+   • 5:1 for body text, 3:1 for large text
+   • Test in both themes
+   • Material 3 color system is designed for accessibility but verify with custom colors
+
+   User Story: As a user with accessibility needs, I want to see contrast ratios applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+41. Dynamic Color Support
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: colors
+
+   On Android 12+, support dynamic color (Material You) with a fallback static color scheme. Users expect their wallpaper-derived colors. Use DynamicColors.applyToActivitiesIfAvailable().
+
+   Acceptance Criteria:
+   • On Android 12+, support dynamic color (Material You) with a fallback static color scheme
+   • Users expect their wallpaper-derived colors
+   • Use DynamicColors
+   • applyToActivitiesIfAvailable()
+
+   User Story: As a user, I want to see dynamic color support applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+42. Semantic Color Tokens
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Define colors as semantic tokens: surface, surfaceVariant, onSurface, onSurfaceVariant, outline, outlineVariant. Follow Material 3 naming. Enables dynamic color and theming without per-component changes.
+
+   Acceptance Criteria:
+   • Define colors as semantic tokens: surface, surfaceVariant, onSurface, onSurfaceVariant, outline, outlineVariant
+   • Follow Material 3 naming
+   • Enables dynamic color and theming without per-component changes
+
+   User Story: As a user, I want to see semantic color tokens applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+43. Illustration Style
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Simple, minimal illustrations. Flat design with limited color palette. Match Material Design aesthetic. 2-3 colors from the theme palette. No heavy gradients or 3D effects.
+
+   Acceptance Criteria:
+   • Simple, minimal illustrations
+   • Flat design with limited color palette
+   • Match Material Design aesthetic
+   • 2-3 colors from the theme palette
+   • No heavy gradients or 3D effects
+
+   User Story: As a user, I want to see illustration style applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+44. Empty State Graphics
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: graphics
+
+   Use Material Symbols or simple illustrations for empty states. Max 80dp icon or 160dp illustration. Keep lightweight. Center in available space. Accompany with explanatory text and action.
+
+   Acceptance Criteria:
+   • Use Material Symbols or simple illustrations for empty states
+   • Max 80dp icon or 160dp illustration
+   • Keep lightweight
+   • Center in available space
+   • Accompany with explanatory text and action
+
+   User Story: As a user, I want to see empty state graphics applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+45. Adaptive Icons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: graphics
+
+   App icon must use Android Adaptive Icon format (foreground + background layers). 108dp total with 72dp safe zone. System applies shape mask (circle, squircle, rounded square).
+
+   Acceptance Criteria:
+   • App icon must use Android Adaptive Icon format (foreground + background layers)
+   • 108dp total with 72dp safe zone
+   • System applies shape mask (circle, squircle, rounded square)
+
+   User Story: As a user on any device, I want to see adaptive icons applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+46. Image Loading
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: graphics
+
+   Use placeholder + crossfade for image loading. Support error states for failed loads. Use Coil or Glide for image loading. Show low-contrast placeholder matching container color.
+
+   Acceptance Criteria:
+   • Use placeholder + crossfade for image loading
+   • Support error states for failed loads
+   • Use Coil or Glide for image loading
+   • Show low-contrast placeholder matching container color
+
+   User Story: As a user with accessibility needs, I want to see image loading applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+47. Vector Drawables
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Use vector drawables (SVG) for icons and simple graphics. Avoid raster assets where possible. Vectors scale to all screen densities. Smaller APK size. Use AnimatedVectorDrawable for icon animations.
+
+   Acceptance Criteria:
+   • Use vector drawables (SVG) for icons and simple graphics
+   • Avoid raster assets where possible
+   • Vectors scale to all screen densities
+   • Smaller APK size
+   • Use AnimatedVectorDrawable for icon animations
+
+   User Story: As a user, I want to see vector drawables applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+48. Ripple Effect
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   All tappable elements must show Material ripple feedback on touch. Standard Android touch feedback. Use Material RippleDrawable or Modifier.clickable with ripple indication.
+
+   Acceptance Criteria:
+   • All tappable elements must show Material ripple feedback on touch
+   • Standard Android touch feedback
+   • Use Material RippleDrawable or Modifier
+   • clickable with ripple indication
+
+   User Story: As a user, I want to see ripple effect applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+49. Swipe Actions
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: interactions
+
+   Support swipe-to-dismiss and swipe actions on list items where appropriate. Use SwipeToDismiss composable or ItemTouchHelper. Show action icons revealed behind the item.
+
+   Acceptance Criteria:
+   • Support swipe-to-dismiss and swipe actions on list items where appropriate
+   • Use SwipeToDismiss composable or ItemTouchHelper
+   • Show action icons revealed behind the item
+
+   User Story: As a user, I want to see swipe actions applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+50. Pull to Refresh
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: interactions
+
+   Support pull-to-refresh on scrollable content with Material refresh indicator. Use SwipeRefreshLayout or Material PullToRefreshContainer. Standard Android UX expectation.
+
+   Acceptance Criteria:
+   • Support pull-to-refresh on scrollable content with Material refresh indicator
+   • Use SwipeRefreshLayout or Material PullToRefreshContainer
+   • Standard Android UX expectation
+
+   User Story: As a user, I want to see pull to refresh applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+51. Snackbar Feedback
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   Use Snackbars for brief feedback messages. Position at bottom, above FAB and bottom nav. Duration: Short (4s), Long (10s), or Indefinite. Include optional action button. Max one line.
+
+   Acceptance Criteria:
+   • Use Snackbars for brief feedback messages
+   • Position at bottom, above FAB and bottom nav
+   • Duration: Short (4s), Long (10s), or Indefinite
+   • Include optional action button
+
+   User Story: As a user, I want to see snackbar feedback applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+52. Material Motion
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: interactions
+
+   Use Material motion patterns: container transform, shared axis, fade through, fade. Container transform for item-to-detail. Shared axis for navigation. Fade through for unrelated transitions.
+
+   Acceptance Criteria:
+   • Use Material motion patterns: container transform, shared axis, fade through, fade
+   • Container transform for item-to-detail
+   • Shared axis for navigation
+   • Fade through for unrelated transitions
+
+   User Story: As a user, I want to navigate using material motion, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+53. Loading States
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   Use Material progress indicators: circular (indeterminate) for actions, linear for progress. Skeleton screens for content loading. Circular spinner for actions. Never show blank screens.
+
+   Acceptance Criteria:
+   • Use Material progress indicators: circular (indeterminate) for actions, linear for progress
+   • Skeleton screens for content loading
+   • Circular spinner for actions
+   • Never show blank screens
+
+   User Story: As a user, I want to see loading states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+54. Material 3 Components
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: components
+
+   Use Material 3 (Material You) components for all standard UI elements. Buttons, cards, chips, dialogs, text fields, switches, etc. Use the latest Material 3 library.
+
+   Acceptance Criteria:
+   • Use Material 3 (Material You) components for all standard UI elements
+   • Buttons, cards, chips, dialogs, text fields, switches, etc
+   • Use the latest Material 3 library
+
+   User Story: As a user, I want to see material 3 components applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+55. Buttons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: components
+
+   Filled (primary), Tonal (secondary), Outlined, Text (tertiary). Height: 40dp. Corner: 20dp (full round). Material 3 buttons are fully rounded. One filled button per context. Use tonal for secondary emphasis.
+
+   Acceptance Criteria:
+   • Filled (primary), Tonal (secondary), Outlined, Text (tertiary)
+   • Corner: 20dp (full round)
+   • Material 3 buttons are fully rounded
+   • One filled button per context
+   • Use tonal for secondary emphasis
+
+   User Story: As a user, I want to see buttons applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+56. Text Fields
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: components
+
+   Filled (default) or Outlined text fields. Height: 56dp. Support label, helper text, error text. Filled fields have background. Outlined have border. Both support leading/trailing icons.
+
+   Acceptance Criteria:
+   • Filled (default) or Outlined text fields
+   • Support label, helper text, error text
+   • Filled fields have background
+   • Outlined have border
+   • Both support leading/trailing icons
+
+   User Story: As a user, I want to see text fields applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+57. Chips
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: components
+
+   Use chips for filters, selections, and input. Types: Assist, Filter, Input, Suggestion. Height: 32dp. Corner: 8dp. Scrollable horizontal chip rows for filter sets.
+
+   Acceptance Criteria:
+   • Use chips for filters, selections, and input
+   • Types: Assist, Filter, Input, Suggestion
+   • Scrollable horizontal chip rows for filter sets
+
+   User Story: As a user, I want to see chips applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+58. Dialogs
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: components
+
+   Standard dialogs: title, content, 2 action buttons (negative left, positive right). Corner: 28dp. Material 3 dialogs have larger corner radius. Keep text concise. Avoid nested scrolling.
+
+   Acceptance Criteria:
+   • Standard dialogs: title, content, 2 action buttons (negative left, positive right)
+   • Material 3 dialogs have larger corner radius
+   • Keep text concise
+   • Avoid nested scrolling
+
+   User Story: As a user, I want to see dialogs applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+59. Navigation Rail (Optional)
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: xs | Category: components
+
+   Use NavigationRail for tablet or landscape layouts instead of bottom navigation. Width: 80dp. Vertical icon + label items. Useful for wider screens. Include FAB at top.
+
+   Acceptance Criteria:
+   • Use NavigationRail for tablet or landscape layouts instead of bottom navigation
+   • Vertical icon + label items
+   • Useful for wider screens
+   • Include FAB at top
+
+   User Story: As a user, I want to navigate using navigation rail (optional), so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+60. TalkBack Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   All UI elements must be accessible via Android TalkBack screen reader. Use contentDescription for images/icons. Proper focus order. Test with TalkBack enabled.
+
+   Acceptance Criteria:
+   • All UI elements must be accessible via Android TalkBack screen reader
+   • Use contentDescription for images/icons
+   • Proper focus order
+   • Test with TalkBack enabled
+
+   User Story: As a user with accessibility needs, I want to see talkback support applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+61. Touch Target Size
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: accessibility
+
+   Minimum touch target: 48 x 48 dp for all interactive elements. Material Design accessibility requirement. Use minWidth/minHeight or padding to achieve.
+
+   Acceptance Criteria:
+   • Minimum touch target: 48 x 48 dp for all interactive elements
+   • Material Design accessibility requirement
+   • Use minWidth/minHeight or padding to achieve
+
+   User Story: As a user with accessibility needs, I want to see touch target size applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+62. Font Scaling
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: accessibility
+
+   Support user font size preferences (0.85x to 2.0x system scale). Layout must not break at 200% font scale. Use sp units and test at maximum scale.
+
+   Acceptance Criteria:
+   • Support user font size preferences (0
+   • 0x system scale)
+   • Layout must not break at 200% font scale
+   • Use sp units and test at maximum scale
+
+   User Story: As a user, I want to see font scaling applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+63. Color Contrast
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: accessibility
+
+   WCAG AA minimum contrast ratios. Test with Android Accessibility Scanner. Run Accessibility Scanner on all screens. Fix all warnings for contrast and touch targets.
+
+   Acceptance Criteria:
+   • WCAG AA minimum contrast ratios
+   • Test with Android Accessibility Scanner
+   • Run Accessibility Scanner on all screens
+   • Fix all warnings for contrast and touch targets
+
+   User Story: As a user with accessibility needs, I want to see color contrast applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+64. Semantic Structure
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: accessibility
+
+   Use semantic heading levels and landmarks for screen reader navigation. Mark headings with accessibilityHeading=true. Group related content with proper roles.
+
+   Acceptance Criteria:
+   • Use semantic heading levels and landmarks for screen reader navigation
+   • Mark headings with accessibilityHeading=true
+   • Group related content with proper roles
+
+   User Story: As a user with accessibility needs, I want to see semantic structure applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+65. Window Size Classes
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: responsive
+
+   Design for Compact width (<600dp) as primary. Support Medium (600-840dp) and Expanded (>840dp) for tablets. Use Material 3 Window Size Classes. Compact = phone, Medium = foldable/small tablet, Expanded = tablet.
+
+   Acceptance Criteria:
+   • Design for Compact width (<600dp) as primary
+   • Support Medium (600-840dp) and Expanded (>840dp) for tablets
+   • Use Material 3 Window Size Classes
+   • Compact = phone, Medium = foldable/small tablet, Expanded = tablet
+
+   User Story: As a user, I want to see window size classes applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+66. Foldable Support
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: m | Category: responsive
+
+   Consider foldable devices (Samsung Fold/Flip). Handle screen continuity and fold awareness. Use Jetpack WindowManager for fold detection. Avoid placing content on the fold/hinge.
+
+   Acceptance Criteria:
+   • Consider foldable devices (Samsung Fold/Flip)
+   • Handle screen continuity and fold awareness
+   • Use Jetpack WindowManager for fold detection
+   • Avoid placing content on the fold/hinge
+
+   User Story: As a user, I want to see foldable support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+67. Keyboard Handling
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: responsive
+
+   Content adjusts when software keyboard appears. Input fields remain visible above keyboard. Use adjustResize or imePadding modifier. Auto-scroll focused field into view.
+
+   Acceptance Criteria:
+   • Content adjusts when software keyboard appears
+   • Input fields remain visible above keyboard
+   • Use adjustResize or imePadding modifier
+   • Auto-scroll focused field into view
+
+   User Story: As a user, I want to see keyboard handling applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+68. Multi-Window Mode
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: responsive
+
+   Support Android split-screen/multi-window mode. Layout adapts to reduced window size. Activity may be resized to half screen or freeform. Test minimum usable size.
+
+   Acceptance Criteria:
+   • Support Android split-screen/multi-window mode
+   • Layout adapts to reduced window size
+   • Activity may be resized to half screen or freeform
+   • Test minimum usable size
+
+   User Story: As a user, I want to see multi-window mode applied in the interface, so that the application follows platform design guidelines consistently
+

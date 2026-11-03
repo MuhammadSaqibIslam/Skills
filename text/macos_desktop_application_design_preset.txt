@@ -1,0 +1,959 @@
+============================================================
+macOS Desktop Application (Copy)
+============================================================
+
+Platform: macos
+Description: Comprehensive design guidelines for native macOS desktop applications. Covers window sizing, native chrome, sidebar navigation, spacing, and Apple Human Interface Guidelines alignment.
+
+────────────────────────────────────────────────────────────
+1. Default Window Size
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: app-size
+
+   1200 x 750 px as the default initial window size. Standard comfortable size for most macOS displays. Provides enough room for sidebar + content without feeling cramped.
+
+   Acceptance Criteria:
+   • 1200 x 750 px as the default initial window size
+   • Standard comfortable size for most macOS displays
+   • Provides enough room for sidebar + content without feeling cramped
+
+   User Story: As a user, I want to see default window size applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+2. Fixed Window Dimensions
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: app-size
+
+   Window size is fixed and non-resizable unless explicitly required by the app. Keeps the layout predictable. If resizing is needed, define minimum (800x500) and maximum bounds.
+
+   Acceptance Criteria:
+   • Window size is fixed and non-resizable unless explicitly required by the app
+   • Keeps the layout predictable
+   • If resizing is needed, define minimum (800x500) and maximum bounds
+
+   User Story: As a user, I want to see fixed window dimensions applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+3. Retina Display Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   All assets and layouts must render crisply on Retina (2x) displays. Use vector assets (SVG/SF Symbols) wherever possible. Avoid raster images below 2x resolution.
+
+   Acceptance Criteria:
+   • All assets and layouts must render crisply on Retina (2x) displays
+   • Use vector assets (SVG/SF Symbols) wherever possible
+   • Avoid raster images below 2x resolution
+
+   User Story: As a user, I want to see retina display support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+4. Full-Screen Mode
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: m | Category: app-size
+
+   Support native macOS full-screen mode if the app has content-heavy views. Use NSWindow full-screen APIs. Ensure layout adapts gracefully to the larger canvas.
+
+   Acceptance Criteria:
+   • Support native macOS full-screen mode if the app has content-heavy views
+   • Use NSWindow full-screen APIs
+   • Ensure layout adapts gracefully to the larger canvas
+
+   User Story: As a user, I want to see full-screen mode applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+5. Top Bar Height
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: top-bar
+
+   Top bar (title bar area) height: 32px. Matches native macOS title bar height. Do not exceed this to maintain platform consistency.
+
+   Acceptance Criteria:
+   • Top bar (title bar area) height: 32px
+   • Matches native macOS title bar height
+   • Do not exceed this to maintain platform consistency
+
+   User Story: As a user, I want to see top bar height applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+6. Traffic Lights Placement
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: top-bar
+
+   Left side: standard macOS traffic light buttons (close, minimize, zoom) at their default position. Do not reposition or restyle the traffic lights. Use default system spacing (left: 7px, vertical center of title bar).
+
+   Acceptance Criteria:
+   • Left side: standard macOS traffic light buttons (close, minimize, zoom) at their default position
+   • Do not reposition or restyle the traffic lights
+   • Use default system spacing (left: 7px, vertical center of title bar)
+
+   User Story: As a user, I want to see traffic lights placement applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+7. Custom Window Title
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: top-bar
+
+   Center or left-aligned custom title text in the title bar area. Use the app name or current context. Keep it concise (under 30 characters). Font should be system default or match heading style.
+
+   Acceptance Criteria:
+   • Center or left-aligned custom title text in the title bar area
+   • Use the app name or current context
+   • Keep it concise (under 30 characters)
+   • Font should be system default or match heading style
+
+   User Story: As a user, I want to see custom window title applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+8. Toolbar Integration
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: top-bar
+
+   If the app needs toolbar actions, integrate them into the title bar area rather than adding a separate toolbar row. Saves vertical space. Use NSToolbar with unified title and toolbar style for a clean look.
+
+   Acceptance Criteria:
+   • If the app needs toolbar actions, integrate them into the title bar area rather than adding a separate toolbar row
+   • Saves vertical space
+   • Use NSToolbar with unified title and toolbar style for a clean look
+
+   User Story: As a user, I want to see toolbar integration applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+9. Title Bar Transparency
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: top-bar
+
+   Title bar should blend seamlessly with the sidebar and content area backgrounds. Use titlebarAppearsTransparent for a modern, unified appearance. Ensure text remains readable.
+
+   Acceptance Criteria:
+   • Title bar should blend seamlessly with the sidebar and content area backgrounds
+   • Use titlebarAppearsTransparent for a modern, unified appearance
+   • Ensure text remains readable
+
+   User Story: As a user, I want to see title bar transparency applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+10. Sidebar as Primary Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: navigation
+
+   Use a left sidebar for primary navigation. All top-level sections accessible from the sidebar. This is the standard macOS pattern (Finder, Mail, Notes). Users expect sidebar navigation on desktop.
+
+   Acceptance Criteria:
+   • Use a left sidebar for primary navigation
+   • All top-level sections accessible from the sidebar
+   • This is the standard macOS pattern (Finder, Mail, Notes)
+   • Users expect sidebar navigation on desktop
+
+   User Story: As a user, I want to navigate using sidebar as primary navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+11. Back Button Placement
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: navigation
+
+   Back button always in the top-left corner with arrow + text style (e.g., "← Back"). Consistent placement allows muscle memory. Use a left arrow icon followed by the label text.
+
+   Acceptance Criteria:
+   • Back button always in the top-left corner with arrow + text style (e
+   • Consistent placement allows muscle memory
+   • Use a left arrow icon followed by the label text
+
+   User Story: As a user, I want to see back button placement applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+12. No Step Indicators
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: navigation
+
+   Do not use unnecessary step indicators or progress steppers for navigation flows. Steppers add visual clutter on desktop. Use clear back/next buttons with descriptive labels instead.
+
+   Acceptance Criteria:
+   • Do not use unnecessary step indicators or progress steppers for navigation flows
+   • Steppers add visual clutter on desktop
+   • Use clear back/next buttons with descriptive labels instead
+
+   User Story: As a user, I want to navigate using no step indicators, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+13. Keyboard Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: navigation
+
+   All navigation items must be accessible via keyboard (Tab, Arrow keys, Enter). macOS users heavily rely on keyboard shortcuts. Ensure logical tab order and visible focus indicators.
+
+   Acceptance Criteria:
+   • All navigation items must be accessible via keyboard (Tab, Arrow keys, Enter)
+   • macOS users heavily rely on keyboard shortcuts
+   • Ensure logical tab order and visible focus indicators
+
+   User Story: As a user, I want to navigate using keyboard navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+14. Active State Highlight
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: navigation
+
+   Active/selected sidebar item must have a clear visual highlight (background color or accent bar). Users need immediate feedback on which section they are in. Use the system accent color or a subtle background fill.
+
+   Acceptance Criteria:
+   • Active/selected sidebar item must have a clear visual highlight (background color or accent bar)
+   • Users need immediate feedback on which section they are in
+   • Use the system accent color or a subtle background fill
+
+   User Story: As a user, I want to see active state highlight applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+15. Breadcrumbs for Deep Navigation
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: navigation
+
+   Use breadcrumbs when navigating more than 2 levels deep within content. Helps users maintain context in deeply nested views. Place below the top bar, above content.
+
+   Acceptance Criteria:
+   • Use breadcrumbs when navigating more than 2 levels deep within content
+   • Helps users maintain context in deeply nested views
+   • Place below the top bar, above content
+
+   User Story: As a user, I want to navigate using breadcrumbs for deep navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+16. Sidebar + Content Layout
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: layout
+
+   Two-panel layout: fixed sidebar (200px) on the left, flexible content area on the right. Sidebar contains navigation (icon + text items). Content area fills remaining width (1000px at default window size).
+
+   Acceptance Criteria:
+   • Two-panel layout: fixed sidebar (200px) on the left, flexible content area on the right
+   • Sidebar contains navigation (icon + text items)
+   • Content area fills remaining width (1000px at default window size)
+
+   User Story: As a user, I want to navigate using sidebar + content layout, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+17. Sidebar Width
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: layout
+
+   Sidebar width: 200px fixed. Wide enough for icon + label navigation items. Consistent with native macOS sidebar patterns.
+
+   Acceptance Criteria:
+   • Sidebar width: 200px fixed
+   • Wide enough for icon + label navigation items
+   • Consistent with native macOS sidebar patterns
+
+   User Story: As a user, I want to navigate using sidebar width, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+18. Sidebar Icon + Text Items
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: layout
+
+   Navigation items use icon + text format. Icons on the left, text labels to the right. Icons provide quick scanning, text provides clarity. Keep labels to 1-2 words maximum.
+
+   Acceptance Criteria:
+   • Navigation items use icon + text format
+   • Icons on the left, text labels to the right
+   • Icons provide quick scanning, text provides clarity
+   • Keep labels to 1-2 words maximum
+
+   User Story: As a user, I want to navigate using sidebar icon + text items, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+19. Content Area Centering
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: layout
+
+   Main content should be centered within the content area, especially for empty states and primary UI. Prevents content from feeling lost in a wide area. Use max-width containers where appropriate.
+
+   Acceptance Criteria:
+   • Main content should be centered within the content area, especially for empty states and primary UI
+   • Prevents content from feeling lost in a wide area
+   • Use max-width containers where appropriate
+
+   User Story: As a user, I want to see content area centering applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+20. Detail Panel (Optional)
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: xs | Category: layout
+
+   For apps with list+detail patterns, use a third panel (inspector) on the right side. Width 250-300px. Can be toggled visible/hidden. Common in Mail, Xcode, Finder.
+
+   Acceptance Criteria:
+   • For apps with list+detail patterns, use a third panel (inspector) on the right side
+   • Can be toggled visible/hidden
+   • Common in Mail, Xcode, Finder
+
+   User Story: As a user, I want to see detail panel (optional) applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+21. Divider Lines
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: layout
+
+   Use subtle 1px divider lines between sidebar and content, and between sections. Provides visual separation without heavy borders. Use a low-opacity color that works in both light and dark modes.
+
+   Acceptance Criteria:
+   • Use subtle 1px divider lines between sidebar and content, and between sections
+   • Provides visual separation without heavy borders
+   • Use a low-opacity color that works in both light and dark modes
+
+   User Story: As a user, I want to see divider lines applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+22. 8pt Grid System
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: spacing
+
+   Use an 8-point grid system for all spacing, sizing, and alignment. All margins, paddings, and gaps should be multiples of 8 (8, 16, 24, 32, 40, 48). Use 4px for minor adjustments only.
+
+   Acceptance Criteria:
+   • Use an 8-point grid system for all spacing, sizing, and alignment
+   • All margins, paddings, and gaps should be multiples of 8 (8, 16, 24, 32, 40, 48)
+   • Use 4px for minor adjustments only
+
+   User Story: As a user, I want to see 8pt grid system applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+23. Content Padding
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: spacing
+
+   Content area padding: 24px on all sides. Provides comfortable breathing room. Inner content sections can use 16px gaps between elements.
+
+   Acceptance Criteria:
+   • Content area padding: 24px on all sides
+   • Provides comfortable breathing room
+   • Inner content sections can use 16px gaps between elements
+
+   User Story: As a user, I want to see content padding applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+24. Sidebar Item Spacing
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: spacing
+
+   Sidebar navigation items: 8px vertical gap between items, 12px horizontal padding. Enough spacing to distinguish items without wasting sidebar real estate.
+
+   Acceptance Criteria:
+   • Sidebar navigation items: 8px vertical gap between items, 12px horizontal padding
+   • Enough spacing to distinguish items without wasting sidebar real estate
+
+   User Story: As a user, I want to navigate using sidebar item spacing, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+25. No Crowded Layouts
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: spacing
+
+   Maintain generous whitespace. No element should feel cramped or too close to another. Desktop apps have ample space. Use it. Minimum 16px between distinct content groups.
+
+   Acceptance Criteria:
+   • Maintain generous whitespace
+   • No element should feel cramped or too close to another
+   • Desktop apps have ample space
+   • Minimum 16px between distinct content groups
+
+   User Story: As a user, I want to see no crowded layouts applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+26. Card Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: spacing
+
+   Cards and content blocks: 16px gap between them, 16px internal padding. Consistent card spacing creates a clean grid appearance.
+
+   Acceptance Criteria:
+   • Cards and content blocks: 16px gap between them, 16px internal padding
+   • Consistent card spacing creates a clean grid appearance
+
+   User Story: As a user, I want to see card spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+27. Form Field Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: spacing
+
+   Form fields: 16px vertical spacing between fields, 8px between label and input. Ensures forms are scannable and not visually overwhelming.
+
+   Acceptance Criteria:
+   • Form fields: 16px vertical spacing between fields, 8px between label and input
+   • Ensures forms are scannable and not visually overwhelming
+
+   User Story: As a user, I want to see form field spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+28. Icon Style
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Simple, clean line icons. Not too bold and not too thin. Prefer SF Symbols or a consistent icon set (Lucide, Phosphor). Avoid filled/heavy icons in navigation.
+
+   Acceptance Criteria:
+   • Simple, clean line icons
+   • Not too bold and not too thin
+   • Prefer SF Symbols or a consistent icon set (Lucide, Phosphor)
+   • Avoid filled/heavy icons in navigation
+
+   User Story: As a user, I want to navigate using icon style, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+29. Sidebar Icon Size
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: icons
+
+   Sidebar navigation icons: 18-20px. Large enough to be recognizable, small enough to not dominate the text label.
+
+   Acceptance Criteria:
+   • Sidebar navigation icons: 18-20px
+   • Large enough to be recognizable, small enough to not dominate the text label
+
+   User Story: As a user, I want to navigate using sidebar icon size, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+30. Content Area Icon Size
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: icons
+
+   Content icons: 16px for inline, 20-24px for section headers, 32-48px for empty states. Scale icons based on context. Larger icons for primary actions and empty states.
+
+   Acceptance Criteria:
+   • Content icons: 16px for inline, 20-24px for section headers, 32-48px for empty states
+   • Scale icons based on context
+   • Larger icons for primary actions and empty states
+
+   User Story: As a user, I want to see content area icon size applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+31. Icon Color
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: icons
+
+   Icons should use the same color as their associated text or the system accent color for active states. Avoid multi-colored icons in navigation. Active state icons can use accent color.
+
+   Acceptance Criteria:
+   • Icons should use the same color as their associated text or the system accent color for active states
+   • Avoid multi-colored icons in navigation
+   • Active state icons can use accent color
+
+   User Story: As a user, I want to navigate using icon color, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+32. Icon Consistency
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Use a single icon family throughout the app. Do not mix icon sets. Mixing icon sets creates visual inconsistency. Pick one library and stick to it.
+
+   Acceptance Criteria:
+   • Use a single icon family throughout the app
+   • Do not mix icon sets
+   • Mixing icon sets creates visual inconsistency
+   • Pick one library and stick to it
+
+   User Story: As a user, I want to see icon consistency applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+33. Type Hierarchy
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: typography
+
+   Fixed structure: Page heading (20-24px bold), Section heading (16-18px semibold), Body text (13-14px regular), Caption/subtext (11-12px regular). Clear hierarchy guides the user's eye. No more than 4 levels of type scale in a single view.
+
+   Acceptance Criteria:
+   • Fixed structure: Page heading (20-24px bold), Section heading (16-18px semibold), Body text (13-14px regular), Caption/subtext (11-12px regular)
+   • Clear hierarchy guides the user's eye
+   • No more than 4 levels of type scale in a single view
+
+   User Story: As a user, I want to see type hierarchy applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+34. Font Family
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: typography
+
+   Font and specific typeface will be provided before design starts. Default to SF Pro (system font). SF Pro is the native macOS font and renders optimally. Custom fonts can be specified per project.
+
+   Acceptance Criteria:
+   • Font and specific typeface will be provided before design starts
+   • Default to SF Pro (system font)
+   • SF Pro is the native macOS font and renders optimally
+   • Custom fonts can be specified per project
+
+   User Story: As a user, I want to see font family applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+35. Line Height
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: typography
+
+   Body text line height: 1.5x font size. Headings: 1.2-1.3x. Comfortable reading rhythm. Tighter line height for headings keeps them visually grouped.
+
+   Acceptance Criteria:
+   • Body text line height: 1
+   • Comfortable reading rhythm
+   • Tighter line height for headings keeps them visually grouped
+
+   User Story: As a user, I want to see line height applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+36. Text Truncation
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: typography
+
+   Long text should truncate with ellipsis (...) rather than wrapping in constrained areas (sidebar, tables, cards). Prevents layout breakage. Show full text in tooltips on hover.
+
+   Acceptance Criteria:
+   • Long text should truncate with ellipsis (
+   • ) rather than wrapping in constrained areas (sidebar, tables, cards)
+   • Prevents layout breakage
+   • Show full text in tooltips on hover
+
+   User Story: As a user, I want to see text truncation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+37. Monospace for Code/Data
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: typography
+
+   Use monospace font (SF Mono or similar) for code snippets, IDs, and technical data. Distinguishes technical content from prose. Improves readability of structured data.
+
+   Acceptance Criteria:
+   • Use monospace font (SF Mono or similar) for code snippets, IDs, and technical data
+   • Distinguishes technical content from prose
+   • Improves readability of structured data
+
+   User Story: As a user, I want to see monospace for code/data applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+38. Runtime Color Control
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Colors are not fixed at design time. The color palette will be controlled at runtime. Design with color tokens/variables, not hardcoded values. All colors must be swappable.
+
+   Acceptance Criteria:
+   • Colors are not fixed at design time
+   • The color palette will be controlled at runtime
+   • Design with color tokens/variables, not hardcoded values
+   • All colors must be swappable
+
+   User Story: As a user, I want to see runtime color control applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+39. Light & Dark Mode
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   Full support for both light and dark appearance modes. Follow macOS system appearance. Use semantic colors (background, surface, text-primary, text-secondary) that adapt to mode.
+
+   Acceptance Criteria:
+   • Full support for both light and dark appearance modes
+   • Follow macOS system appearance
+   • Use semantic colors (background, surface, text-primary, text-secondary) that adapt to mode
+
+   User Story: As a user, I want to see light & dark mode applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+40. System Accent Color
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: colors
+
+   Respect the user's system accent color preference for interactive elements. macOS users can set accent colors in System Preferences. Use NSColor.controlAccentColor or equivalent.
+
+   Acceptance Criteria:
+   • Respect the user's system accent color preference for interactive elements
+   • macOS users can set accent colors in System Preferences
+   • controlAccentColor or equivalent
+
+   User Story: As a user, I want to see system accent color applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+41. Contrast Ratios
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: colors
+
+   Maintain WCAG AA contrast ratios minimum (4.5:1 for body text, 3:1 for large text). Applies to both light and dark modes. Test with contrast checker tools.
+
+   Acceptance Criteria:
+   • Maintain WCAG AA contrast ratios minimum (4
+   • 5:1 for body text, 3:1 for large text)
+   • Applies to both light and dark modes
+   • Test with contrast checker tools
+
+   User Story: As a user with accessibility needs, I want to see contrast ratios applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+42. Semantic Color Tokens
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Define colors semantically: background, surface, text-primary, text-secondary, text-muted, border, accent, error, warning, success, info. Semantic tokens enable theming and dark mode without per-component color changes.
+
+   Acceptance Criteria:
+   • Define colors semantically: background, surface, text-primary, text-secondary, text-muted, border, accent, error, warning, success, info
+   • Semantic tokens enable theming and dark mode without per-component color changes
+
+   User Story: As a user, I want to see semantic color tokens applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+43. Illustration Style
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Simple, minimal illustrations. Not colorful, not heavy. Use line art or flat illustrations with limited color palette. Max 2-3 colors per illustration.
+
+   Acceptance Criteria:
+   • Simple, minimal illustrations
+   • Not colorful, not heavy
+   • Use line art or flat illustrations with limited color palette
+   • Max 2-3 colors per illustration
+
+   User Story: As a user, I want to see illustration style applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+44. Empty State Graphics
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: graphics
+
+   Use lightweight illustrations or icons for empty states. Centered in the content area. Should convey the state clearly (no data, first time, error) without being visually heavy.
+
+   Acceptance Criteria:
+   • Use lightweight illustrations or icons for empty states
+   • Centered in the content area
+   • Should convey the state clearly (no data, first time, error) without being visually heavy
+
+   User Story: As a user, I want to see empty state graphics applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+45. No Heavy Imagery
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: graphics
+
+   Avoid stock photos, complex illustrations, or gradient-heavy graphics. Keeps the app feeling fast and professional. Focus on content, not decoration.
+
+   Acceptance Criteria:
+   • Avoid stock photos, complex illustrations, or gradient-heavy graphics
+   • Keeps the app feeling fast and professional
+   • Focus on content, not decoration
+
+   User Story: As a user, I want to see no heavy imagery applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+46. Vector-First
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Use SVG/vector graphics wherever possible. Avoid raster images for UI elements. Vectors scale perfectly on Retina displays and are smaller in file size.
+
+   Acceptance Criteria:
+   • Use SVG/vector graphics wherever possible
+   • Avoid raster images for UI elements
+   • Vectors scale perfectly on Retina displays and are smaller in file size
+
+   User Story: As a user, I want to see vector-first applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+47. App Icon
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: graphics
+
+   App icon follows macOS rounded-rectangle (squircle) shape at 1024x1024 base resolution. Follow Apple Human Interface Guidelines for icon design. Provide @1x and @2x versions.
+
+   Acceptance Criteria:
+   • App icon follows macOS rounded-rectangle (squircle) shape at 1024x1024 base resolution
+   • Follow Apple Human Interface Guidelines for icon design
+   • Provide @1x and @2x versions
+
+   User Story: As a user, I want to see app icon applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+48. Hover States
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   All interactive elements must have visible hover states. Desktop users rely on hover for discoverability. Use subtle background or opacity change.
+
+   Acceptance Criteria:
+   • All interactive elements must have visible hover states
+   • Desktop users rely on hover for discoverability
+   • Use subtle background or opacity change
+
+   User Story: As a user, I want to see hover states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+49. Right-Click Context Menus
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: interactions
+
+   Support right-click context menus for items that have multiple actions. macOS users expect right-click menus. Include common actions: copy, delete, rename, etc.
+
+   Acceptance Criteria:
+   • Support right-click context menus for items that have multiple actions
+   • macOS users expect right-click menus
+   • Include common actions: copy, delete, rename, etc
+
+   User Story: As a user, I want to navigate using right-click context menus, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+50. Keyboard Shortcuts
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: interactions
+
+   Support standard macOS keyboard shortcuts (Cmd+C, Cmd+V, Cmd+Z, Cmd+S, etc.). Do not override system shortcuts. Add app-specific shortcuts for frequent actions.
+
+   Acceptance Criteria:
+   • Support standard macOS keyboard shortcuts (Cmd+C, Cmd+V, Cmd+Z, Cmd+S, etc
+   • Do not override system shortcuts
+   • Add app-specific shortcuts for frequent actions
+
+   User Story: As a user, I want to see keyboard shortcuts applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+51. Drag and Drop
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: m | Category: interactions
+
+   Support drag and drop where it makes sense (reordering lists, file upload, moving items). Natural desktop interaction. Provide visual drop targets and drag ghost previews.
+
+   Acceptance Criteria:
+   • Support drag and drop where it makes sense (reordering lists, file upload, moving items)
+   • Natural desktop interaction
+   • Provide visual drop targets and drag ghost previews
+
+   User Story: As a user, I want to see drag and drop applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+52. Double-Click to Edit
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: interactions
+
+   Support double-click to edit for text fields and list items where appropriate. Standard macOS pattern for inline editing (Finder, spreadsheets).
+
+   Acceptance Criteria:
+   • Support double-click to edit for text fields and list items where appropriate
+   • Standard macOS pattern for inline editing (Finder, spreadsheets)
+
+   User Story: As a user, I want to see double-click to edit applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+53. Smooth Transitions
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: interactions
+
+   Use subtle animations (150-250ms) for state transitions, panel reveals, and navigation. Avoid abrupt layout changes. Use ease-out for entrances, ease-in for exits. No flashy animations.
+
+   Acceptance Criteria:
+   • Use subtle animations (150-250ms) for state transitions, panel reveals, and navigation
+   • Avoid abrupt layout changes
+   • Use ease-out for entrances, ease-in for exits
+   • No flashy animations
+
+   User Story: As a user, I want to navigate using smooth transitions, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+54. Native-Feeling Controls
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: components
+
+   Buttons, inputs, toggles, and dropdowns should feel native to macOS. Match macOS system control styling. Rounded corners (6-8px), subtle borders, system colors.
+
+   Acceptance Criteria:
+   • Buttons, inputs, toggles, and dropdowns should feel native to macOS
+   • Match macOS system control styling
+   • Rounded corners (6-8px), subtle borders, system colors
+
+   User Story: As a user, I want to see native-feeling controls applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+55. Modal Dialogs
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: components
+
+   Modals should be centered, with a dimmed backdrop, and max-width of 500px for standard dialogs. Use sheet-style modals for document-related actions. Standard modals for app-level actions.
+
+   Acceptance Criteria:
+   • Modals should be centered, with a dimmed backdrop, and max-width of 500px for standard dialogs
+   • Use sheet-style modals for document-related actions
+   • Standard modals for app-level actions
+
+   User Story: As a user, I want to see modal dialogs applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+56. Tables
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: components
+
+   Use clean, borderless tables with alternating row backgrounds for data display. Follow NSTableView patterns. Sortable columns with clear indicators. Hover highlight on rows.
+
+   Acceptance Criteria:
+   • Use clean, borderless tables with alternating row backgrounds for data display
+   • Follow NSTableView patterns
+   • Sortable columns with clear indicators
+   • Hover highlight on rows
+
+   User Story: As a user, I want to see tables applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+57. Buttons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: components
+
+   Primary button: filled with accent color. Secondary: outlined or text-only. Destructive: red. Only one primary button per view. Button height: 28-32px. Corner radius: 6px.
+
+   Acceptance Criteria:
+   • Primary button: filled with accent color
+   • Secondary: outlined or text-only
+   • Destructive: red
+   • Only one primary button per view
+   • Button height: 28-32px
+
+   User Story: As a user, I want to see buttons applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+58. Input Fields
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: components
+
+   Input fields: subtle border, 32px height, 8px horizontal padding, clear focus ring. Match macOS native text field appearance. Use accent color for focus ring.
+
+   Acceptance Criteria:
+   • Input fields: subtle border, 32px height, 8px horizontal padding, clear focus ring
+   • Match macOS native text field appearance
+   • Use accent color for focus ring
+
+   User Story: As a user, I want to see input fields applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+59. Toast / Notification Banners
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: components
+
+   Use brief, non-intrusive toasts for success/error feedback. Position at top-right. Auto-dismiss after 3-5 seconds. Include dismiss button. Do not block interaction.
+
+   Acceptance Criteria:
+   • Use brief, non-intrusive toasts for success/error feedback
+   • Position at top-right
+   • Auto-dismiss after 3-5 seconds
+   • Include dismiss button
+   • Do not block interaction
+
+   User Story: As a user, I want to see toast / notification banners applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+60. VoiceOver Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   All UI elements must be accessible via macOS VoiceOver screen reader. Use proper ARIA labels, roles, and semantic HTML/native elements. Test with VoiceOver enabled.
+
+   Acceptance Criteria:
+   • All UI elements must be accessible via macOS VoiceOver screen reader
+   • Use proper ARIA labels, roles, and semantic HTML/native elements
+   • Test with VoiceOver enabled
+
+   User Story: As a user with accessibility needs, I want to see voiceover support applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+61. Focus Indicators
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: accessibility
+
+   All focusable elements must have a visible focus ring/indicator. Use the system focus ring style. Never remove focus outlines without providing an alternative.
+
+   Acceptance Criteria:
+   • All focusable elements must have a visible focus ring/indicator
+   • Use the system focus ring style
+   • Never remove focus outlines without providing an alternative
+
+   User Story: As a user, I want to see focus indicators applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+62. Color Independence
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   Do not rely on color alone to convey information. Use icons, text, or patterns as well. Ensures usability for color-blind users. Status indicators should include icons alongside color.
+
+   Acceptance Criteria:
+   • Do not rely on color alone to convey information
+   • Use icons, text, or patterns as well
+   • Ensures usability for color-blind users
+   • Status indicators should include icons alongside color
+
+   User Story: As a user, I want to see color independence applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+63. Text Scaling
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: accessibility
+
+   Support Dynamic Type / text scaling for users who increase system font size. Layout should not break at 120-150% text size. Test with accessibility zoom.
+
+   Acceptance Criteria:
+   • Support Dynamic Type / text scaling for users who increase system font size
+   • Layout should not break at 120-150% text size
+   • Test with accessibility zoom
+
+   User Story: As a user with accessibility needs, I want to see text scaling applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+64. Reduce Motion
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: accessibility
+
+   Respect the "Reduce Motion" system preference. Disable animations when enabled. Check prefers-reduced-motion. Replace animations with instant state changes.
+
+   Acceptance Criteria:
+   • Respect the "Reduce Motion" system preference
+   • Disable animations when enabled
+   • Check prefers-reduced-motion
+   • Replace animations with instant state changes
+
+   User Story: As a user, I want to see reduce motion applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+65. Fixed Layout
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: responsive
+
+   Layout is fixed at the default window size. No responsive breakpoints needed. Since the window is non-resizable, the layout is designed for one exact size.
+
+   Acceptance Criteria:
+   • Layout is fixed at the default window size
+   • No responsive breakpoints needed
+   • Since the window is non-resizable, the layout is designed for one exact size
+
+   User Story: As a user on any device, I want to see fixed layout applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+66. Sidebar Collapsing
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: m | Category: responsive
+
+   If the app supports resizing, sidebar should collapse to icon-only mode below 900px window width. Only applicable if window resizing is enabled. Sidebar icons remain for navigation.
+
+   Acceptance Criteria:
+   • If the app supports resizing, sidebar should collapse to icon-only mode below 900px window width
+   • Only applicable if window resizing is enabled
+   • Sidebar icons remain for navigation
+
+   User Story: As a user, I want to navigate using sidebar collapsing, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+67. Scrollable Content
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: responsive
+
+   Content area scrolls vertically when content exceeds viewport. Sidebar does not scroll separately unless item count requires it. Use smooth scrolling. Show scrollbar on hover (macOS default behavior).
+
+   Acceptance Criteria:
+   • Content area scrolls vertically when content exceeds viewport
+   • Sidebar does not scroll separately unless item count requires it
+   • Use smooth scrolling
+   • Show scrollbar on hover (macOS default behavior)
+
+   User Story: As a user, I want to see scrollable content applied in the interface, so that the application follows platform design guidelines consistently
+

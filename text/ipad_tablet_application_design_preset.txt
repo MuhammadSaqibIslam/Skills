@@ -1,0 +1,998 @@
+============================================================
+iPad / Tablet Application (Copy)
+============================================================
+
+Platform: tablet
+Description: Comprehensive design guidelines for iPad and tablet applications. Covers split views, multitasking, pointer support, adaptive layouts, and tablet-specific interaction patterns.
+
+────────────────────────────────────────────────────────────
+1. Full Screen Layout
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   Design for iPad base resolution: 1024 x 1366 pt (12.9" iPad Pro) and 820 x 1180 pt (10.9" iPad). Use adaptive layout that works across all iPad sizes. Design at logical points, not pixels.
+
+   Acceptance Criteria:
+   • Design for iPad base resolution: 1024 x 1366 pt (12
+   • 9" iPad Pro) and 820 x 1180 pt (10
+   • Use adaptive layout that works across all iPad sizes
+   • Design at logical points, not pixels
+
+   User Story: As a user on any device, I want to see full screen layout applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+2. Multitasking Window Sizes
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   Support all iPad multitasking modes: full screen, split view (1/3, 1/2, 2/3), and slide over (320pt wide). App may run at any width from 320pt (slide over) to full screen. Layout must adapt to all sizes.
+
+   Acceptance Criteria:
+   • Support all iPad multitasking modes: full screen, split view (1/3, 1/2, 2/3), and slide over (320pt wide)
+   • App may run at any width from 320pt (slide over) to full screen
+   • Layout must adapt to all sizes
+
+   User Story: As a user, I want to see multitasking window sizes applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+3. Orientation Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   Support both portrait and landscape orientations. Layout adapts between the two. iPad users rotate freely. Both orientations must be fully functional and well-designed.
+
+   Acceptance Criteria:
+   • Support both portrait and landscape orientations
+   • Layout adapts between the two
+   • iPad users rotate freely
+   • Both orientations must be fully functional and well-designed
+
+   User Story: As a user, I want to see orientation support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+4. Stage Manager Support
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: app-size
+
+   Support freely resizable windows on iPads with Stage Manager (M-chip iPads). Windows can be any size. Use size classes (compact/regular) to adapt layout. Test at minimum window size.
+
+   Acceptance Criteria:
+   • Support freely resizable windows on iPads with Stage Manager (M-chip iPads)
+   • Windows can be any size
+   • Use size classes (compact/regular) to adapt layout
+   • Test at minimum window size
+
+   User Story: As a user, I want to see stage manager support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+5. Status Bar
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: top-bar
+
+   System status bar always visible. Adapt style (light/dark) to match content background. iPad status bar is thinner than iPhone. Content must respect safe area at top.
+
+   Acceptance Criteria:
+   • System status bar always visible
+   • Adapt style (light/dark) to match content background
+   • iPad status bar is thinner than iPhone
+   • Content must respect safe area at top
+
+   User Story: As a user, I want to see status bar applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+6. Navigation Bar
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: top-bar
+
+   Standard navigation bar: 44pt height. Can include title, back button, and multiple action buttons. More horizontal space allows more buttons than iPhone. Use trailing button group for actions.
+
+   Acceptance Criteria:
+   • Standard navigation bar: 44pt height
+   • Can include title, back button, and multiple action buttons
+   • More horizontal space allows more buttons than iPhone
+   • Use trailing button group for actions
+
+   User Story: As a user, I want to navigate using navigation bar, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+7. Toolbar
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: top-bar
+
+   Optional bottom toolbar for contextual actions in document/editor views. Bottom toolbar: 44pt height. Useful for formatting, tools, and quick actions in editing interfaces.
+
+   Acceptance Criteria:
+   • Optional bottom toolbar for contextual actions in document/editor views
+   • Bottom toolbar: 44pt height
+   • Useful for formatting, tools, and quick actions in editing interfaces
+
+   User Story: As a user, I want to see toolbar applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+8. Document Title Editing
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: s | Category: top-bar
+
+   For document-based apps, allow inline title editing in the navigation bar. Tap title to edit. Standard pattern in Pages, Keynote, and similar iPad apps.
+
+   Acceptance Criteria:
+   • For document-based apps, allow inline title editing in the navigation bar
+   • Tap title to edit
+   • Standard pattern in Pages, Keynote, and similar iPad apps
+
+   User Story: As a user, I want to navigate using document title editing, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+9. Sidebar Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: navigation
+
+   Use a collapsible sidebar for primary navigation. Always visible in regular width, toggleable in compact. Standard iPad pattern (Files, Notes, Mail). Sidebar width: 320pt. Icon + text items.
+
+   Acceptance Criteria:
+   • Use a collapsible sidebar for primary navigation
+   • Always visible in regular width, toggleable in compact
+   • Standard iPad pattern (Files, Notes, Mail)
+   • Sidebar width: 320pt
+   • Icon + text items
+
+   User Story: As a user, I want to navigate using sidebar navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+10. Split View Pattern
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: navigation
+
+   Use master-detail split view: sidebar (list) on left, detail content on right. The defining iPad navigation pattern. Both panels visible simultaneously in landscape/regular width.
+
+   Acceptance Criteria:
+   • Use master-detail split view: sidebar (list) on left, detail content on right
+   • The defining iPad navigation pattern
+   • Both panels visible simultaneously in landscape/regular width
+
+   User Story: As a user, I want to navigate using split view pattern, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+11. Tab Bar Alternative
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: navigation
+
+   Prefer sidebar over tab bar on iPad. Tab bar is acceptable for simple apps with 3-5 sections. Sidebar uses the larger screen better. Tab bar wastes space on iPad. Apple recommends sidebar for iPad.
+
+   Acceptance Criteria:
+   • Prefer sidebar over tab bar on iPad
+   • Tab bar is acceptable for simple apps with 3-5 sections
+   • Sidebar uses the larger screen better
+   • Tab bar wastes space on iPad
+   • Apple recommends sidebar for iPad
+
+   User Story: As a user, I want to navigate using tab bar alternative, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+12. Back Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: navigation
+
+   Back button in navigation bar. Support swipe-from-left-edge gesture for back. In split view, back may toggle sidebar visibility instead of popping a screen.
+
+   Acceptance Criteria:
+   • Back button in navigation bar
+   • Support swipe-from-left-edge gesture for back
+   • In split view, back may toggle sidebar visibility instead of popping a screen
+
+   User Story: As a user, I want to navigate using back navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+13. Keyboard Shortcuts
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: navigation
+
+   Support hardware keyboard shortcuts for all primary actions. Show with Cmd key hold. iPad users with keyboards expect shortcut support. Use discoverability HUD (Cmd press and hold).
+
+   Acceptance Criteria:
+   • Support hardware keyboard shortcuts for all primary actions
+   • Show with Cmd key hold
+   • iPad users with keyboards expect shortcut support
+   • Use discoverability HUD (Cmd press and hold)
+
+   User Story: As a user, I want to see keyboard shortcuts applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+14. Search
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: navigation
+
+   Global search accessible via Cmd+F or search icon. Scope search to current context. Use UISearchController integrated with navigation. Support search suggestions and recent searches.
+
+   Acceptance Criteria:
+   • Global search accessible via Cmd+F or search icon
+   • Scope search to current context
+   • Use UISearchController integrated with navigation
+   • Support search suggestions and recent searches
+
+   User Story: As a user, I want to navigate using search, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+15. Three-Column Layout
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: layout
+
+   For complex apps: sidebar (navigation) + list (content index) + detail (content). Collapsible columns. Apple Mail pattern. In compact width, columns stack. In regular width, 2-3 columns visible.
+
+   Acceptance Criteria:
+   • For complex apps: sidebar (navigation) + list (content index) + detail (content)
+   • Collapsible columns
+   • Apple Mail pattern
+   • In compact width, columns stack
+   • In regular width, 2-3 columns visible
+
+   User Story: As a user, I want to navigate using three-column layout, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+16. Adaptive Column Widths
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: layout
+
+   Sidebar: 320pt. List column: 320-375pt. Detail: remaining space. All flexible. Columns resize based on available width. Detail column gets priority for space.
+
+   Acceptance Criteria:
+   • List column: 320-375pt
+   • Detail: remaining space
+   • Columns resize based on available width
+   • Detail column gets priority for space
+
+   User Story: As a user on any device, I want to see adaptive column widths applied in the interface, so that the interface adapts properly to my screen size
+
+────────────────────────────────────────────────────────────
+17. Content Density
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: layout
+
+   Use the extra screen space wisely. Show more content per screen than phone layout but avoid clutter. iPad layouts should feel spacious but content-rich. Not just a stretched phone layout.
+
+   Acceptance Criteria:
+   • Use the extra screen space wisely
+   • Show more content per screen than phone layout but avoid clutter
+   • iPad layouts should feel spacious but content-rich
+   • Not just a stretched phone layout
+
+   User Story: As a user, I want to see content density applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+18. Grid Layouts
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: layout
+
+   Use multi-column grids for media, cards, and collections. 2-4 columns depending on content type. Photos: 3-4 columns. Cards: 2-3 columns. Adapt column count to available width.
+
+   Acceptance Criteria:
+   • Use multi-column grids for media, cards, and collections
+   • 2-4 columns depending on content type
+   • Photos: 3-4 columns
+   • Cards: 2-3 columns
+   • Adapt column count to available width
+
+   User Story: As a user, I want to see grid layouts applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+19. Popovers over Modals
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: layout
+
+   Prefer popovers (anchored to trigger) over full-screen modals for secondary content and actions. Popovers maintain context. Full-screen modals are disorienting on large screens. Use form sheets for complex forms.
+
+   Acceptance Criteria:
+   • Prefer popovers (anchored to trigger) over full-screen modals for secondary content and actions
+   • Popovers maintain context
+   • Full-screen modals are disorienting on large screens
+   • Use form sheets for complex forms
+
+   User Story: As a user, I want to see popovers over modals applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+20. Drag and Drop Zones
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: s | Category: layout
+
+   Define clear drop targets for drag-and-drop interactions between panels/columns. iPad excels at drag and drop. Allow moving items between list and detail, or between apps.
+
+   Acceptance Criteria:
+   • Define clear drop targets for drag-and-drop interactions between panels/columns
+   • iPad excels at drag and drop
+   • Allow moving items between list and detail, or between apps
+
+   User Story: As a user, I want to see drag and drop zones applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+21. 8pt Grid System
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: spacing
+
+   Use an 8-point grid for all spacing. Standard values: 8, 16, 20, 24, 32, 40, 48pt. Same grid as iOS/macOS. Consistent spacing across Apple platforms.
+
+   Acceptance Criteria:
+   • Use an 8-point grid for all spacing
+   • Standard values: 8, 16, 20, 24, 32, 40, 48pt
+   • Same grid as iOS/macOS
+   • Consistent spacing across Apple platforms
+
+   User Story: As a user, I want to see 8pt grid system applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+22. Content Margins
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: spacing
+
+   Horizontal content margins: 20pt (compact width), 24-32pt (regular width). More generous margins than iPhone. Content should breathe on the larger screen.
+
+   Acceptance Criteria:
+   • Horizontal content margins: 20pt (compact width), 24-32pt (regular width)
+   • More generous margins than iPhone
+   • Content should breathe on the larger screen
+
+   User Story: As a user, I want to see content margins applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+23. Touch Targets
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: spacing
+
+   Minimum touch target: 44 x 44 pt. Elements supporting pointer (mouse/trackpad) can be smaller: 32pt. iPad supports both touch and pointer. Default to 44pt, use pointer media query for smaller targets.
+
+   Acceptance Criteria:
+   • Minimum touch target: 44 x 44 pt
+   • Elements supporting pointer (mouse/trackpad) can be smaller: 32pt
+   • iPad supports both touch and pointer
+   • Default to 44pt, use pointer media query for smaller targets
+
+   User Story: As a user, I want to see touch targets applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+24. Column Gutters
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: spacing
+
+   Grid gutters: 16-20pt between columns. Card grids: 16pt gap. Comfortable spacing between grid items. Not too tight (feels cramped) or loose (wastes space).
+
+   Acceptance Criteria:
+   • Grid gutters: 16-20pt between columns
+   • Card grids: 16pt gap
+   • Comfortable spacing between grid items
+   • Not too tight (feels cramped) or loose (wastes space)
+
+   User Story: As a user, I want to see column gutters applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+25. Section Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: spacing
+
+   Between major sections: 32-40pt. Between related items: 12-16pt. Clear visual grouping. Generous whitespace is appropriate on tablet-sized screens.
+
+   Acceptance Criteria:
+   • Between major sections: 32-40pt
+   • Between related items: 12-16pt
+   • Clear visual grouping
+   • Generous whitespace is appropriate on tablet-sized screens
+
+   User Story: As a user, I want to see section spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+26. SF Symbols
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: icons
+
+   Use SF Symbols as the primary icon set. Consistent with iOS and macOS. SF Symbols scale with Dynamic Type and support variable rendering (weight, scale).
+
+   Acceptance Criteria:
+   • Use SF Symbols as the primary icon set
+   • Consistent with iOS and macOS
+   • SF Symbols scale with Dynamic Type and support variable rendering (weight, scale)
+
+   User Story: As a user, I want to see sf symbols applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+27. Sidebar Icons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Sidebar navigation icons: 20-24pt. Outlined for default, filled for selected. Slightly larger than iPhone sidebar due to the bigger screen and touch targets.
+
+   Acceptance Criteria:
+   • Sidebar navigation icons: 20-24pt
+   • Outlined for default, filled for selected
+   • Slightly larger than iPhone sidebar due to the bigger screen and touch targets
+
+   User Story: As a user, I want to navigate using sidebar icons, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+28. Toolbar Icons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Toolbar and navigation bar icons: 22-24pt. Use standard SF Symbols for common actions. Share, compose, trash, folder icons should use standard SF Symbol names.
+
+   Acceptance Criteria:
+   • Toolbar and navigation bar icons: 22-24pt
+   • Use standard SF Symbols for common actions
+   • Share, compose, trash, folder icons should use standard SF Symbol names
+
+   User Story: As a user, I want to navigate using toolbar icons, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+29. Content Icons
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: icons
+
+   Inline icons: 16-20pt. List item icons: 24pt. Empty state icons: 48-64pt. Scale to context. Larger empty state icons fill the larger viewport appropriately.
+
+   Acceptance Criteria:
+   • Inline icons: 16-20pt
+   • List item icons: 24pt
+   • Empty state icons: 48-64pt
+   • Scale to context
+   • Larger empty state icons fill the larger viewport appropriately
+
+   User Story: As a user, I want to see content icons applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+30. Pointer Hover Effects
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: icons
+
+   Icons in toolbars and navigation show subtle highlight/lift effect on pointer hover. iPad supports trackpad/mouse. Pointer effects provide feedback for cursor-based interaction.
+
+   Acceptance Criteria:
+   • Icons in toolbars and navigation show subtle highlight/lift effect on pointer hover
+   • iPad supports trackpad/mouse
+   • Pointer effects provide feedback for cursor-based interaction
+
+   User Story: As a user, I want to navigate using pointer hover effects, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+31. Type Hierarchy
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: typography
+
+   Same as iOS but with larger display sizes: Large Title (34pt), Title 1 (28pt), Title 2 (22pt), Headline (17pt), Body (17pt), Subheadline (15pt), Caption (12pt). iPad can use the same or slightly larger type sizes than iPhone due to reading distance.
+
+   Acceptance Criteria:
+   • Same as iOS but with larger display sizes: Large Title (34pt), Title 1 (28pt), Title 2 (22pt), Headline (17pt), Body (17pt), Subheadline (15pt), Caption (12pt)
+   • iPad can use the same or slightly larger type sizes than iPhone due to reading distance
+
+   User Story: As a user, I want to see type hierarchy applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+32. Font Family
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: typography
+
+   Default to SF Pro. Custom fonts provided before design starts. Ensure broad weight support. iPad apps may display more text simultaneously. Font must be readable at extended reading.
+
+   Acceptance Criteria:
+   • Default to SF Pro
+   • Custom fonts provided before design starts
+   • Ensure broad weight support
+   • iPad apps may display more text simultaneously
+   • Font must be readable at extended reading
+
+   User Story: As a user, I want to see font family applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+33. Dynamic Type
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: typography
+
+   Support all Dynamic Type sizes including accessibility sizes. iPad users also adjust text size. Layout must accommodate very large text without breaking.
+
+   Acceptance Criteria:
+   • Support all Dynamic Type sizes including accessibility sizes
+   • iPad users also adjust text size
+   • Layout must accommodate very large text without breaking
+
+   User Story: As a user with accessibility needs, I want to see dynamic type applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+34. Multi-Column Text
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: s | Category: typography
+
+   For long-form content, consider multi-column text layout in landscape to improve readability. Single column at ~65-75 characters per line. Multi-column for wide views. Avoid very long text lines.
+
+   Acceptance Criteria:
+   • For long-form content, consider multi-column text layout in landscape to improve readability
+   • Single column at ~65-75 characters per line
+   • Multi-column for wide views
+   • Avoid very long text lines
+
+   User Story: As a user, I want to see multi-column text applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+35. Line Length
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: typography
+
+   Maximum line length for body text: 75 characters. Use max-width on text containers. Critical on tablet where full-width text lines can be extremely long and hard to read.
+
+   Acceptance Criteria:
+   • Maximum line length for body text: 75 characters
+   • Use max-width on text containers
+   • Critical on tablet where full-width text lines can be extremely long and hard to read
+
+   User Story: As a user, I want to see line length applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+36. Runtime Color Control
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Colors controlled at runtime. Use color assets or theme tokens for all colors. Same approach as iOS. All colors defined as tokens that can be swapped per theme.
+
+   Acceptance Criteria:
+   • Colors controlled at runtime
+   • Use color assets or theme tokens for all colors
+   • Same approach as iOS
+   • All colors defined as tokens that can be swapped per theme
+
+   User Story: As a user, I want to see runtime color control applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+37. Light & Dark Mode
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   Full support for light and dark appearance. Follows system setting with optional manual override. iPad uses the same appearance system as iOS. Test all screens in both modes.
+
+   Acceptance Criteria:
+   • Full support for light and dark appearance
+   • Follows system setting with optional manual override
+   • iPad uses the same appearance system as iOS
+   • Test all screens in both modes
+
+   User Story: As a user, I want to see light & dark mode applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+38. Sidebar Tinting
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: colors
+
+   Sidebar uses a slightly different background tint from the main content area for visual separation. Standard iPadOS pattern. Sidebar surface is slightly translucent/tinted. Use system sidebar material.
+
+   Acceptance Criteria:
+   • Sidebar uses a slightly different background tint from the main content area for visual separation
+   • Standard iPadOS pattern
+   • Sidebar surface is slightly translucent/tinted
+   • Use system sidebar material
+
+   User Story: As a user, I want to see sidebar tinting applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+39. Contrast Ratios
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: colors
+
+   WCAG AA minimum contrast. Same standards as iOS: 4.5:1 for body, 3:1 for large text. Larger screen doesn't change contrast requirements. Verify with accessibility tools.
+
+   Acceptance Criteria:
+   • WCAG AA minimum contrast
+   • Same standards as iOS: 4
+   • 5:1 for body, 3:1 for large text
+   • Larger screen doesn't change contrast requirements
+   • Verify with accessibility tools
+
+   User Story: As a user with accessibility needs, I want to see contrast ratios applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+40. Semantic Color Tokens
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   Use iOS semantic colors: systemBackground, secondarySystemBackground, label, secondaryLabel, separator. Semantic colors adapt to light/dark mode and accessibility settings automatically.
+
+   Acceptance Criteria:
+   • Use iOS semantic colors: systemBackground, secondarySystemBackground, label, secondaryLabel, separator
+   • Semantic colors adapt to light/dark mode and accessibility settings automatically
+
+   User Story: As a user with accessibility needs, I want to see semantic color tokens applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+41. Illustration Style
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Simple, minimal, lightweight. Same style as iOS but can be slightly larger. Flat or line-art style. Limited color palette. Not heavy or distracting.
+
+   Acceptance Criteria:
+   • Simple, minimal, lightweight
+   • Same style as iOS but can be slightly larger
+   • Flat or line-art style
+   • Limited color palette
+   • Not heavy or distracting
+
+   User Story: As a user, I want to see illustration style applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+42. Empty States
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: graphics
+
+   Empty state illustrations: 100-160pt. Centered in the detail/content panel, not the full screen. On split view, empty state appears in the detail panel. Include helpful action button.
+
+   Acceptance Criteria:
+   • Empty state illustrations: 100-160pt
+   • Centered in the detail/content panel, not the full screen
+   • On split view, empty state appears in the detail panel
+   • Include helpful action button
+
+   User Story: As a user, I want to see empty states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+43. High-Resolution Assets
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: graphics
+
+   All assets at @2x resolution minimum for Retina displays. All iPads have Retina displays. Vector (SVG/SF Symbols) preferred over raster.
+
+   Acceptance Criteria:
+   • All assets at @2x resolution minimum for Retina displays
+   • All iPads have Retina displays
+   • Vector (SVG/SF Symbols) preferred over raster
+
+   User Story: As a user, I want to see high-resolution assets applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+44. Drag Preview Images
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: s | Category: graphics
+
+   Provide appropriate drag preview images for drag-and-drop operations. When dragging items, show a preview that represents the content. Standard iPad interaction.
+
+   Acceptance Criteria:
+   • Provide appropriate drag preview images for drag-and-drop operations
+   • When dragging items, show a preview that represents the content
+   • Standard iPad interaction
+
+   User Story: As a user, I want to see drag preview images applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+45. App Icon
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: graphics
+
+   Same 1024x1024pt icon as iOS. System automatically applies iPad corner radius. iPad icon corners are slightly less rounded than iPhone. Design for recognition at 76pt (iPad home screen).
+
+   Acceptance Criteria:
+   • Same 1024x1024pt icon as iOS
+   • System automatically applies iPad corner radius
+   • iPad icon corners are slightly less rounded than iPhone
+   • Design for recognition at 76pt (iPad home screen)
+
+   User Story: As a user, I want to see app icon applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+46. Pointer/Trackpad Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: interactions
+
+   Full support for pointer (trackpad/mouse) interactions. Hover effects, pointer lift on buttons. iPadOS pointer is a circle that morphs to highlight interactive elements. Use UIPointerInteraction.
+
+   Acceptance Criteria:
+   • Full support for pointer (trackpad/mouse) interactions
+   • Hover effects, pointer lift on buttons
+   • iPadOS pointer is a circle that morphs to highlight interactive elements
+   • Use UIPointerInteraction
+
+   User Story: As a user, I want to see pointer/trackpad support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+47. Multi-Touch Gestures
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: interactions
+
+   Support iPad-specific gestures: pinch-to-zoom, two-finger scroll, and multi-select with two-finger drag. iPad has more gesture vocabulary than iPhone. Use where contextually appropriate.
+
+   Acceptance Criteria:
+   • Support iPad-specific gestures: pinch-to-zoom, two-finger scroll, and multi-select with two-finger drag
+   • iPad has more gesture vocabulary than iPhone
+   • Use where contextually appropriate
+
+   User Story: As a user, I want to see multi-touch gestures applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+48. Drag and Drop
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: interactions
+
+   Support intra-app and inter-app drag and drop for content items. Key iPad differentiator. Allow dragging images, text, files between panels and to/from other apps.
+
+   Acceptance Criteria:
+   • Support intra-app and inter-app drag and drop for content items
+   • Key iPad differentiator
+   • Allow dragging images, text, files between panels and to/from other apps
+
+   User Story: As a user, I want to see drag and drop applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+49. Apple Pencil Support
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: m | Category: interactions
+
+   If the app involves drawing or handwriting, support Apple Pencil with pressure and tilt sensitivity. Scribble (handwriting to text) support for text fields is automatic on iPadOS 14+.
+
+   Acceptance Criteria:
+   • If the app involves drawing or handwriting, support Apple Pencil with pressure and tilt sensitivity
+   • Scribble (handwriting to text) support for text fields is automatic on iPadOS 14+
+
+   User Story: As a user, I want to see apple pencil support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+50. Context Menus
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: interactions
+
+   Support context menus on long-press (touch) and right-click (pointer). Same content for both input methods. Include preview if relevant. Standard iPadOS pattern.
+
+   Acceptance Criteria:
+   • Support context menus on long-press (touch) and right-click (pointer)
+   • Same content for both input methods
+   • Include preview if relevant
+   • Standard iPadOS pattern
+
+   User Story: As a user, I want to navigate using context menus, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+51. Smooth Transitions
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   Use standard iOS transitions. Navigation: push/pop. Modals: form sheet or page sheet. Sidebar: slide. iPad transitions should feel native. Avoid custom animations unless the app specifically requires them.
+
+   Acceptance Criteria:
+   • Use standard iOS transitions
+   • Navigation: push/pop
+   • Modals: form sheet or page sheet
+   • iPad transitions should feel native
+   • Avoid custom animations unless the app specifically requires them
+
+   User Story: As a user, I want to navigate using smooth transitions, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+52. Popovers
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: components
+
+   Use popovers instead of action sheets for iPad. Anchor to trigger element with arrow. Action sheets are for iPhone. iPad uses popovers. System enforces this for UIAlertController.
+
+   Acceptance Criteria:
+   • Use popovers instead of action sheets for iPad
+   • Anchor to trigger element with arrow
+   • Action sheets are for iPhone
+   • iPad uses popovers
+   • System enforces this for UIAlertController
+
+   User Story: As a user, I want to see popovers applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+53. Form Sheets
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: components
+
+   Use form sheet presentation (centered, smaller than full screen) for modal forms and editors. Form sheets: ~540pt wide, ~620pt tall on full-screen iPad. Maintains context behind modal.
+
+   Acceptance Criteria:
+   • Use form sheet presentation (centered, smaller than full screen) for modal forms and editors
+   • Form sheets: ~540pt wide, ~620pt tall on full-screen iPad
+   • Maintains context behind modal
+
+   User Story: As a user, I want to see form sheets applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+54. Sidebar List Rows
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: components
+
+   Sidebar items: 44pt height, icon (20pt) + text, rounded selection highlight, indent for sub-items. Match iPadOS sidebar styling. Support swipe actions on sidebar items. Section headers for groups.
+
+   Acceptance Criteria:
+   • Sidebar items: 44pt height, icon (20pt) + text, rounded selection highlight, indent for sub-items
+   • Match iPadOS sidebar styling
+   • Support swipe actions on sidebar items
+   • Section headers for groups
+
+   User Story: As a user, I want to see sidebar list rows applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+55. Buttons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: components
+
+   Same as iOS: filled primary, tonal secondary. 50pt height for primary actions. 44pt for toolbar buttons. iPad buttons can include pointer lift effects. Use UIPointerStyle for hover interaction.
+
+   Acceptance Criteria:
+   • Same as iOS: filled primary, tonal secondary
+   • 50pt height for primary actions
+   • 44pt for toolbar buttons
+   • iPad buttons can include pointer lift effects
+   • Use UIPointerStyle for hover interaction
+
+   User Story: As a user, I want to see buttons applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+56. Split View Controller
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: components
+
+   Use UISplitViewController for the primary navigation pattern. Configure column widths and display modes. Handles compact/regular transitions automatically. Three-column split view for complex apps.
+
+   Acceptance Criteria:
+   • Use UISplitViewController for the primary navigation pattern
+   • Configure column widths and display modes
+   • Handles compact/regular transitions automatically
+   • Three-column split view for complex apps
+
+   User Story: As a user, I want to navigate using split view controller, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+57. Toolbars
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: components
+
+   Bottom toolbar for contextual tools in editor/document views. Bar button items with flexible spacing. Toolbar items can include segmented controls, sliders, and custom views on iPad.
+
+   Acceptance Criteria:
+   • Bottom toolbar for contextual tools in editor/document views
+   • Bar button items with flexible spacing
+   • Toolbar items can include segmented controls, sliders, and custom views on iPad
+
+   User Story: As a user, I want to see toolbars applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+58. VoiceOver
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   Full VoiceOver support with proper accessibility labels, traits, and container grouping. Multi-column layouts need careful VoiceOver ordering. Group columns logically.
+
+   Acceptance Criteria:
+   • Full VoiceOver support with proper accessibility labels, traits, and container grouping
+   • Multi-column layouts need careful VoiceOver ordering
+   • Group columns logically
+
+   User Story: As a user with accessibility needs, I want to see voiceover applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+59. Switch Control
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   Support Switch Control for users with motor impairments. Ensure all actions are reachable. Every interactive element must be reachable via Switch Control scanning.
+
+   Acceptance Criteria:
+   • Support Switch Control for users with motor impairments
+   • Ensure all actions are reachable
+   • Every interactive element must be reachable via Switch Control scanning
+
+   User Story: As a user, I want to see switch control applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+60. Dynamic Type
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   Support all Dynamic Type sizes. Layout adapts to large accessibility text sizes. Multi-column layouts may need to collapse to single column at very large text sizes.
+
+   Acceptance Criteria:
+   • Support all Dynamic Type sizes
+   • Layout adapts to large accessibility text sizes
+   • Multi-column layouts may need to collapse to single column at very large text sizes
+
+   User Story: As a user with accessibility needs, I want to see dynamic type applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+61. Keyboard Accessibility
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: accessibility
+
+   Full keyboard navigation when hardware keyboard is connected. Tab order across columns. Many iPad users have keyboards. All functionality must work without touching the screen.
+
+   Acceptance Criteria:
+   • Full keyboard navigation when hardware keyboard is connected
+   • Tab order across columns
+   • Many iPad users have keyboards
+   • All functionality must work without touching the screen
+
+   User Story: As a user with accessibility needs, I want to see keyboard accessibility applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+62. Contrast & Color
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: accessibility
+
+   WCAG AA contrast ratios. Do not rely on color alone for information. Same standards as iOS. Use icons and text alongside color indicators.
+
+   Acceptance Criteria:
+   • WCAG AA contrast ratios
+   • Do not rely on color alone for information
+   • Same standards as iOS
+   • Use icons and text alongside color indicators
+
+   User Story: As a user with accessibility needs, I want to see contrast & color applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+63. Size Class Adaptation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: responsive
+
+   Adapt layout for compact (narrow) and regular (wide) horizontal size classes. Compact: stack columns (phone-like). Regular: show columns side-by-side. Use trait collections.
+
+   Acceptance Criteria:
+   • Adapt layout for compact (narrow) and regular (wide) horizontal size classes
+   • Compact: stack columns (phone-like)
+   • Regular: show columns side-by-side
+   • Use trait collections
+
+   User Story: As a user, I want to see size class adaptation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+64. Slide Over Compatibility
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: responsive
+
+   App must be usable in Slide Over mode (320pt wide). Fall back to single-column layout. Slide Over is very narrow. Must gracefully degrade. Same layout as iPhone at this width.
+
+   Acceptance Criteria:
+   • App must be usable in Slide Over mode (320pt wide)
+   • Fall back to single-column layout
+   • Slide Over is very narrow
+   • Must gracefully degrade
+   • Same layout as iPhone at this width
+
+   User Story: As a user, I want to see slide over compatibility applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+65. Split View Compatibility
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: responsive
+
+   Support 1/3, 1/2, and 2/3 split view widths. Transition between column configurations smoothly. 1/3 (≈320pt): single column. 1/2 (≈507pt): sidebar + detail. 2/3 (≈694pt): full split.
+
+   Acceptance Criteria:
+   • Support 1/3, 1/2, and 2/3 split view widths
+   • Transition between column configurations smoothly
+   • 1/3 (≈320pt): single column
+   • 1/2 (≈507pt): sidebar + detail
+   • 2/3 (≈694pt): full split
+
+   User Story: As a user, I want to see split view compatibility applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+66. Rotation Handling
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: responsive
+
+   Smooth layout transition when device rotates. No content loss or layout breakage. Animate layout changes during rotation. Maintain scroll position and selection state.
+
+   Acceptance Criteria:
+   • Smooth layout transition when device rotates
+   • No content loss or layout breakage
+   • Animate layout changes during rotation
+   • Maintain scroll position and selection state
+
+   User Story: As a user, I want to see rotation handling applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+67. Keyboard Appearance
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: responsive
+
+   Layout adjusts when software keyboard appears. Content remains accessible above keyboard. iPad software keyboard is large. Use keyboard layout guide. Consider floating keyboard mode.
+
+   Acceptance Criteria:
+   • Layout adjusts when software keyboard appears
+   • Content remains accessible above keyboard
+   • iPad software keyboard is large
+   • Use keyboard layout guide
+   • Consider floating keyboard mode
+
+   User Story: As a user, I want to see keyboard appearance applied in the interface, so that the application follows platform design guidelines consistently
+

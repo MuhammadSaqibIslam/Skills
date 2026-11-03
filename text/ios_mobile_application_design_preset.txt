@@ -1,0 +1,988 @@
+============================================================
+iOS Mobile Application (Copy)
+============================================================
+
+Platform: ios
+Description: Comprehensive design guidelines for iPhone applications following Apple Human Interface Guidelines. Covers safe areas, navigation bars, tab bars, touch targets, and iOS-native patterns.
+
+────────────────────────────────────────────────────────────
+1. Full Screen Layout
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: app-size
+
+   App occupies the full screen. Design for logical resolution: 390 x 844 pt (iPhone 14/15 base). Use Auto Layout / flexible constraints. Design at 1x logical points, assets at 2x and 3x.
+
+   Acceptance Criteria:
+   • App occupies the full screen
+   • Design for logical resolution: 390 x 844 pt (iPhone 14/15 base)
+   • Use Auto Layout / flexible constraints
+   • Design at 1x logical points, assets at 2x and 3x
+
+   User Story: As a user, I want to see full screen layout applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+2. Safe Areas
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: app-size
+
+   Respect safe area insets on all edges. Content must not be hidden behind the Dynamic Island, notch, or home indicator. Top safe area: ~59pt (Dynamic Island) or ~47pt (notch). Bottom: ~34pt (home indicator). Use safeAreaInsets.
+
+   Acceptance Criteria:
+   • Respect safe area insets on all edges
+   • Content must not be hidden behind the Dynamic Island, notch, or home indicator
+   • Top safe area: ~59pt (Dynamic Island) or ~47pt (notch)
+   • Bottom: ~34pt (home indicator)
+   • Use safeAreaInsets
+
+   User Story: As a user, I want to see safe areas applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+3. Device Size Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: app-size
+
+   Support all active iPhone sizes: iPhone SE (375x667pt), iPhone 14 (390x844pt), iPhone 14 Pro Max (430x932pt). Test on smallest and largest devices. Use flexible layouts that adapt to width differences.
+
+   Acceptance Criteria:
+   • Support all active iPhone sizes: iPhone SE (375x667pt), iPhone 14 (390x844pt), iPhone 14 Pro Max (430x932pt)
+   • Test on smallest and largest devices
+   • Use flexible layouts that adapt to width differences
+
+   User Story: As a user, I want to see device size support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+4. Orientation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: app-size
+
+   Portrait-only orientation unless the app specifically requires landscape (e.g., video, games). Most content apps work best in portrait. Lock orientation to avoid unexpected layout issues.
+
+   Acceptance Criteria:
+   • Portrait-only orientation unless the app specifically requires landscape (e
+   • Most content apps work best in portrait
+   • Lock orientation to avoid unexpected layout issues
+
+   User Story: As a user, I want to see orientation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+5. Status Bar
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: top-bar
+
+   System status bar (time, signal, battery) is always visible. Adapt style (light/dark) to match content. Use .lightContent or .darkContent based on background color. Never hide the status bar in standard views.
+
+   Acceptance Criteria:
+   • System status bar (time, signal, battery) is always visible
+   • Adapt style (light/dark) to match content
+   • darkContent based on background color
+   • Never hide the status bar in standard views
+
+   User Story: As a user, I want to see status bar applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+6. Navigation Bar Height
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: top-bar
+
+   Standard navigation bar height: 44pt (below status bar). Total top area: status bar (~54pt with Dynamic Island) + nav bar (44pt) = ~98pt.
+
+   Acceptance Criteria:
+   • Standard navigation bar height: 44pt (below status bar)
+   • Total top area: status bar (~54pt with Dynamic Island) + nav bar (44pt) = ~98pt
+
+   User Story: As a user, I want to navigate using navigation bar height, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+7. Navigation Bar Content
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: top-bar
+
+   Nav bar contains: left button (back/close), center title, right action button(s). Max 2 right-side buttons. Use standard back chevron (<) for navigation. Title should be concise.
+
+   Acceptance Criteria:
+   • Nav bar contains: left button (back/close), center title, right action button(s)
+   • Max 2 right-side buttons
+   • Use standard back chevron (<) for navigation
+   • Title should be concise
+
+   User Story: As a user, I want to navigate using navigation bar content, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+8. Large Title Mode
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: top-bar
+
+   Use large title style for top-level screens. Collapses to inline title on scroll. Large title: 34pt bold, left-aligned. Provides clear hierarchy for main screens.
+
+   Acceptance Criteria:
+   • Use large title style for top-level screens
+   • Collapses to inline title on scroll
+   • Large title: 34pt bold, left-aligned
+   • Provides clear hierarchy for main screens
+
+   User Story: As a user, I want to see large title mode applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+9. Search Bar Integration
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: top-bar
+
+   If search is needed, integrate it below the navigation bar with pull-to-reveal behavior. Standard iOS search controller pattern. Hidden by default, revealed on pull-down.
+
+   Acceptance Criteria:
+   • If search is needed, integrate it below the navigation bar with pull-to-reveal behavior
+   • Standard iOS search controller pattern
+   • Hidden by default, revealed on pull-down
+
+   User Story: As a user, I want to navigate using search bar integration, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+10. Tab Bar as Primary Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: navigation
+
+   Use a bottom tab bar for primary navigation with 3-5 tabs maximum. Tab bar height: 49pt (plus safe area inset). Each tab: icon + label. Active tab uses accent color.
+
+   Acceptance Criteria:
+   • Use a bottom tab bar for primary navigation with 3-5 tabs maximum
+   • Tab bar height: 49pt (plus safe area inset)
+   • Each tab: icon + label
+   • Active tab uses accent color
+
+   User Story: As a user, I want to navigate using tab bar as primary navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+11. Back Navigation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: navigation
+
+   Use the system back button (left chevron + previous screen title) for stack navigation. Support swipe-from-left-edge gesture for back navigation. Never disable the system back gesture.
+
+   Acceptance Criteria:
+   • Use the system back button (left chevron + previous screen title) for stack navigation
+   • Support swipe-from-left-edge gesture for back navigation
+   • Never disable the system back gesture
+
+   User Story: As a user, I want to navigate using back navigation, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+12. Navigation Stack
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: navigation
+
+   Use standard UINavigationController push/pop pattern for hierarchical content. Push to go deeper, pop to go back. Each pushed screen gets a back button automatically.
+
+   Acceptance Criteria:
+   • Use standard UINavigationController push/pop pattern for hierarchical content
+   • Push to go deeper, pop to go back
+   • Each pushed screen gets a back button automatically
+
+   User Story: As a user, I want to navigate using navigation stack, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+13. Modal Presentation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: navigation
+
+   Use modals (sheet style) for self-contained tasks: create, compose, settings. Dismiss via drag-down or close button. iOS 15+ uses .medium and .large detents for half/full sheets. Always include a close/cancel button.
+
+   Acceptance Criteria:
+   • Use modals (sheet style) for self-contained tasks: create, compose, settings
+   • Dismiss via drag-down or close button
+   • large detents for half/full sheets
+   • Always include a close/cancel button
+
+   User Story: As a user, I want to see modal presentation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+14. No Hamburger Menu
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: navigation
+
+   Avoid hamburger/drawer menus. Use tab bar or visible navigation instead. Hamburger menus hide discoverability on iOS. If more than 5 sections, use a "More" tab.
+
+   Acceptance Criteria:
+   • Avoid hamburger/drawer menus
+   • Use tab bar or visible navigation instead
+   • Hamburger menus hide discoverability on iOS
+   • If more than 5 sections, use a "More" tab
+
+   User Story: As a user, I want to navigate using no hamburger menu, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+15. Deep Link Support
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: navigation
+
+   Key screens should be directly navigable via deep links / universal links. Enables notifications, sharing, and external references to open specific content.
+
+   Acceptance Criteria:
+   • Key screens should be directly navigable via deep links / universal links
+   • Enables notifications, sharing, and external references to open specific content
+
+   User Story: As a user, I want to see deep link support applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+16. Full-Width Content
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: layout
+
+   Content extends to screen edges. Use horizontal padding (16pt) for text and content blocks. Cards and grouped content: 16pt horizontal margin. Full-bleed images can extend to edges.
+
+   Acceptance Criteria:
+   • Content extends to screen edges
+   • Use horizontal padding (16pt) for text and content blocks
+   • Cards and grouped content: 16pt horizontal margin
+   • Full-bleed images can extend to edges
+
+   User Story: As a user, I want to see full-width content applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+17. Grouped Table / List Layout
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: layout
+
+   Use grouped / inset-grouped list style for settings, forms, and structured content. Standard iOS pattern for organized content. Rounded corners on groups, 16pt inset from edges.
+
+   Acceptance Criteria:
+   • Use grouped / inset-grouped list style for settings, forms, and structured content
+   • Standard iOS pattern for organized content
+   • Rounded corners on groups, 16pt inset from edges
+
+   User Story: As a user, I want to see grouped table / list layout applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+18. Scroll-Based Layout
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: layout
+
+   Screens with more content than viewport should scroll vertically. Avoid horizontal scrolling for primary content. Use ScrollView or List. Horizontal scrolling is acceptable for carousels and media galleries only.
+
+   Acceptance Criteria:
+   • Screens with more content than viewport should scroll vertically
+   • Avoid horizontal scrolling for primary content
+   • Use ScrollView or List
+   • Horizontal scrolling is acceptable for carousels and media galleries only
+
+   User Story: As a user, I want to see scroll-based layout applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+19. Bottom Action Area
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: layout
+
+   Primary action buttons anchored to the bottom of the screen, above the safe area. Easily reachable by thumb. Use a sticky footer with background blur for floating actions.
+
+   Acceptance Criteria:
+   • Primary action buttons anchored to the bottom of the screen, above the safe area
+   • Easily reachable by thumb
+   • Use a sticky footer with background blur for floating actions
+
+   User Story: As a user, I want to see bottom action area applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+20. Empty States
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: layout
+
+   Empty states should be centered vertically in the content area with icon, title, subtitle, and optional action button. Clearly communicate what to do next. Keep visuals minimal and message concise.
+
+   Acceptance Criteria:
+   • Empty states should be centered vertically in the content area with icon, title, subtitle, and optional action button
+   • Clearly communicate what to do next
+   • Keep visuals minimal and message concise
+
+   User Story: As a user, I want to see empty states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+21. 8pt Grid System
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: spacing
+
+   Use an 8-point grid for all spacing. Standard spacings: 4, 8, 12, 16, 24, 32pt. Consistent spacing creates visual rhythm. 4pt for tight spacing only (icon-to-label gaps).
+
+   Acceptance Criteria:
+   • Use an 8-point grid for all spacing
+   • Standard spacings: 4, 8, 12, 16, 24, 32pt
+   • Consistent spacing creates visual rhythm
+   • 4pt for tight spacing only (icon-to-label gaps)
+
+   User Story: As a user, I want to see 8pt grid system applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+22. Horizontal Margins
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: spacing
+
+   Standard horizontal content margin: 16pt from screen edge. Matches iOS system default. Grouped lists use 20pt inset for rounded-rect style.
+
+   Acceptance Criteria:
+   • Standard horizontal content margin: 16pt from screen edge
+   • Matches iOS system default
+   • Grouped lists use 20pt inset for rounded-rect style
+
+   User Story: As a user, I want to see horizontal margins applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+23. Section Spacing
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: spacing
+
+   Spacing between major sections: 24-32pt. Between related items: 8-16pt. Visual separation between content groups. Larger gaps signal different contexts.
+
+   Acceptance Criteria:
+   • Spacing between major sections: 24-32pt
+   • Between related items: 8-16pt
+   • Visual separation between content groups
+   • Larger gaps signal different contexts
+
+   User Story: As a user, I want to see section spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+24. Touch Target Minimum
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: spacing
+
+   All tappable elements must have a minimum touch target of 44 x 44 pt. Apple HIG requirement. Even if the visual element is smaller, the tappable area must be 44pt.
+
+   Acceptance Criteria:
+   • All tappable elements must have a minimum touch target of 44 x 44 pt
+   • Apple HIG requirement
+   • Even if the visual element is smaller, the tappable area must be 44pt
+
+   User Story: As a user, I want to see touch target minimum applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+25. List Row Height
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: spacing
+
+   Standard list row height: 44pt minimum. Complex rows: 60-88pt. Ensures comfortable tapping. Multi-line rows should still maintain 44pt minimum.
+
+   Acceptance Criteria:
+   • Standard list row height: 44pt minimum
+   • Complex rows: 60-88pt
+   • Ensures comfortable tapping
+   • Multi-line rows should still maintain 44pt minimum
+
+   User Story: As a user, I want to see list row height applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+26. SF Symbols Preferred
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: icons
+
+   Use SF Symbols as the primary icon set. Fall back to custom icons only when necessary. SF Symbols are optimized for iOS, support Dynamic Type, and adapt to weight/size automatically.
+
+   Acceptance Criteria:
+   • Use SF Symbols as the primary icon set
+   • Fall back to custom icons only when necessary
+   • SF Symbols are optimized for iOS, support Dynamic Type, and adapt to weight/size automatically
+
+   User Story: As a user, I want to see sf symbols preferred applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+27. Tab Bar Icons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: icons
+
+   Tab bar icons: 25x25pt max size. Use outlined style for inactive, filled for active. Standard iOS tab bar icon pattern. Keep icons simple and recognizable at small sizes.
+
+   Acceptance Criteria:
+   • Tab bar icons: 25x25pt max size
+   • Use outlined style for inactive, filled for active
+   • Standard iOS tab bar icon pattern
+   • Keep icons simple and recognizable at small sizes
+
+   User Story: As a user, I want to navigate using tab bar icons, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+28. Navigation Bar Icons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: icons
+
+   Nav bar button icons: 22-24pt. Use standard SF Symbols for common actions (share, edit, add). Consistent with iOS system apps. Use .regular weight for nav bar icons.
+
+   Acceptance Criteria:
+   • Nav bar button icons: 22-24pt
+   • Use standard SF Symbols for common actions (share, edit, add)
+   • Consistent with iOS system apps
+   • regular weight for nav bar icons
+
+   User Story: As a user, I want to navigate using navigation bar icons, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+29. Content Icons
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: icons
+
+   Inline content icons: 16-20pt. Section header icons: 20-24pt. Feature/empty state icons: 40-60pt. Scale appropriately for context. Larger icons for focal points, smaller for supporting content.
+
+   Acceptance Criteria:
+   • Inline content icons: 16-20pt
+   • Section header icons: 20-24pt
+   • Feature/empty state icons: 40-60pt
+   • Scale appropriately for context
+   • Larger icons for focal points, smaller for supporting content
+
+   User Story: As a user, I want to see content icons applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+30. Consistent Weight
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: icons
+
+   Use a single icon weight throughout the app (preferably .regular or .medium). Mixing weights creates visual inconsistency. Exception: active tab icons can use heavier weight.
+
+   Acceptance Criteria:
+   • Use a single icon weight throughout the app (preferably
+   • Mixing weights creates visual inconsistency
+   • Exception: active tab icons can use heavier weight
+
+   User Story: As a user, I want to see consistent weight applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+31. Type Hierarchy
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: typography
+
+   Fixed structure: Large title (34pt bold), Title (28pt bold), Headline (17pt semibold), Body (17pt regular), Subheadline (15pt regular), Caption (12pt regular). Based on iOS Dynamic Type sizes. These scale when the user changes text size preferences.
+
+   Acceptance Criteria:
+   • Fixed structure: Large title (34pt bold), Title (28pt bold), Headline (17pt semibold), Body (17pt regular), Subheadline (15pt regular), Caption (12pt regular)
+   • Based on iOS Dynamic Type sizes
+   • These scale when the user changes text size preferences
+
+   User Story: As a user, I want to see type hierarchy applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+32. Font Family
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: typography
+
+   Default to SF Pro (system font). Custom fonts will be provided before design starts. SF Pro is optimized for iOS readability. Support Dynamic Type with custom fonts.
+
+   Acceptance Criteria:
+   • Default to SF Pro (system font)
+   • Custom fonts will be provided before design starts
+   • SF Pro is optimized for iOS readability
+   • Support Dynamic Type with custom fonts
+
+   User Story: As a user, I want to see font family applied in the interface, so that text is readable and visually consistent throughout the application
+
+────────────────────────────────────────────────────────────
+33. Dynamic Type Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: typography
+
+   All text must support Dynamic Type scaling (accessibility text sizes). Use system text styles (UIFont.TextStyle) or scaledFont for custom fonts. Test at largest accessibility size.
+
+   Acceptance Criteria:
+   • All text must support Dynamic Type scaling (accessibility text sizes)
+   • Use system text styles (UIFont
+   • TextStyle) or scaledFont for custom fonts
+   • Test at largest accessibility size
+
+   User Story: As a user with accessibility needs, I want to see dynamic type support applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+34. Line Spacing
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: typography
+
+   Body text line height: 22pt (for 17pt body). Maintain 1.3x ratio for readability. iOS system defaults provide good line spacing. Do not tighten below default.
+
+   Acceptance Criteria:
+   • Body text line height: 22pt (for 17pt body)
+   • 3x ratio for readability
+   • iOS system defaults provide good line spacing
+   • Do not tighten below default
+
+   User Story: As a user, I want to see line spacing applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+35. Text Alignment
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: typography
+
+   Left-align body text. Center-align titles in nav bars and empty states only. Left alignment is easier to scan. Center alignment reserved for focal/hero content.
+
+   Acceptance Criteria:
+   • Left-align body text
+   • Center-align titles in nav bars and empty states only
+   • Left alignment is easier to scan
+   • Center alignment reserved for focal/hero content
+
+   User Story: As a user, I want to see text alignment applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+36. Runtime Color Control
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Colors are not fixed at design time. The color palette will be controlled at runtime via asset catalogs or tokens. Use Color Assets or a theme manager. All colors must be swappable without code changes.
+
+   Acceptance Criteria:
+   • Colors are not fixed at design time
+   • The color palette will be controlled at runtime via asset catalogs or tokens
+   • Use Color Assets or a theme manager
+   • All colors must be swappable without code changes
+
+   User Story: As a user, I want to see runtime color control applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+37. Light & Dark Mode
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   Full support for both light and dark appearance modes. Use UIColor with light/dark variants. Test all screens in both modes. System automatically switches.
+
+   Acceptance Criteria:
+   • Full support for both light and dark appearance modes
+   • Use UIColor with light/dark variants
+   • Test all screens in both modes
+   • System automatically switches
+
+   User Story: As a user, I want to see light & dark mode applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+38. System Colors
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: l | Category: colors
+
+   Use iOS system colors for standard UI elements (systemBlue, systemRed, systemGreen, etc.). System colors automatically adapt to light/dark mode and accessibility settings.
+
+   Acceptance Criteria:
+   • Use iOS system colors for standard UI elements (systemBlue, systemRed, systemGreen, etc
+   • System colors automatically adapt to light/dark mode and accessibility settings
+
+   User Story: As a user with accessibility needs, I want to see system colors applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+39. Contrast Ratios
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: colors
+
+   Maintain WCAG AA minimum contrast: 4.5:1 for body text, 3:1 for large text and icons. Critical for both modes. Dark mode backgrounds must have sufficient contrast with text.
+
+   Acceptance Criteria:
+   • Maintain WCAG AA minimum contrast: 4
+   • 5:1 for body text, 3:1 for large text and icons
+   • Critical for both modes
+   • Dark mode backgrounds must have sufficient contrast with text
+
+   User Story: As a user with accessibility needs, I want to see contrast ratios applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+40. Tint Color
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: colors
+
+   Use a single tint/accent color for interactive elements (buttons, links, toggles). Provides visual consistency. The tint color should be the brand color or system blue.
+
+   Acceptance Criteria:
+   • Use a single tint/accent color for interactive elements (buttons, links, toggles)
+   • Provides visual consistency
+   • The tint color should be the brand color or system blue
+
+   User Story: As a user, I want to see tint color applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+41. Semantic Color Tokens
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: colors
+
+   Define colors semantically: background, groupedBackground, surface, label, secondaryLabel, separator, accent, destructive. Matches iOS semantic color naming. Enables theming and automatic dark mode adaptation.
+
+   Acceptance Criteria:
+   • Define colors semantically: background, groupedBackground, surface, label, secondaryLabel, separator, accent, destructive
+   • Matches iOS semantic color naming
+   • Enables theming and automatic dark mode adaptation
+
+   User Story: As a user, I want to see semantic color tokens applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+42. Illustration Style
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: graphics
+
+   Simple, minimal illustrations. Lightweight and not visually heavy. Flat style with limited colors (2-3 per illustration). Match the overall app tone.
+
+   Acceptance Criteria:
+   • Simple, minimal illustrations
+   • Lightweight and not visually heavy
+   • Flat style with limited colors (2-3 per illustration)
+   • Match the overall app tone
+
+   User Story: As a user, I want to see illustration style applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+43. Onboarding Graphics
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: graphics
+
+   Onboarding screens can use slightly larger illustrations but keep them minimal and centered. Max 200x200pt illustration size. Complement with clear headline and subtitle below.
+
+   Acceptance Criteria:
+   • Onboarding screens can use slightly larger illustrations but keep them minimal and centered
+   • Max 200x200pt illustration size
+   • Complement with clear headline and subtitle below
+
+   User Story: As a user, I want to see onboarding graphics applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+44. Empty State Graphics
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: graphics
+
+   Use SF Symbols or minimal line art for empty states. Size: 60-80pt. Keep consistent with the icon style. Add a brief message and optional action button below.
+
+   Acceptance Criteria:
+   • Use SF Symbols or minimal line art for empty states
+   • Keep consistent with the icon style
+   • Add a brief message and optional action button below
+
+   User Story: As a user, I want to see empty state graphics applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+45. Image Handling
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: graphics
+
+   Content images: use aspect-fill with rounded corners (12pt radius). Support placeholder/loading states. Show a subtle placeholder while loading. Fade in images when loaded. Cache aggressively.
+
+   Acceptance Criteria:
+   • Content images: use aspect-fill with rounded corners (12pt radius)
+   • Support placeholder/loading states
+   • Show a subtle placeholder while loading
+   • Fade in images when loaded
+   • Cache aggressively
+
+   User Story: As a user, I want to see image handling applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+46. App Icon
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: graphics
+
+   App icon: 1024x1024pt. No transparency. Follows iOS rounded-rectangle mask automatically. Do not add rounded corners to the icon asset. iOS masks it. Design for recognition at 60x60pt.
+
+   Acceptance Criteria:
+   • App icon: 1024x1024pt
+   • Follows iOS rounded-rectangle mask automatically
+   • Do not add rounded corners to the icon asset
+   • Design for recognition at 60x60pt
+
+   User Story: As a user, I want to see app icon applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+47. Swipe Gestures
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: l | Category: interactions
+
+   Support swipe-to-delete (right-to-left) and swipe actions on list rows. Standard iOS list interaction. Use red for destructive, system colors for other actions.
+
+   Acceptance Criteria:
+   • Support swipe-to-delete (right-to-left) and swipe actions on list rows
+   • Standard iOS list interaction
+   • Use red for destructive, system colors for other actions
+
+   User Story: As a user, I want to see swipe gestures applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+48. Pull to Refresh
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: interactions
+
+   Support pull-to-refresh on scrollable content that loads from a remote source. Use UIRefreshControl. Standard iOS pattern users expect. Show spinner while refreshing.
+
+   Acceptance Criteria:
+   • Support pull-to-refresh on scrollable content that loads from a remote source
+   • Use UIRefreshControl
+   • Standard iOS pattern users expect
+   • Show spinner while refreshing
+
+   User Story: As a user, I want to see pull to refresh applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+49. Haptic Feedback
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: interactions
+
+   Use haptic feedback for key interactions: success, error, selection change, toggle. Use UIImpactFeedbackGenerator (.light/.medium) and UINotificationFeedbackGenerator (.success/.error).
+
+   Acceptance Criteria:
+   • Use haptic feedback for key interactions: success, error, selection change, toggle
+   • Use UIImpactFeedbackGenerator (
+   • medium) and UINotificationFeedbackGenerator (
+
+   User Story: As a user, I want to see haptic feedback applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+50. Long Press Actions
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: m | Category: interactions
+
+   Support long-press for context menus on items with multiple actions. Use UIContextMenuInteraction. Include preview if relevant. Standard iOS 13+ pattern.
+
+   Acceptance Criteria:
+   • Support long-press for context menus on items with multiple actions
+   • Use UIContextMenuInteraction
+   • Include preview if relevant
+   • Standard iOS 13+ pattern
+
+   User Story: As a user, I want to navigate using long press actions, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+51. Smooth Transitions
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   Use standard iOS transitions: push/pop for navigation, slide-up for modals, crossfade for tab changes. Do not create custom transitions unless the app specifically requires them. iOS defaults feel native.
+
+   Acceptance Criteria:
+   • Use standard iOS transitions: push/pop for navigation, slide-up for modals, crossfade for tab changes
+   • Do not create custom transitions unless the app specifically requires them
+   • iOS defaults feel native
+
+   User Story: As a user, I want to navigate using smooth transitions, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+52. Loading States
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: interactions
+
+   Use skeleton screens or spinner indicators for loading. Never show a blank screen. Skeleton screens preferred for content lists. Spinner for actions. Progress bar for uploads.
+
+   Acceptance Criteria:
+   • Use skeleton screens or spinner indicators for loading
+   • Never show a blank screen
+   • Skeleton screens preferred for content lists
+   • Spinner for actions
+   • Progress bar for uploads
+
+   User Story: As a user, I want to see loading states applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+53. Action Sheets
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: components
+
+   Use action sheets (bottom sheets) for presenting a set of choices related to an action. iOS standard for destructive confirmations and multi-choice actions. Include a Cancel button.
+
+   Acceptance Criteria:
+   • Use action sheets (bottom sheets) for presenting a set of choices related to an action
+   • iOS standard for destructive confirmations and multi-choice actions
+   • Include a Cancel button
+
+   User Story: As a user, I want to see action sheets applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+54. Alerts
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: components
+
+   Use standard alerts for important decisions. Max 2 buttons (Cancel + Action). Destructive buttons in red. Keep alert text concise. Title + optional message. Avoid alerts for non-critical information.
+
+   Acceptance Criteria:
+   • Use standard alerts for important decisions
+   • Max 2 buttons (Cancel + Action)
+   • Destructive buttons in red
+   • Keep alert text concise
+   • Title + optional message
+
+   User Story: As a user, I want to see alerts applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+55. Segmented Controls
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: s | Category: components
+
+   Use segmented controls for switching between 2-5 views/filters within the same context. Better than tabs for iOS. Place below navigation bar. Max 5 segments to avoid truncation.
+
+   Acceptance Criteria:
+   • Use segmented controls for switching between 2-5 views/filters within the same context
+   • Better than tabs for iOS
+   • Place below navigation bar
+   • Max 5 segments to avoid truncation
+
+   User Story: As a user, I want to navigate using segmented controls, so that I can find and access features intuitively
+
+────────────────────────────────────────────────────────────
+56. Cards
+────────────────────────────────────────────────────────────
+   Priority: should | Effort: xs | Category: components
+
+   Cards: 16pt corner radius, subtle shadow or border, 16pt internal padding. Group related content visually. Full-width cards with horizontal margin match iOS patterns.
+
+   Acceptance Criteria:
+   • Cards: 16pt corner radius, subtle shadow or border, 16pt internal padding
+   • Group related content visually
+   • Full-width cards with horizontal margin match iOS patterns
+
+   User Story: As a user, I want to see cards applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+57. Buttons
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: components
+
+   Primary: filled with tint color, 50pt height, 12pt corner radius. Secondary: text-only or outlined. Full-width buttons for primary actions. Inline buttons for secondary. Minimum height 44pt.
+
+   Acceptance Criteria:
+   • Primary: filled with tint color, 50pt height, 12pt corner radius
+   • Secondary: text-only or outlined
+   • Full-width buttons for primary actions
+   • Inline buttons for secondary
+   • Minimum height 44pt
+
+   User Story: As a user, I want to see buttons applied in the interface, so that the visual theme is consistent and comfortable to look at
+
+────────────────────────────────────────────────────────────
+58. Input Fields
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: components
+
+   Text inputs: 44pt height, subtle border or background fill, 12pt horizontal padding, clear focus state. Use appropriate keyboard types (email, number, URL). Support auto-fill and password manager.
+
+   Acceptance Criteria:
+   • Text inputs: 44pt height, subtle border or background fill, 12pt horizontal padding, clear focus state
+   • Use appropriate keyboard types (email, number, URL)
+   • Support auto-fill and password manager
+
+   User Story: As a user, I want to see input fields applied in the interface, so that the layout feels balanced and well-organized
+
+────────────────────────────────────────────────────────────
+59. VoiceOver Support
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   All UI elements must have proper accessibility labels, hints, and traits for VoiceOver. Test with VoiceOver enabled. Ensure logical reading order. Group related elements.
+
+   Acceptance Criteria:
+   • All UI elements must have proper accessibility labels, hints, and traits for VoiceOver
+   • Test with VoiceOver enabled
+   • Ensure logical reading order
+   • Group related elements
+
+   User Story: As a user with accessibility needs, I want to see voiceover support applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+60. Dynamic Type
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: accessibility
+
+   Support all Dynamic Type sizes including accessibility sizes (AX1-AX5). Layout must adapt to very large text. Use scrollable containers. Test at AX5 size.
+
+   Acceptance Criteria:
+   • Support all Dynamic Type sizes including accessibility sizes (AX1-AX5)
+   • Layout must adapt to very large text
+   • Use scrollable containers
+   • Test at AX5 size
+
+   User Story: As a user with accessibility needs, I want to see dynamic type applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+61. Touch Target Size
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: accessibility
+
+   Minimum touch target: 44 x 44 pt for all interactive elements. Apple requirement. Use contentEdgeInsets or frame expansion for small visual elements.
+
+   Acceptance Criteria:
+   • Minimum touch target: 44 x 44 pt for all interactive elements
+   • Apple requirement
+   • Use contentEdgeInsets or frame expansion for small visual elements
+
+   User Story: As a user, I want to see touch target size applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+62. Reduce Motion
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: accessibility
+
+   Respect UIAccessibility.isReduceMotionEnabled. Replace animations with crossfades or instant changes. Required for vestibular disorder accessibility. Check the flag and adjust transitions.
+
+   Acceptance Criteria:
+   • Respect UIAccessibility
+   • isReduceMotionEnabled
+   • Replace animations with crossfades or instant changes
+   • Required for vestibular disorder accessibility
+   • Check the flag and adjust transitions
+
+   User Story: As a user with accessibility needs, I want to see reduce motion applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+63. Color Contrast
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: xs | Category: accessibility
+
+   WCAG AA minimum: 4.5:1 for normal text, 3:1 for large text. Test in both light and dark modes. Use Xcode Accessibility Inspector to verify. Applies to text over images too.
+
+   Acceptance Criteria:
+   • WCAG AA minimum: 4
+   • 5:1 for normal text, 3:1 for large text
+   • Test in both light and dark modes
+   • Use Xcode Accessibility Inspector to verify
+   • Applies to text over images too
+
+   User Story: As a user with accessibility needs, I want to see color contrast applied in the interface, so that I can use the application effectively regardless of my abilities
+
+────────────────────────────────────────────────────────────
+64. Size Classes
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: m | Category: responsive
+
+   Design for compact width (all iPhones portrait). Support regular width for landscape if enabled. Compact width is the primary design target. Regular width applies to iPad and iPhone landscape.
+
+   Acceptance Criteria:
+   • Design for compact width (all iPhones portrait)
+   • Support regular width for landscape if enabled
+   • Compact width is the primary design target
+   • Regular width applies to iPad and iPhone landscape
+
+   User Story: As a user, I want to see size classes applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+65. Safe Area Adaptation
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: responsive
+
+   Layout adapts to different safe area insets across device generations. iPhone SE has no notch/dynamic island. iPhone 15 Pro has Dynamic Island. Both must work.
+
+   Acceptance Criteria:
+   • Layout adapts to different safe area insets across device generations
+   • iPhone SE has no notch/dynamic island
+   • iPhone 15 Pro has Dynamic Island
+
+   User Story: As a user, I want to see safe area adaptation applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+66. Keyboard Avoidance
+────────────────────────────────────────────────────────────
+   Priority: must | Effort: s | Category: responsive
+
+   Content must scroll or reposition when the keyboard appears. Input fields must remain visible. Use KeyboardAvoidingView or observe keyboard notifications. Auto-scroll to focused field.
+
+   Acceptance Criteria:
+   • Content must scroll or reposition when the keyboard appears
+   • Input fields must remain visible
+   • Use KeyboardAvoidingView or observe keyboard notifications
+   • Auto-scroll to focused field
+
+   User Story: As a user, I want to see keyboard avoidance applied in the interface, so that the application follows platform design guidelines consistently
+
+────────────────────────────────────────────────────────────
+67. Landscape Mode
+────────────────────────────────────────────────────────────
+   Priority: could | Effort: m | Category: responsive
+
+   If landscape is supported, ensure all screens work in both orientations without layout breakage. Typically only needed for media-heavy apps. Test navigation and modals in landscape.
+
+   Acceptance Criteria:
+   • If landscape is supported, ensure all screens work in both orientations without layout breakage
+   • Typically only needed for media-heavy apps
+   • Test navigation and modals in landscape
+
+   User Story: As a user, I want to navigate using landscape mode, so that I can find and access features intuitively
+
