@@ -1,0 +1,1357 @@
+{
+  "_exportVersion": "1.0",
+  "_exportedAt": "2026-11-03T11:24:58.278Z",
+  "_source": "ReqGen",
+  "_presetType": "design",
+  "name": "Web Application (Copy)",
+  "description": "Comprehensive design guidelines for responsive web applications. Covers responsive breakpoints, navigation patterns, grid systems, accessibility standards, and cross-browser considerations.",
+  "platform": "web",
+  "icon": "🌐",
+  "requirements": [
+    {
+      "name": "Responsive Design",
+      "description": "App must be fully responsive across all viewport sizes: mobile (320px+), tablet (768px+), desktop (1024px+), wide (1440px+). Use CSS media queries or container queries. Mobile-first approach recommended.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "App must be fully responsive across all viewport sizes: mobile (320px+), tablet (768px+), desktop (1024px+), wide (1440px+)",
+        "Use CSS media queries or container queries",
+        "Mobile-first approach recommended"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see responsive design applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Maximum Content Width",
+      "description": "Maximum content width: 1200-1440px, centered on larger screens with auto margins. Prevents content from stretching on ultra-wide monitors. Background can extend full width.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Maximum content width: 1200-1440px, centered on larger screens with auto margins",
+        "Prevents content from stretching on ultra-wide monitors",
+        "Background can extend full width"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see maximum content width applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Minimum Supported Width",
+      "description": "Minimum supported viewport width: 320px (iPhone SE). All content must be accessible at 320px. No horizontal scrolling at any supported viewport.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Minimum supported viewport width: 320px (iPhone SE)",
+        "All content must be accessible at 320px",
+        "No horizontal scrolling at any supported viewport"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see minimum supported width applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Viewport Meta Tag",
+      "description": "Include proper viewport meta tag: width=device-width, initial-scale=1. Required for responsive behavior on mobile browsers. Do not disable user-scalable.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Include proper viewport meta tag: width=device-width, initial-scale=1",
+        "Required for responsive behavior on mobile browsers",
+        "Do not disable user-scalable"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see viewport meta tag applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Header/Navbar Height",
+      "description": "Desktop header: 56-64px height. Mobile header: 48-56px height. Consistent height across pages. Fixed/sticky positioning recommended for app-style interfaces.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Desktop header: 56-64px height",
+        "Mobile header: 48-56px height",
+        "Consistent height across pages",
+        "Fixed/sticky positioning recommended for app-style interfaces"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see header/navbar height applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Header Content",
+      "description": "Header contains: logo/brand (left), primary navigation (center or left), user actions (right). Logo links to home/dashboard. User actions: profile, notifications, settings.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Header contains: logo/brand (left), primary navigation (center or left), user actions (right)",
+        "Logo links to home/dashboard",
+        "User actions: profile, notifications, settings"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using header content",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Sticky Header",
+      "description": "Header should be sticky (position: sticky) so it remains visible on scroll. For app-style interfaces. Content pages may use static header. Add subtle shadow on scroll.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Header should be sticky (position: sticky) so it remains visible on scroll",
+        "For app-style interfaces",
+        "Content pages may use static header",
+        "Add subtle shadow on scroll"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see sticky header applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Mobile Header",
+      "description": "On mobile, header collapses to: logo (left), hamburger menu (right) or minimal navigation. Hamburger opens mobile navigation drawer/overlay. Keep header minimal on small screens.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "On mobile, header collapses to: logo (left), hamburger menu (right) or minimal navigation",
+        "Hamburger opens mobile navigation drawer/overlay",
+        "Keep header minimal on small screens"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using mobile header",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Breadcrumbs",
+      "description": "Use breadcrumbs below the header for multi-level navigation. Not on top-level pages. Shows current location in hierarchy. Links to parent levels. Hidden on mobile or collapsed.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use breadcrumbs below the header for multi-level navigation",
+        "Not on top-level pages",
+        "Shows current location in hierarchy",
+        "Links to parent levels",
+        "Hidden on mobile or collapsed"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using breadcrumbs",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Primary Navigation",
+      "description": "Desktop: horizontal nav in header or fixed sidebar (240px). Mobile: hamburger menu with slide-out drawer. Choose sidebar for app-like interfaces (dashboards, tools). Header nav for content-focused sites.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Desktop: horizontal nav in header or fixed sidebar (240px)",
+        "Mobile: hamburger menu with slide-out drawer",
+        "Choose sidebar for app-like interfaces (dashboards, tools)",
+        "Header nav for content-focused sites"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using primary navigation",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Sidebar Navigation",
+      "description": "If using sidebar: fixed left, 240px width on desktop, collapsible to 64px (icon-only), hidden on mobile. Icon + text items. Collapsible for more content space. Toggle button visible.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "If using sidebar: fixed left, 240px width on desktop, collapsible to 64px (icon-only), hidden on mobile",
+        "Icon + text items",
+        "Collapsible for more content space",
+        "Toggle button visible"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using sidebar navigation",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Back Navigation",
+      "description": "Provide explicit back buttons/links for sub-pages. Do not rely solely on browser back button. Arrow + text (e.g., \"← Back to Dashboard\"). Top-left of content area. Consistent placement.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Provide explicit back buttons/links for sub-pages",
+        "Do not rely solely on browser back button",
+        ", \"← Back to Dashboard\")",
+        "Top-left of content area",
+        "Consistent placement"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using back navigation",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Active State",
+      "description": "Current page/section must be clearly highlighted in navigation. Use background color, accent bar, bold text, or combination. Must be obvious at a glance.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Current page/section must be clearly highlighted in navigation",
+        "Use background color, accent bar, bold text, or combination",
+        "Must be obvious at a glance"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using active state",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Keyboard Navigation",
+      "description": "Full keyboard navigation support. Logical tab order. Skip-to-content link as first focusable element. WCAG requirement. Tab through all interactive elements. Visible focus indicators throughout.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Full keyboard navigation support",
+        "Logical tab order",
+        "Skip-to-content link as first focusable element",
+        "WCAG requirement",
+        "Tab through all interactive elements"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using keyboard navigation",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "URL Routing",
+      "description": "Every distinct view should have its own URL. Support browser back/forward and bookmarking. Use client-side routing. URLs should be human-readable and shareable.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Every distinct view should have its own URL",
+        "Support browser back/forward and bookmarking",
+        "Use client-side routing",
+        "URLs should be human-readable and shareable"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see url routing applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "CSS Grid/Flexbox",
+      "description": "Use CSS Grid for page layout and Flexbox for component-level layout. Avoid float-based layouts. Grid for 2D layouts, Flexbox for 1D layouts. Both support responsive design.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Use CSS Grid for page layout and Flexbox for component-level layout",
+        "Avoid float-based layouts",
+        "Grid for 2D layouts, Flexbox for 1D layouts",
+        "Both support responsive design"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see css grid/flexbox applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Column Grid",
+      "description": "12-column grid system. Desktop: 12 columns. Tablet: 8 columns. Mobile: 4 columns. Standard grid provides flexible column combinations (6+6, 4+8, 3+3+3+3, etc.).",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "should",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "12-column grid system",
+        "Desktop: 12 columns",
+        "Tablet: 8 columns",
+        "Mobile: 4 columns",
+        "Standard grid provides flexible column combinations (6+6, 4+8, 3+3+3+3, etc"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see column grid applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Content Area",
+      "description": "Main content area fills available space after header and sidebar. Centered with max-width constraint. Content padding: 24-32px on desktop, 16px on mobile. Scrolls independently if sidebar is fixed.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Main content area fills available space after header and sidebar",
+        "Centered with max-width constraint",
+        "Content padding: 24-32px on desktop, 16px on mobile",
+        "Scrolls independently if sidebar is fixed"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see content area applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Card Layout",
+      "description": "Use cards for grouping content. Consistent corner radius (8-12px), padding (16-24px), and shadow/border. Cards help organize dashboard-style interfaces. Use grid layout for card grids.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Use cards for grouping content",
+        "Consistent corner radius (8-12px), padding (16-24px), and shadow/border",
+        "Cards help organize dashboard-style interfaces",
+        "Use grid layout for card grids"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see card layout applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Footer",
+      "description": "App-style interfaces: no footer needed. Content sites: footer with links, copyright, secondary nav. Footer sticks to bottom of viewport (min-height: 100vh pattern) when content is short.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "could",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "App-style interfaces: no footer needed",
+        "Content sites: footer with links, copyright, secondary nav",
+        "Footer sticks to bottom of viewport (min-height: 100vh pattern) when content is short"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see footer applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Empty States",
+      "description": "Empty states centered in content area: icon/illustration, headline, description, action button. Guide users on what to do next. Keep visuals lightweight. Match overall design language.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Empty states centered in content area: icon/illustration, headline, description, action button",
+        "Guide users on what to do next",
+        "Keep visuals lightweight",
+        "Match overall design language"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see empty states applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "8px Grid System",
+      "description": "Use an 8px base grid for all spacing. Standard values: 4, 8, 12, 16, 24, 32, 48, 64px. Consistent spacing creates visual harmony. Use CSS custom properties for spacing tokens.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Use an 8px base grid for all spacing",
+        "Standard values: 4, 8, 12, 16, 24, 32, 48, 64px",
+        "Consistent spacing creates visual harmony",
+        "Use CSS custom properties for spacing tokens"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see 8px grid system applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Page Padding",
+      "description": "Desktop: 24-32px page padding. Tablet: 24px. Mobile: 16px. Responsive padding. Content should never touch viewport edges on any device.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Desktop: 24-32px page padding",
+        "Responsive padding",
+        "Content should never touch viewport edges on any device"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see page padding applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Section Spacing",
+      "description": "Between major page sections: 32-48px. Between related content blocks: 16-24px. Larger gaps between unrelated sections. Tighter gaps within related groups.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Between major page sections: 32-48px",
+        "Between related content blocks: 16-24px",
+        "Larger gaps between unrelated sections",
+        "Tighter gaps within related groups"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see section spacing applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Click/Touch Target",
+      "description": "Minimum interactive element size: 44 x 44 px for touch, 32 x 32 px for mouse-only interfaces. WCAG 2.5.5 (AAA) recommends 44px. At minimum meet 2.5.8 (AA) target size of 24px.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Minimum interactive element size: 44 x 44 px for touch, 32 x 32 px for mouse-only interfaces",
+        "5 (AAA) recommends 44px",
+        "At minimum meet 2",
+        "8 (AA) target size of 24px"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see click/touch target applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Form Field Spacing",
+      "description": "Between form fields: 16-24px. Between label and input: 4-8px. Between form groups: 32px. Readable, scannable forms. Labels close to their inputs. Groups visually separated.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Between form fields: 16-24px",
+        "Between label and input: 4-8px",
+        "Between form groups: 32px",
+        "Readable, scannable forms",
+        "Labels close to their inputs"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see form field spacing applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Gutter Width",
+      "description": "Grid gutter: 16px on mobile, 24px on desktop. Between cards: 16-24px. Consistent gutter across the grid. Tighter on mobile to maximize content space.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Grid gutter: 16px on mobile, 24px on desktop",
+        "Between cards: 16-24px",
+        "Consistent gutter across the grid",
+        "Tighter on mobile to maximize content space"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see gutter width applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Icon Library",
+      "description": "Use a single, consistent icon library (Lucide, Heroicons, Phosphor, or Material Symbols). Pick one library and use it everywhere. Do not mix icon sets. SVG format preferred.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use a single, consistent icon library (Lucide, Heroicons, Phosphor, or Material Symbols)",
+        "Pick one library and use it everywhere",
+        "Do not mix icon sets",
+        "SVG format preferred"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see icon library applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Icon Sizes",
+      "description": "Standard sizes: 16px (inline/dense), 20px (default), 24px (prominent), 32-48px (hero/empty states). Use consistent sizes. Navigation icons: 20px. Button icons: 16-20px. Table actions: 16px.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Standard sizes: 16px (inline/dense), 20px (default), 24px (prominent), 32-48px (hero/empty states)",
+        "Use consistent sizes",
+        "Navigation icons: 20px",
+        "Button icons: 16-20px",
+        "Table actions: 16px"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using icon sizes",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Icon Style",
+      "description": "Simple, clean outline icons. Consistent stroke width (1.5-2px). Not too bold, not too thin. Match the overall design tone. Outline icons feel modern and clean.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Simple, clean outline icons",
+        "Consistent stroke width (1",
+        "Not too bold, not too thin",
+        "Match the overall design tone",
+        "Outline icons feel modern and clean"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see icon style applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Icon + Text Pairing",
+      "description": "Icons accompanying text labels in navigation, buttons, and list items. 8px gap between icon and text. Icons alone can be ambiguous. Always pair with text in primary navigation. Icon-only acceptable for common actions (search, settings, close).",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Icons accompanying text labels in navigation, buttons, and list items",
+        "8px gap between icon and text",
+        "Icons alone can be ambiguous",
+        "Always pair with text in primary navigation",
+        "Icon-only acceptable for common actions (search, settings, close)"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using icon + text pairing",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "SVG Format",
+      "description": "Use inline SVG or SVG sprites for icons. Avoid icon fonts and raster images. SVGs are scalable, accessible (via aria), and styleable with CSS. Better performance than icon fonts.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use inline SVG or SVG sprites for icons",
+        "Avoid icon fonts and raster images",
+        "SVGs are scalable, accessible (via aria), and styleable with CSS",
+        "Better performance than icon fonts"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see svg format applied in the interface",
+        "benefit": "text is readable and visually consistent throughout the application"
+      }
+    },
+    {
+      "name": "Type Hierarchy",
+      "description": "Fixed structure: H1 (28-32px bold), H2 (22-24px semibold), H3 (18-20px semibold), Body (14-16px regular), Small/Caption (12-13px regular). Clear hierarchy. Only one H1 per page. Scale down slightly on mobile.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Fixed structure: H1 (28-32px bold), H2 (22-24px semibold), H3 (18-20px semibold), Body (14-16px regular), Small/Caption (12-13px regular)",
+        "Only one H1 per page",
+        "Scale down slightly on mobile"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see type hierarchy applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Font Family",
+      "description": "Font family will be provided before design starts. Default to system font stack: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif. System fonts load instantly and look native. Custom fonts via Google Fonts or self-hosted WOFF2.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Font family will be provided before design starts",
+        "Default to system font stack: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "System fonts load instantly and look native",
+        "Custom fonts via Google Fonts or self-hosted WOFF2"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see font family applied in the interface",
+        "benefit": "text is readable and visually consistent throughout the application"
+      }
+    },
+    {
+      "name": "Line Height",
+      "description": "Body text line-height: 1.5. Headings: 1.2-1.3. Tight text (captions, labels): 1.3-1.4. WCAG requires at least 1.5 line-height for body text readability.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Body text line-height: 1",
+        "Tight text (captions, labels): 1",
+        "WCAG requires at least 1",
+        "5 line-height for body text readability"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see line height applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Maximum Line Length",
+      "description": "Body text max-width: 65-75 characters per line (~600-700px). Long lines are hard to read. Use max-width on text containers, not just the page.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Body text max-width: 65-75 characters per line (~600-700px)",
+        "Long lines are hard to read",
+        "Use max-width on text containers, not just the page"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see maximum line length applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Responsive Typography",
+      "description": "Font sizes reduce on mobile: H1 to 24px, H2 to 20px, Body stays 14-16px. Use CSS clamp() or media queries for fluid typography. Body text should not go below 14px.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Font sizes reduce on mobile: H1 to 24px, H2 to 20px, Body stays 14-16px",
+        "Use CSS clamp() or media queries for fluid typography",
+        "Body text should not go below 14px"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see responsive typography applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Font Loading",
+      "description": "Use font-display: swap for custom fonts. Preload critical font files. Prevents invisible text during load (FOIT). Shows system font until custom font loads (FOUT).",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "should",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Use font-display: swap for custom fonts",
+        "Preload critical font files",
+        "Prevents invisible text during load (FOIT)",
+        "Shows system font until custom font loads (FOUT)"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see font loading applied in the interface",
+        "benefit": "text is readable and visually consistent throughout the application"
+      }
+    },
+    {
+      "name": "Runtime Color Control",
+      "description": "Colors are not fixed at design time. Use CSS custom properties (variables) for all colors. Define colors as --color-primary, --color-surface, etc. at :root level. Swap theme by changing variables.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Colors are not fixed at design time",
+        "Use CSS custom properties (variables) for all colors",
+        "Define colors as --color-primary, --color-surface, etc",
+        "Swap theme by changing variables"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see runtime color control applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Light & Dark Mode",
+      "description": "Full support for light and dark color modes. Detect system preference with prefers-color-scheme. Provide manual toggle. Remember user choice in localStorage. Default to system preference.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Full support for light and dark color modes",
+        "Detect system preference with prefers-color-scheme",
+        "Provide manual toggle",
+        "Remember user choice in localStorage",
+        "Default to system preference"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see light & dark mode applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Semantic Color Tokens",
+      "description": "Define semantic tokens: background, surface, surface-elevated, text-primary, text-secondary, text-muted, border, accent, error, warning, success. Semantic tokens abstract from specific colors. Enable theming without touching component styles.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Define semantic tokens: background, surface, surface-elevated, text-primary, text-secondary, text-muted, border, accent, error, warning, success",
+        "Semantic tokens abstract from specific colors",
+        "Enable theming without touching component styles"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see semantic color tokens applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Contrast Ratios",
+      "description": "WCAG AA: 4.5:1 for normal text, 3:1 for large text (18px+ or 14px+ bold). Test both modes. Use WebAIM contrast checker. Verify all text/background combinations in both light and dark.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "5:1 for normal text, 3:1 for large text (18px+ or 14px+ bold)",
+        "Use WebAIM contrast checker",
+        "Verify all text/background combinations in both light and dark"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see contrast ratios applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Neutral Palette",
+      "description": "Use a carefully defined neutral palette (grays) with 8-10 shades for backgrounds, borders, and text. Cool or warm grays depending on brand. Ensure enough distinction between adjacent shades.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Use a carefully defined neutral palette (grays) with 8-10 shades for backgrounds, borders, and text",
+        "Cool or warm grays depending on brand",
+        "Ensure enough distinction between adjacent shades"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see neutral palette applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Illustration Style",
+      "description": "Simple, minimal illustrations. Flat or line-art style with limited colors. Not colorful or heavy. Illustrations should complement, not dominate. 2-3 colors max.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Simple, minimal illustrations",
+        "Flat or line-art style with limited colors",
+        "Not colorful or heavy",
+        "Illustrations should complement, not dominate"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see illustration style applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "SVG Preferred",
+      "description": "Use SVG for illustrations, icons, and decorative graphics. PNG/WebP for photos only. SVGs scale to any screen density. Smaller file sizes for vector content.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Use SVG for illustrations, icons, and decorative graphics",
+        "PNG/WebP for photos only",
+        "SVGs scale to any screen density",
+        "Smaller file sizes for vector content"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see svg preferred applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Image Optimization",
+      "description": "All raster images must be optimized. Use WebP/AVIF with JPEG fallback. Lazy load below-fold images. Critical for web performance. Use srcset for responsive images. Compress to <100KB where possible.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "All raster images must be optimized",
+        "Use WebP/AVIF with JPEG fallback",
+        "Lazy load below-fold images",
+        "Critical for web performance",
+        "Use srcset for responsive images"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see image optimization applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Empty State Graphics",
+      "description": "Lightweight illustrations or large icons for empty states. Centered, with clear message and CTA. Max 200px width for illustrations. Match the overall design tone.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Lightweight illustrations or large icons for empty states",
+        "Centered, with clear message and CTA",
+        "Max 200px width for illustrations",
+        "Match the overall design tone"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see empty state graphics applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Favicon & Social",
+      "description": "Provide favicon (16/32/180px), Open Graph image (1200x630), and web manifest icons. Favicon appears in browser tabs. OG image appears when shared on social media.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Provide favicon (16/32/180px), Open Graph image (1200x630), and web manifest icons",
+        "Favicon appears in browser tabs",
+        "OG image appears when shared on social media"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see favicon & social applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Hover States",
+      "description": "All interactive elements must have hover states. Use cursor: pointer for clickable elements. Desktop users rely on hover for discoverability. Subtle background change or opacity shift.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "All interactive elements must have hover states",
+        "Use cursor: pointer for clickable elements",
+        "Desktop users rely on hover for discoverability",
+        "Subtle background change or opacity shift"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see hover states applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Focus States",
+      "description": "All focusable elements must have visible focus indicators. Use :focus-visible for keyboard-only focus. WCAG requirement. 2px offset outline or ring in accent color. Never remove without replacement.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "All focusable elements must have visible focus indicators",
+        "Use :focus-visible for keyboard-only focus",
+        "WCAG requirement",
+        "2px offset outline or ring in accent color",
+        "Never remove without replacement"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see focus states applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Loading States",
+      "description": "Show loading indicators for async operations: skeleton screens for content, spinners for actions, progress bars for uploads. Never leave users guessing. Skeleton screens preferred over spinners for content areas.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Show loading indicators for async operations: skeleton screens for content, spinners for actions, progress bars for uploads",
+        "Never leave users guessing",
+        "Skeleton screens preferred over spinners for content areas"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see loading states applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Toast Notifications",
+      "description": "Use toast notifications for non-critical feedback (success, info). Position: top-right or bottom-right. Auto-dismiss after 3-5 seconds. Include dismiss button. Stack multiple toasts vertically.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use toast notifications for non-critical feedback (success, info)",
+        "Position: top-right or bottom-right",
+        "Auto-dismiss after 3-5 seconds",
+        "Include dismiss button",
+        "Stack multiple toasts vertically"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see toast notifications applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Smooth Transitions",
+      "description": "Subtle CSS transitions (150-300ms) for state changes. Use ease-out for entrances, ease-in for exits. Avoid jarring layout shifts. Transition color, opacity, and transform. Respect prefers-reduced-motion.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Subtle CSS transitions (150-300ms) for state changes",
+        "Use ease-out for entrances, ease-in for exits",
+        "Avoid jarring layout shifts",
+        "Transition color, opacity, and transform",
+        "Respect prefers-reduced-motion"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see smooth transitions applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Form Validation",
+      "description": "Inline form validation on blur or submit. Show error messages below fields in red. Success state in green. Validate as user types where possible (email, password strength). Do not validate on every keystroke.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Inline form validation on blur or submit",
+        "Show error messages below fields in red",
+        "Success state in green",
+        "Validate as user types where possible (email, password strength)",
+        "Do not validate on every keystroke"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see form validation applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Button Hierarchy",
+      "description": "Primary: filled accent color. Secondary: outlined or ghost. Tertiary: text-only. Destructive: red variant. One primary button per section. Height: 36-40px. Padding: 12-16px horizontal. Corner: 6-8px.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Primary: filled accent color",
+        "Secondary: outlined or ghost",
+        "Tertiary: text-only",
+        "Destructive: red variant",
+        "One primary button per section"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see button hierarchy applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Input Fields",
+      "description": "Height: 36-40px. Border: 1px subtle. Corner: 6-8px. Clear focus ring. Support prefix/suffix icons. Consistent input styling across all forms. Include placeholder text. Show error state with red border.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Border: 1px subtle",
+        "Clear focus ring",
+        "Support prefix/suffix icons",
+        "Consistent input styling across all forms",
+        "Include placeholder text"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see input fields applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Modals/Dialogs",
+      "description": "Centered, dimmed backdrop (50-60% black), max-width 500px for standard, 800px for complex. Corner: 12px. Focus trap inside modal. Close on backdrop click and Escape key. Animate entrance/exit.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "should",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Centered, dimmed backdrop (50-60% black), max-width 500px for standard, 800px for complex",
+        "Focus trap inside modal",
+        "Close on backdrop click and Escape key",
+        "Animate entrance/exit"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see modals/dialogs applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Tables",
+      "description": "Clean tables with subtle header background, hover row highlight, sortable columns, and pagination. Responsive: horizontal scroll or card-view on mobile. Sticky header on scroll.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Clean tables with subtle header background, hover row highlight, sortable columns, and pagination",
+        "Responsive: horizontal scroll or card-view on mobile",
+        "Sticky header on scroll"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see tables applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Dropdowns/Select",
+      "description": "Custom dropdowns matching the design system. Support search/filter for long lists. Native select for mobile (better UX). Custom dropdown for desktop. Keyboard accessible.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "should",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Custom dropdowns matching the design system",
+        "Support search/filter for long lists",
+        "Native select for mobile (better UX)",
+        "Custom dropdown for desktop",
+        "Keyboard accessible"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see dropdowns/select applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Tooltips",
+      "description": "Use tooltips for supplementary info on icon-only buttons and truncated text. Appear on hover/focus. Brief text, max 2 lines. Arrow pointing to trigger. Dark background for visibility.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use tooltips for supplementary info on icon-only buttons and truncated text",
+        "Appear on hover/focus",
+        "Brief text, max 2 lines",
+        "Arrow pointing to trigger",
+        "Dark background for visibility"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see tooltips applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "WCAG 2.1 AA Compliance",
+      "description": "Entire application must meet WCAG 2.1 Level AA standards. Covers perceivable, operable, understandable, and robust principles. Test with axe, Lighthouse.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Entire application must meet WCAG 2",
+        "1 Level AA standards",
+        "Covers perceivable, operable, understandable, and robust principles",
+        "Test with axe, Lighthouse"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see wcag 2.1 aa compliance applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Semantic HTML",
+      "description": "Use semantic HTML elements: header, nav, main, section, article, aside, footer. Screen readers use landmarks for navigation. Avoid div-only markup for structural elements.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use semantic HTML elements: header, nav, main, section, article, aside, footer",
+        "Screen readers use landmarks for navigation",
+        "Avoid div-only markup for structural elements"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see semantic html applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "ARIA Labels",
+      "description": "All interactive elements must have accessible names. Use aria-label, aria-labelledby, or visible text. Icon-only buttons need aria-label. Form inputs need associated labels. Images need alt text.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "All interactive elements must have accessible names",
+        "Use aria-label, aria-labelledby, or visible text",
+        "Icon-only buttons need aria-label",
+        "Form inputs need associated labels",
+        "Images need alt text"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see aria labels applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Keyboard Operability",
+      "description": "All functionality must be operable via keyboard alone. No keyboard traps. Tab/Shift+Tab for navigation. Enter/Space for activation. Escape to close. Arrow keys for widgets.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "All functionality must be operable via keyboard alone",
+        "No keyboard traps",
+        "Tab/Shift+Tab for navigation",
+        "Enter/Space for activation",
+        "Arrow keys for widgets"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using keyboard operability",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Reduced Motion",
+      "description": "Respect prefers-reduced-motion media query. Disable or minimize animations when enabled. Replace transitions with instant changes or very subtle fades when reduced motion is preferred.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Respect prefers-reduced-motion media query",
+        "Disable or minimize animations when enabled",
+        "Replace transitions with instant changes or very subtle fades when reduced motion is preferred"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see reduced motion applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Screen Reader Testing",
+      "description": "Test with at least one screen reader: NVDA (Windows), VoiceOver (macOS), or JAWS. Automated tools catch ~30% of issues. Manual screen reader testing catches the rest.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Test with at least one screen reader: NVDA (Windows), VoiceOver (macOS), or JAWS",
+        "Automated tools catch ~30% of issues",
+        "Manual screen reader testing catches the rest"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see screen reader testing applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Breakpoints",
+      "description": "Standard breakpoints: 480px (mobile), 768px (tablet), 1024px (desktop), 1440px (wide desktop). Mobile-first: default styles for mobile, add complexity via min-width queries.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Standard breakpoints: 480px (mobile), 768px (tablet), 1024px (desktop), 1440px (wide desktop)",
+        "Mobile-first: default styles for mobile, add complexity via min-width queries"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see breakpoints applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Fluid Layout",
+      "description": "Use fluid widths (%, vw, fr) between breakpoints. Avoid fixed-pixel widths for layout containers. Layout should look good at every width, not just at breakpoint thresholds.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Use fluid widths (%, vw, fr) between breakpoints",
+        "Avoid fixed-pixel widths for layout containers",
+        "Layout should look good at every width, not just at breakpoint thresholds"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see fluid layout applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Mobile Navigation",
+      "description": "Desktop sidebar/header nav collapses to hamburger menu on mobile. Full-screen or slide-out drawer. Hamburger icon at top-right or top-left. Overlay with backdrop. Close on item select.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Desktop sidebar/header nav collapses to hamburger menu on mobile",
+        "Full-screen or slide-out drawer",
+        "Hamburger icon at top-right or top-left",
+        "Overlay with backdrop",
+        "Close on item select"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using mobile navigation",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Touch vs Mouse",
+      "description": "Increase touch targets on touch devices. Use @media (pointer: coarse) for touch-specific styles. Larger buttons, more padding, no hover-dependent interactions on touch devices.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Increase touch targets on touch devices",
+        "Use @media (pointer: coarse) for touch-specific styles",
+        "Larger buttons, more padding, no hover-dependent interactions on touch devices"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see touch vs mouse applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Responsive Images",
+      "description": "Use srcset and sizes attributes. Serve appropriate image sizes for each viewport. Saves bandwidth on mobile. Use picture element for art direction changes.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Use srcset and sizes attributes",
+        "Serve appropriate image sizes for each viewport",
+        "Saves bandwidth on mobile",
+        "Use picture element for art direction changes"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see responsive images applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    }
+  ]
+}

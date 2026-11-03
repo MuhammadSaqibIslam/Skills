@@ -1,0 +1,1271 @@
+{
+  "_exportVersion": "1.0",
+  "_exportedAt": "2026-11-03T11:40:30.186Z",
+  "_source": "ReqGen",
+  "_presetType": "design",
+  "name": "iPad / Tablet Application (Copy)",
+  "description": "Comprehensive design guidelines for iPad and tablet applications. Covers split views, multitasking, pointer support, adaptive layouts, and tablet-specific interaction patterns.",
+  "platform": "tablet",
+  "icon": "💻",
+  "requirements": [
+    {
+      "name": "Full Screen Layout",
+      "description": "Design for iPad base resolution: 1024 x 1366 pt (12.9\" iPad Pro) and 820 x 1180 pt (10.9\" iPad). Use adaptive layout that works across all iPad sizes. Design at logical points, not pixels.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Design for iPad base resolution: 1024 x 1366 pt (12",
+        "9\" iPad Pro) and 820 x 1180 pt (10",
+        "Use adaptive layout that works across all iPad sizes",
+        "Design at logical points, not pixels"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see full screen layout applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Multitasking Window Sizes",
+      "description": "Support all iPad multitasking modes: full screen, split view (1/3, 1/2, 2/3), and slide over (320pt wide). App may run at any width from 320pt (slide over) to full screen. Layout must adapt to all sizes.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support all iPad multitasking modes: full screen, split view (1/3, 1/2, 2/3), and slide over (320pt wide)",
+        "App may run at any width from 320pt (slide over) to full screen",
+        "Layout must adapt to all sizes"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see multitasking window sizes applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Orientation Support",
+      "description": "Support both portrait and landscape orientations. Layout adapts between the two. iPad users rotate freely. Both orientations must be fully functional and well-designed.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support both portrait and landscape orientations",
+        "Layout adapts between the two",
+        "iPad users rotate freely",
+        "Both orientations must be fully functional and well-designed"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see orientation support applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Stage Manager Support",
+      "description": "Support freely resizable windows on iPads with Stage Manager (M-chip iPads). Windows can be any size. Use size classes (compact/regular) to adapt layout. Test at minimum window size.",
+      "requirementType": "design",
+      "subcategory": "app-size",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support freely resizable windows on iPads with Stage Manager (M-chip iPads)",
+        "Windows can be any size",
+        "Use size classes (compact/regular) to adapt layout",
+        "Test at minimum window size"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see stage manager support applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Status Bar",
+      "description": "System status bar always visible. Adapt style (light/dark) to match content background. iPad status bar is thinner than iPhone. Content must respect safe area at top.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "System status bar always visible",
+        "Adapt style (light/dark) to match content background",
+        "iPad status bar is thinner than iPhone",
+        "Content must respect safe area at top"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see status bar applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Navigation Bar",
+      "description": "Standard navigation bar: 44pt height. Can include title, back button, and multiple action buttons. More horizontal space allows more buttons than iPhone. Use trailing button group for actions.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Standard navigation bar: 44pt height",
+        "Can include title, back button, and multiple action buttons",
+        "More horizontal space allows more buttons than iPhone",
+        "Use trailing button group for actions"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using navigation bar",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Toolbar",
+      "description": "Optional bottom toolbar for contextual actions in document/editor views. Bottom toolbar: 44pt height. Useful for formatting, tools, and quick actions in editing interfaces.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Optional bottom toolbar for contextual actions in document/editor views",
+        "Bottom toolbar: 44pt height",
+        "Useful for formatting, tools, and quick actions in editing interfaces"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see toolbar applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Document Title Editing",
+      "description": "For document-based apps, allow inline title editing in the navigation bar. Tap title to edit. Standard pattern in Pages, Keynote, and similar iPad apps.",
+      "requirementType": "design",
+      "subcategory": "top-bar",
+      "priority": "could",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "For document-based apps, allow inline title editing in the navigation bar",
+        "Tap title to edit",
+        "Standard pattern in Pages, Keynote, and similar iPad apps"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using document title editing",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Sidebar Navigation",
+      "description": "Use a collapsible sidebar for primary navigation. Always visible in regular width, toggleable in compact. Standard iPad pattern (Files, Notes, Mail). Sidebar width: 320pt. Icon + text items.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Use a collapsible sidebar for primary navigation",
+        "Always visible in regular width, toggleable in compact",
+        "Standard iPad pattern (Files, Notes, Mail)",
+        "Sidebar width: 320pt",
+        "Icon + text items"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using sidebar navigation",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Split View Pattern",
+      "description": "Use master-detail split view: sidebar (list) on left, detail content on right. The defining iPad navigation pattern. Both panels visible simultaneously in landscape/regular width.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Use master-detail split view: sidebar (list) on left, detail content on right",
+        "The defining iPad navigation pattern",
+        "Both panels visible simultaneously in landscape/regular width"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using split view pattern",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Tab Bar Alternative",
+      "description": "Prefer sidebar over tab bar on iPad. Tab bar is acceptable for simple apps with 3-5 sections. Sidebar uses the larger screen better. Tab bar wastes space on iPad. Apple recommends sidebar for iPad.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Prefer sidebar over tab bar on iPad",
+        "Tab bar is acceptable for simple apps with 3-5 sections",
+        "Sidebar uses the larger screen better",
+        "Tab bar wastes space on iPad",
+        "Apple recommends sidebar for iPad"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using tab bar alternative",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Back Navigation",
+      "description": "Back button in navigation bar. Support swipe-from-left-edge gesture for back. In split view, back may toggle sidebar visibility instead of popping a screen.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Back button in navigation bar",
+        "Support swipe-from-left-edge gesture for back",
+        "In split view, back may toggle sidebar visibility instead of popping a screen"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using back navigation",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Keyboard Shortcuts",
+      "description": "Support hardware keyboard shortcuts for all primary actions. Show with Cmd key hold. iPad users with keyboards expect shortcut support. Use discoverability HUD (Cmd press and hold).",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support hardware keyboard shortcuts for all primary actions",
+        "Show with Cmd key hold",
+        "iPad users with keyboards expect shortcut support",
+        "Use discoverability HUD (Cmd press and hold)"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see keyboard shortcuts applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Search",
+      "description": "Global search accessible via Cmd+F or search icon. Scope search to current context. Use UISearchController integrated with navigation. Support search suggestions and recent searches.",
+      "requirementType": "design",
+      "subcategory": "navigation",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Global search accessible via Cmd+F or search icon",
+        "Scope search to current context",
+        "Use UISearchController integrated with navigation",
+        "Support search suggestions and recent searches"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using search",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Three-Column Layout",
+      "description": "For complex apps: sidebar (navigation) + list (content index) + detail (content). Collapsible columns. Apple Mail pattern. In compact width, columns stack. In regular width, 2-3 columns visible.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "should",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "For complex apps: sidebar (navigation) + list (content index) + detail (content)",
+        "Collapsible columns",
+        "Apple Mail pattern",
+        "In compact width, columns stack",
+        "In regular width, 2-3 columns visible"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using three-column layout",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Adaptive Column Widths",
+      "description": "Sidebar: 320pt. List column: 320-375pt. Detail: remaining space. All flexible. Columns resize based on available width. Detail column gets priority for space.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "List column: 320-375pt",
+        "Detail: remaining space",
+        "Columns resize based on available width",
+        "Detail column gets priority for space"
+      ],
+      "userStory": {
+        "role": "user on any device",
+        "action": "see adaptive column widths applied in the interface",
+        "benefit": "the interface adapts properly to my screen size"
+      }
+    },
+    {
+      "name": "Content Density",
+      "description": "Use the extra screen space wisely. Show more content per screen than phone layout but avoid clutter. iPad layouts should feel spacious but content-rich. Not just a stretched phone layout.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use the extra screen space wisely",
+        "Show more content per screen than phone layout but avoid clutter",
+        "iPad layouts should feel spacious but content-rich",
+        "Not just a stretched phone layout"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see content density applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Grid Layouts",
+      "description": "Use multi-column grids for media, cards, and collections. 2-4 columns depending on content type. Photos: 3-4 columns. Cards: 2-3 columns. Adapt column count to available width.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Use multi-column grids for media, cards, and collections",
+        "2-4 columns depending on content type",
+        "Photos: 3-4 columns",
+        "Cards: 2-3 columns",
+        "Adapt column count to available width"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see grid layouts applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Popovers over Modals",
+      "description": "Prefer popovers (anchored to trigger) over full-screen modals for secondary content and actions. Popovers maintain context. Full-screen modals are disorienting on large screens. Use form sheets for complex forms.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "should",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Prefer popovers (anchored to trigger) over full-screen modals for secondary content and actions",
+        "Popovers maintain context",
+        "Full-screen modals are disorienting on large screens",
+        "Use form sheets for complex forms"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see popovers over modals applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Drag and Drop Zones",
+      "description": "Define clear drop targets for drag-and-drop interactions between panels/columns. iPad excels at drag and drop. Allow moving items between list and detail, or between apps.",
+      "requirementType": "design",
+      "subcategory": "layout",
+      "priority": "could",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Define clear drop targets for drag-and-drop interactions between panels/columns",
+        "iPad excels at drag and drop",
+        "Allow moving items between list and detail, or between apps"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see drag and drop zones applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "8pt Grid System",
+      "description": "Use an 8-point grid for all spacing. Standard values: 8, 16, 20, 24, 32, 40, 48pt. Same grid as iOS/macOS. Consistent spacing across Apple platforms.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Use an 8-point grid for all spacing",
+        "Standard values: 8, 16, 20, 24, 32, 40, 48pt",
+        "Same grid as iOS/macOS",
+        "Consistent spacing across Apple platforms"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see 8pt grid system applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Content Margins",
+      "description": "Horizontal content margins: 20pt (compact width), 24-32pt (regular width). More generous margins than iPhone. Content should breathe on the larger screen.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Horizontal content margins: 20pt (compact width), 24-32pt (regular width)",
+        "More generous margins than iPhone",
+        "Content should breathe on the larger screen"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see content margins applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Touch Targets",
+      "description": "Minimum touch target: 44 x 44 pt. Elements supporting pointer (mouse/trackpad) can be smaller: 32pt. iPad supports both touch and pointer. Default to 44pt, use pointer media query for smaller targets.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Minimum touch target: 44 x 44 pt",
+        "Elements supporting pointer (mouse/trackpad) can be smaller: 32pt",
+        "iPad supports both touch and pointer",
+        "Default to 44pt, use pointer media query for smaller targets"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see touch targets applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Column Gutters",
+      "description": "Grid gutters: 16-20pt between columns. Card grids: 16pt gap. Comfortable spacing between grid items. Not too tight (feels cramped) or loose (wastes space).",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Grid gutters: 16-20pt between columns",
+        "Card grids: 16pt gap",
+        "Comfortable spacing between grid items",
+        "Not too tight (feels cramped) or loose (wastes space)"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see column gutters applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "Section Spacing",
+      "description": "Between major sections: 32-40pt. Between related items: 12-16pt. Clear visual grouping. Generous whitespace is appropriate on tablet-sized screens.",
+      "requirementType": "design",
+      "subcategory": "spacing",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Between major sections: 32-40pt",
+        "Between related items: 12-16pt",
+        "Clear visual grouping",
+        "Generous whitespace is appropriate on tablet-sized screens"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see section spacing applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "SF Symbols",
+      "description": "Use SF Symbols as the primary icon set. Consistent with iOS and macOS. SF Symbols scale with Dynamic Type and support variable rendering (weight, scale).",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Use SF Symbols as the primary icon set",
+        "Consistent with iOS and macOS",
+        "SF Symbols scale with Dynamic Type and support variable rendering (weight, scale)"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see sf symbols applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Sidebar Icons",
+      "description": "Sidebar navigation icons: 20-24pt. Outlined for default, filled for selected. Slightly larger than iPhone sidebar due to the bigger screen and touch targets.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Sidebar navigation icons: 20-24pt",
+        "Outlined for default, filled for selected",
+        "Slightly larger than iPhone sidebar due to the bigger screen and touch targets"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using sidebar icons",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Toolbar Icons",
+      "description": "Toolbar and navigation bar icons: 22-24pt. Use standard SF Symbols for common actions. Share, compose, trash, folder icons should use standard SF Symbol names.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Toolbar and navigation bar icons: 22-24pt",
+        "Use standard SF Symbols for common actions",
+        "Share, compose, trash, folder icons should use standard SF Symbol names"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using toolbar icons",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Content Icons",
+      "description": "Inline icons: 16-20pt. List item icons: 24pt. Empty state icons: 48-64pt. Scale to context. Larger empty state icons fill the larger viewport appropriately.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Inline icons: 16-20pt",
+        "List item icons: 24pt",
+        "Empty state icons: 48-64pt",
+        "Scale to context",
+        "Larger empty state icons fill the larger viewport appropriately"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see content icons applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Pointer Hover Effects",
+      "description": "Icons in toolbars and navigation show subtle highlight/lift effect on pointer hover. iPad supports trackpad/mouse. Pointer effects provide feedback for cursor-based interaction.",
+      "requirementType": "design",
+      "subcategory": "icons",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Icons in toolbars and navigation show subtle highlight/lift effect on pointer hover",
+        "iPad supports trackpad/mouse",
+        "Pointer effects provide feedback for cursor-based interaction"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using pointer hover effects",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Type Hierarchy",
+      "description": "Same as iOS but with larger display sizes: Large Title (34pt), Title 1 (28pt), Title 2 (22pt), Headline (17pt), Body (17pt), Subheadline (15pt), Caption (12pt). iPad can use the same or slightly larger type sizes than iPhone due to reading distance.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Same as iOS but with larger display sizes: Large Title (34pt), Title 1 (28pt), Title 2 (22pt), Headline (17pt), Body (17pt), Subheadline (15pt), Caption (12pt)",
+        "iPad can use the same or slightly larger type sizes than iPhone due to reading distance"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see type hierarchy applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Font Family",
+      "description": "Default to SF Pro. Custom fonts provided before design starts. Ensure broad weight support. iPad apps may display more text simultaneously. Font must be readable at extended reading.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Default to SF Pro",
+        "Custom fonts provided before design starts",
+        "Ensure broad weight support",
+        "iPad apps may display more text simultaneously",
+        "Font must be readable at extended reading"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see font family applied in the interface",
+        "benefit": "text is readable and visually consistent throughout the application"
+      }
+    },
+    {
+      "name": "Dynamic Type",
+      "description": "Support all Dynamic Type sizes including accessibility sizes. iPad users also adjust text size. Layout must accommodate very large text without breaking.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support all Dynamic Type sizes including accessibility sizes",
+        "iPad users also adjust text size",
+        "Layout must accommodate very large text without breaking"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see dynamic type applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Multi-Column Text",
+      "description": "For long-form content, consider multi-column text layout in landscape to improve readability. Single column at ~65-75 characters per line. Multi-column for wide views. Avoid very long text lines.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "could",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "For long-form content, consider multi-column text layout in landscape to improve readability",
+        "Single column at ~65-75 characters per line",
+        "Multi-column for wide views",
+        "Avoid very long text lines"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see multi-column text applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Line Length",
+      "description": "Maximum line length for body text: 75 characters. Use max-width on text containers. Critical on tablet where full-width text lines can be extremely long and hard to read.",
+      "requirementType": "design",
+      "subcategory": "typography",
+      "priority": "should",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Maximum line length for body text: 75 characters",
+        "Use max-width on text containers",
+        "Critical on tablet where full-width text lines can be extremely long and hard to read"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see line length applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Runtime Color Control",
+      "description": "Colors controlled at runtime. Use color assets or theme tokens for all colors. Same approach as iOS. All colors defined as tokens that can be swapped per theme.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Colors controlled at runtime",
+        "Use color assets or theme tokens for all colors",
+        "Same approach as iOS",
+        "All colors defined as tokens that can be swapped per theme"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see runtime color control applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Light & Dark Mode",
+      "description": "Full support for light and dark appearance. Follows system setting with optional manual override. iPad uses the same appearance system as iOS. Test all screens in both modes.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Full support for light and dark appearance",
+        "Follows system setting with optional manual override",
+        "iPad uses the same appearance system as iOS",
+        "Test all screens in both modes"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see light & dark mode applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Sidebar Tinting",
+      "description": "Sidebar uses a slightly different background tint from the main content area for visual separation. Standard iPadOS pattern. Sidebar surface is slightly translucent/tinted. Use system sidebar material.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "should",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Sidebar uses a slightly different background tint from the main content area for visual separation",
+        "Standard iPadOS pattern",
+        "Sidebar surface is slightly translucent/tinted",
+        "Use system sidebar material"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see sidebar tinting applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Contrast Ratios",
+      "description": "WCAG AA minimum contrast. Same standards as iOS: 4.5:1 for body, 3:1 for large text. Larger screen doesn't change contrast requirements. Verify with accessibility tools.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "WCAG AA minimum contrast",
+        "Same standards as iOS: 4",
+        "5:1 for body, 3:1 for large text",
+        "Larger screen doesn't change contrast requirements",
+        "Verify with accessibility tools"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see contrast ratios applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Semantic Color Tokens",
+      "description": "Use iOS semantic colors: systemBackground, secondarySystemBackground, label, secondaryLabel, separator. Semantic colors adapt to light/dark mode and accessibility settings automatically.",
+      "requirementType": "design",
+      "subcategory": "colors",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Use iOS semantic colors: systemBackground, secondarySystemBackground, label, secondaryLabel, separator",
+        "Semantic colors adapt to light/dark mode and accessibility settings automatically"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see semantic color tokens applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Illustration Style",
+      "description": "Simple, minimal, lightweight. Same style as iOS but can be slightly larger. Flat or line-art style. Limited color palette. Not heavy or distracting.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Simple, minimal, lightweight",
+        "Same style as iOS but can be slightly larger",
+        "Flat or line-art style",
+        "Limited color palette",
+        "Not heavy or distracting"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see illustration style applied in the interface",
+        "benefit": "the visual theme is consistent and comfortable to look at"
+      }
+    },
+    {
+      "name": "Empty States",
+      "description": "Empty state illustrations: 100-160pt. Centered in the detail/content panel, not the full screen. On split view, empty state appears in the detail panel. Include helpful action button.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Empty state illustrations: 100-160pt",
+        "Centered in the detail/content panel, not the full screen",
+        "On split view, empty state appears in the detail panel",
+        "Include helpful action button"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see empty states applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "High-Resolution Assets",
+      "description": "All assets at @2x resolution minimum for Retina displays. All iPads have Retina displays. Vector (SVG/SF Symbols) preferred over raster.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "All assets at @2x resolution minimum for Retina displays",
+        "All iPads have Retina displays",
+        "Vector (SVG/SF Symbols) preferred over raster"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see high-resolution assets applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Drag Preview Images",
+      "description": "Provide appropriate drag preview images for drag-and-drop operations. When dragging items, show a preview that represents the content. Standard iPad interaction.",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "could",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Provide appropriate drag preview images for drag-and-drop operations",
+        "When dragging items, show a preview that represents the content",
+        "Standard iPad interaction"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see drag preview images applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "App Icon",
+      "description": "Same 1024x1024pt icon as iOS. System automatically applies iPad corner radius. iPad icon corners are slightly less rounded than iPhone. Design for recognition at 76pt (iPad home screen).",
+      "requirementType": "design",
+      "subcategory": "graphics",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Same 1024x1024pt icon as iOS",
+        "System automatically applies iPad corner radius",
+        "iPad icon corners are slightly less rounded than iPhone",
+        "Design for recognition at 76pt (iPad home screen)"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see app icon applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Pointer/Trackpad Support",
+      "description": "Full support for pointer (trackpad/mouse) interactions. Hover effects, pointer lift on buttons. iPadOS pointer is a circle that morphs to highlight interactive elements. Use UIPointerInteraction.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Full support for pointer (trackpad/mouse) interactions",
+        "Hover effects, pointer lift on buttons",
+        "iPadOS pointer is a circle that morphs to highlight interactive elements",
+        "Use UIPointerInteraction"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see pointer/trackpad support applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Multi-Touch Gestures",
+      "description": "Support iPad-specific gestures: pinch-to-zoom, two-finger scroll, and multi-select with two-finger drag. iPad has more gesture vocabulary than iPhone. Use where contextually appropriate.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support iPad-specific gestures: pinch-to-zoom, two-finger scroll, and multi-select with two-finger drag",
+        "iPad has more gesture vocabulary than iPhone",
+        "Use where contextually appropriate"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see multi-touch gestures applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Drag and Drop",
+      "description": "Support intra-app and inter-app drag and drop for content items. Key iPad differentiator. Allow dragging images, text, files between panels and to/from other apps.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "should",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support intra-app and inter-app drag and drop for content items",
+        "Key iPad differentiator",
+        "Allow dragging images, text, files between panels and to/from other apps"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see drag and drop applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Apple Pencil Support",
+      "description": "If the app involves drawing or handwriting, support Apple Pencil with pressure and tilt sensitivity. Scribble (handwriting to text) support for text fields is automatic on iPadOS 14+.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "could",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "If the app involves drawing or handwriting, support Apple Pencil with pressure and tilt sensitivity",
+        "Scribble (handwriting to text) support for text fields is automatic on iPadOS 14+"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see apple pencil support applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Context Menus",
+      "description": "Support context menus on long-press (touch) and right-click (pointer). Same content for both input methods. Include preview if relevant. Standard iPadOS pattern.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support context menus on long-press (touch) and right-click (pointer)",
+        "Same content for both input methods",
+        "Include preview if relevant",
+        "Standard iPadOS pattern"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using context menus",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Smooth Transitions",
+      "description": "Use standard iOS transitions. Navigation: push/pop. Modals: form sheet or page sheet. Sidebar: slide. iPad transitions should feel native. Avoid custom animations unless the app specifically requires them.",
+      "requirementType": "design",
+      "subcategory": "interactions",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use standard iOS transitions",
+        "Navigation: push/pop",
+        "Modals: form sheet or page sheet",
+        "iPad transitions should feel native",
+        "Avoid custom animations unless the app specifically requires them"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using smooth transitions",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Popovers",
+      "description": "Use popovers instead of action sheets for iPad. Anchor to trigger element with arrow. Action sheets are for iPhone. iPad uses popovers. System enforces this for UIAlertController.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Use popovers instead of action sheets for iPad",
+        "Anchor to trigger element with arrow",
+        "Action sheets are for iPhone",
+        "iPad uses popovers",
+        "System enforces this for UIAlertController"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see popovers applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Form Sheets",
+      "description": "Use form sheet presentation (centered, smaller than full screen) for modal forms and editors. Form sheets: ~540pt wide, ~620pt tall on full-screen iPad. Maintains context behind modal.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Use form sheet presentation (centered, smaller than full screen) for modal forms and editors",
+        "Form sheets: ~540pt wide, ~620pt tall on full-screen iPad",
+        "Maintains context behind modal"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see form sheets applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Sidebar List Rows",
+      "description": "Sidebar items: 44pt height, icon (20pt) + text, rounded selection highlight, indent for sub-items. Match iPadOS sidebar styling. Support swipe actions on sidebar items. Section headers for groups.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Sidebar items: 44pt height, icon (20pt) + text, rounded selection highlight, indent for sub-items",
+        "Match iPadOS sidebar styling",
+        "Support swipe actions on sidebar items",
+        "Section headers for groups"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see sidebar list rows applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Buttons",
+      "description": "Same as iOS: filled primary, tonal secondary. 50pt height for primary actions. 44pt for toolbar buttons. iPad buttons can include pointer lift effects. Use UIPointerStyle for hover interaction.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Same as iOS: filled primary, tonal secondary",
+        "50pt height for primary actions",
+        "44pt for toolbar buttons",
+        "iPad buttons can include pointer lift effects",
+        "Use UIPointerStyle for hover interaction"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see buttons applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Split View Controller",
+      "description": "Use UISplitViewController for the primary navigation pattern. Configure column widths and display modes. Handles compact/regular transitions automatically. Three-column split view for complex apps.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "must",
+      "effort": "l",
+      "acceptanceCriteria": [
+        "Use UISplitViewController for the primary navigation pattern",
+        "Configure column widths and display modes",
+        "Handles compact/regular transitions automatically",
+        "Three-column split view for complex apps"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "navigate using split view controller",
+        "benefit": "I can find and access features intuitively"
+      }
+    },
+    {
+      "name": "Toolbars",
+      "description": "Bottom toolbar for contextual tools in editor/document views. Bar button items with flexible spacing. Toolbar items can include segmented controls, sliders, and custom views on iPad.",
+      "requirementType": "design",
+      "subcategory": "components",
+      "priority": "should",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Bottom toolbar for contextual tools in editor/document views",
+        "Bar button items with flexible spacing",
+        "Toolbar items can include segmented controls, sliders, and custom views on iPad"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see toolbars applied in the interface",
+        "benefit": "the layout feels balanced and well-organized"
+      }
+    },
+    {
+      "name": "VoiceOver",
+      "description": "Full VoiceOver support with proper accessibility labels, traits, and container grouping. Multi-column layouts need careful VoiceOver ordering. Group columns logically.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Full VoiceOver support with proper accessibility labels, traits, and container grouping",
+        "Multi-column layouts need careful VoiceOver ordering",
+        "Group columns logically"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see voiceover applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Switch Control",
+      "description": "Support Switch Control for users with motor impairments. Ensure all actions are reachable. Every interactive element must be reachable via Switch Control scanning.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support Switch Control for users with motor impairments",
+        "Ensure all actions are reachable",
+        "Every interactive element must be reachable via Switch Control scanning"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see switch control applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Dynamic Type",
+      "description": "Support all Dynamic Type sizes. Layout adapts to large accessibility text sizes. Multi-column layouts may need to collapse to single column at very large text sizes.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support all Dynamic Type sizes",
+        "Layout adapts to large accessibility text sizes",
+        "Multi-column layouts may need to collapse to single column at very large text sizes"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see dynamic type applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Keyboard Accessibility",
+      "description": "Full keyboard navigation when hardware keyboard is connected. Tab order across columns. Many iPad users have keyboards. All functionality must work without touching the screen.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Full keyboard navigation when hardware keyboard is connected",
+        "Tab order across columns",
+        "Many iPad users have keyboards",
+        "All functionality must work without touching the screen"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see keyboard accessibility applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Contrast & Color",
+      "description": "WCAG AA contrast ratios. Do not rely on color alone for information. Same standards as iOS. Use icons and text alongside color indicators.",
+      "requirementType": "design",
+      "subcategory": "accessibility",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "WCAG AA contrast ratios",
+        "Do not rely on color alone for information",
+        "Same standards as iOS",
+        "Use icons and text alongside color indicators"
+      ],
+      "userStory": {
+        "role": "user with accessibility needs",
+        "action": "see contrast & color applied in the interface",
+        "benefit": "I can use the application effectively regardless of my abilities"
+      }
+    },
+    {
+      "name": "Size Class Adaptation",
+      "description": "Adapt layout for compact (narrow) and regular (wide) horizontal size classes. Compact: stack columns (phone-like). Regular: show columns side-by-side. Use trait collections.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "Adapt layout for compact (narrow) and regular (wide) horizontal size classes",
+        "Compact: stack columns (phone-like)",
+        "Regular: show columns side-by-side",
+        "Use trait collections"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see size class adaptation applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Slide Over Compatibility",
+      "description": "App must be usable in Slide Over mode (320pt wide). Fall back to single-column layout. Slide Over is very narrow. Must gracefully degrade. Same layout as iPhone at this width.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "xs",
+      "acceptanceCriteria": [
+        "App must be usable in Slide Over mode (320pt wide)",
+        "Fall back to single-column layout",
+        "Slide Over is very narrow",
+        "Must gracefully degrade",
+        "Same layout as iPhone at this width"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see slide over compatibility applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Split View Compatibility",
+      "description": "Support 1/3, 1/2, and 2/3 split view widths. Transition between column configurations smoothly. 1/3 (≈320pt): single column. 1/2 (≈507pt): sidebar + detail. 2/3 (≈694pt): full split.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "m",
+      "acceptanceCriteria": [
+        "Support 1/3, 1/2, and 2/3 split view widths",
+        "Transition between column configurations smoothly",
+        "1/3 (≈320pt): single column",
+        "1/2 (≈507pt): sidebar + detail",
+        "2/3 (≈694pt): full split"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see split view compatibility applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Rotation Handling",
+      "description": "Smooth layout transition when device rotates. No content loss or layout breakage. Animate layout changes during rotation. Maintain scroll position and selection state.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Smooth layout transition when device rotates",
+        "No content loss or layout breakage",
+        "Animate layout changes during rotation",
+        "Maintain scroll position and selection state"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see rotation handling applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    },
+    {
+      "name": "Keyboard Appearance",
+      "description": "Layout adjusts when software keyboard appears. Content remains accessible above keyboard. iPad software keyboard is large. Use keyboard layout guide. Consider floating keyboard mode.",
+      "requirementType": "design",
+      "subcategory": "responsive",
+      "priority": "must",
+      "effort": "s",
+      "acceptanceCriteria": [
+        "Layout adjusts when software keyboard appears",
+        "Content remains accessible above keyboard",
+        "iPad software keyboard is large",
+        "Use keyboard layout guide",
+        "Consider floating keyboard mode"
+      ],
+      "userStory": {
+        "role": "user",
+        "action": "see keyboard appearance applied in the interface",
+        "benefit": "the application follows platform design guidelines consistently"
+      }
+    }
+  ]
+}
